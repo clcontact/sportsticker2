@@ -1,37 +1,151 @@
-import React, { useEffect, useState } from "react";
-import { io } from "socket.io-client";
+import React, { useEffect, useState, useRef } from "react";
+import Ticker from "./Ticker";
 
-const socket = io("http://localhost:3000");
+const DisplayTracker = ({
+  gamesPerPage = 4,
+  pageInterval = 5000, // milliseconds per page
+  slideDuration = 1000, // milliseconds for slide animation
+}) => {
+  const [games, setGames] = useState([]);
+  const [pageIndex, setPageIndex] = useState(0);
+  const [transitioning, setTransitioning] = useState(false);
+  const containerRef = useRef(null);
 
-export default function DisplayPage() {
-  const [settings, setSettings] = useState({ mode: "ticker", team: "", refreshInterval: 60 });
+  // Fetch latest games
+  const fetchGames = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/games");
+      const data = await res.json();
+      setGames(data);
+      setPageIndex(0); // reset paging
+    } catch (err) {
+      console.error("Error fetching games:", err);
+    }
+  };
 
   useEffect(() => {
-    socket.on("settingsUpdated", (data) => {
-      console.log("Received update:", data);
-      setSettings(data);
-    });
-
-    return () => socket.off("settingsUpdated");
+    fetchGames();
   }, []);
+
+  // Handle page changes
+  useEffect(() => {
+    if (games.length === 0) return;
+
+    const interval = setInterval(() => {
+      const totalPages = Math.ceil(games.length / gamesPerPage);
+
+      setTransitioning(true);
+
+      setTimeout(() => {
+        setTransitioning(false);
+        if (pageIndex + 1 >= totalPages) {
+          fetchGames(); // refresh scores at the end
+        } else {
+          setPageIndex(pageIndex + 1);
+        }
+      }, slideDuration);
+    }, pageInterval);
+
+    return () => clearInterval(interval);
+  }, [games, pageIndex, gamesPerPage, pageInterval, slideDuration]);
+
+  // Current page slice
+  const currentGames = games.slice(
+    pageIndex * gamesPerPage,
+    pageIndex * gamesPerPage + gamesPerPage
+  );
 
   return (
     <div
       style={{
-        backgroundColor: "#111",
+        backgroundColor: "black",
         color: "white",
-        fontFamily: "Arial, sans-serif",
-        height: "100vh",
+        width: "100%",
+        height: "calc(100vh - 2.5rem)",
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        fontFamily: "sans-serif",
+        overflow: "hidden",
+        position: "relative",
+        padding: "1rem",
       }}
     >
-      <h1>🏈 Sports Ticker Display</h1>
-      <h2>Mode: {settings.mode}</h2>
-      <h3>Team: {settings.team}</h3>
-      <p>Refresh every {settings.refreshInterval}s</p>
+      <div
+        ref={containerRef}
+        style={{
+          display: "flex",
+          transform: transitioning ? "translateX(-100%)" : "translateX(0)",
+          transition: transitioning ? `transform ${slideDuration}ms ease-in-out` : "none",
+          width: "200%", // allow space to slide
+        }}
+      >
+        <div style={{ width: "50%" }}>
+          {currentGames.length === 0 ? (
+            <div style={{ textAlign: "center" }}>Waiting for scores...</div>
+          ) : (
+            currentGames.map((g) => (
+              <table
+                key={g.id}
+                style={{
+                  borderCollapse: "collapse",
+                  width: "100%",
+                  marginBottom: "1rem",
+                  backgroundColor: "#111",
+                }}
+              >
+                <tbody>
+                  <tr>
+                    <td
+                      style={{
+                        border: "1px solid #555",
+                        padding: "0.5rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {g.away}
+                    </td>
+                    <td
+                      style={{
+                        border: "1px solid #555",
+                        padding: "0.5rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {g.awayScore}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style={{
+                        border: "1px solid #555",
+                        padding: "0.5rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {g.home}
+                    </td>
+                    <td
+                      style={{
+                        border: "1px solid #555",
+                        padding: "0.5rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      {g.homeScore}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            ))
+          )}
+        </div>
+        {/* Empty next page placeholder for smooth sliding */}
+        <div style={{ width: "50%" }} />
+      </div>
+      <Ticker />
     </div>
   );
-}
+};
+
+export default DisplayTracker;

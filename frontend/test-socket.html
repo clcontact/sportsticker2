@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket.IO Test</title>
+</head>
+<body style="background:black; color:white; font-family:sans-serif;">
+  <h1>Socket.IO Test</h1>
+  <ul id="gamesList"></ul>
+
+  <script src="https://cdn.socket.io/4.8.0/socket.io.min.js"></script>
+  <script>
+    const socket = io('http://localhost:3000');
+
+    socket.on('connect', () => {
+      console.log('Connected to server');
+    });
+
+    socket.on('gamesUpdate', (games) => {
+      console.log('Received games update', games);
+      const ul = document.getElementById('gamesList');
+      ul.innerHTML = '';
+      games.forEach(g => {
+        const li = document.createElement('li');
+        li.textContent = `${g.away} ${g.awayScore} - ${g.homeScore} ${g.home}`;
+        ul.appendChild(li);
+      });
+    });
+
+    socket.on('disconnect', () => {
+      console.log('Disconnected from server');
+    });
+  </script>
+</body>
+</html>
