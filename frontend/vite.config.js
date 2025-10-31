@@ -1,16 +1,21 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+// /frontend/vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
+// 🚨 Use ES Module 'import' for plugins 🚨
+import tailwindcss from '@tailwindcss/postcss';
+import autoprefixer from 'autoprefixer';
+
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 5173,
-    proxy: {
-      "/api": "http://localhost:3000", // backend proxy
-      "/socket.io": {
-        target: "ws://localhost:3000",
-        ws: true
-      }
-    }
-  }
+  css: {
+    postcss: {
+      plugins: [
+        // Reference the imported variables here
+        tailwindcss(),
+        autoprefixer(),
+      ],
+    },
+  },
 });

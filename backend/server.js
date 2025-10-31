@@ -2,8 +2,10 @@
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
-import { getCurrentGames, startTickerDataService } from "./services/tickerDataService.js";
 import cors from "cors";
+//import { getCurrentGames, startTicker } from "./services/TickerDataService.js";
+import {getCurrentGames, startTicker } from "./services/tickerDataService.js"
+import { startDataPolling } from './services/dataFetcher.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -13,12 +15,16 @@ const io = new Server(server, {
 
 app.use(cors());
 
-// Endpoint for ticker polling
+// REST endpoint to get current games
 app.get("/api/games", (req, res) => {
   res.json(getCurrentGames());
 });
 
-// Start ticker simulation (scores update)
-startTickerDataService(io);
+// Start the ticker updates
+startTicker(io, 15000);
 
-server.listen(3000, () => console.log("Server running on port 3000"));
+server.listen(3000, () => {
+  console.log("✅ Server running on port 3000");
+  startDataPolling();
+  }
+);
