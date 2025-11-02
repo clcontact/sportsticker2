@@ -90,7 +90,7 @@ export default function LeagueTicker({ league, gameCount, leagueDisplayName }) {
         1: 1.8,
         2: 1.4,
         3: 1.1,
-        4: 0.85,
+        4: 1.1,
     }[displayWindowSize] || 1.0;
 
     // --- TEAM CARD ---
@@ -100,8 +100,8 @@ export default function LeagueTicker({ league, gameCount, leagueDisplayName }) {
 
         const logoSize = `${7.5 * scaleFactor}rem`;
         const scoreFontSize = `${4.0 * scaleFactor}rem`;
-        const nameFontSize = `${1.2 * scaleFactor}rem`;
-        const recordFontSize = `${1.1 * scaleFactor}rem`;
+        const nameFontSize = `${1.5 * scaleFactor}rem`;
+        const recordFontSize = `${1.5 * scaleFactor}rem`;
 
         return (
             <div className="flex w-full h-full overflow-hidden">
