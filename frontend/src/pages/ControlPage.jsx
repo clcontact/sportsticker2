@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 export default function ControlPage() {
-  const [settings, setSettings] = useState({ mode: "ticker", team: "BUF", refreshInterval: 60 });
+  const [settings, setSettings] = useState({
+    mode: "ticker",
+    team: "BUF",
+    refreshInterval: 60,
+  });
 
   // Fetch current settings on load
   useEffect(() => {
@@ -38,7 +42,8 @@ export default function ControlPage() {
         <option value="focus">Focus</option>
       </select>
 
-      <br /><br />
+      <br />
+      <br />
 
       <label>Team:</label>
       <input
@@ -47,16 +52,23 @@ export default function ControlPage() {
         onChange={(e) => setSettings({ ...settings, team: e.target.value })}
       />
 
-      <br /><br />
+      <br />
+      <br />
 
       <label>Refresh Interval (seconds):</label>
       <input
         type="number"
         value={settings.refreshInterval}
-        onChange={(e) => setSettings({ ...settings, refreshInterval: parseInt(e.target.value) })}
+        onChange={(e) =>
+          setSettings({
+            ...settings,
+            refreshInterval: parseInt(e.target.value),
+          })
+        }
       />
 
-      <br /><br />
+      <br />
+      <br />
       <button onClick={updateSettings}>Save Changes</button>
     </div>
   );

@@ -18,4 +18,10 @@ export default defineConfig({
       ],
     },
   },
+  server: {
+    // Set your desired port here
+    port: 3001, 
+    // You can also change the host if needed
+    // host: '0.0.0.0',
+  },
 });

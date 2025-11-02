@@ -1,0 +1,1464 @@
+{
+  "sports": [
+    {
+      "id": "1",
+      "uid": "s:1",
+      "guid": "e364bfcd-493d-3bfb-ac83-bd27d66fedd0",
+      "name": "Baseball",
+      "slug": "baseball",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-baseball.png",
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ],
+          "width": 500,
+          "height": 500
+        },
+        {
+          "href": "https://a.espncdn.com/guid/e364bfcd-493d-3bfb-ac83-bd27d66fedd0/logos/default-dark.png",
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ],
+          "width": 500,
+          "height": 500
+        }
+      ],
+      "leagues": [
+        {
+          "id": "10",
+          "uid": "s:1~l:10",
+          "name": "Major League Baseball",
+          "abbreviation": "MLB",
+          "shortName": "MLB",
+          "slug": "mlb",
+          "tag": "mlb",
+          "isTournament": false,
+          "smartdates": [
+            "2025-10-29T07:00Z",
+            "2025-10-31T07:00Z",
+            "2025-11-01T07:00Z"
+          ],
+          "events": [
+            {
+              "id": "401809302",
+              "uid": "s:1~l:10~e:401809302~c:401809302",
+              "guid": "e77774d8-05d3-38d3-8c1e-a717afb057fc",
+              "date": "2025-11-01T00:00:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "Los Angeles Dodgers at Toronto Blue Jays",
+              "shortName": "LAD @ TOR",
+              "seriesSummary": "Series tied 3-3",
+              "competitionType": {
+                "slug": "league-finals",
+                "abbreviation": "FINAL",
+                "text": "Finals"
+              },
+              "notes": [
+                {
+                  "text": "World Series - Game 6",
+                  "headline": "World Series - Game 6",
+                  "type": "event"
+                }
+              ],
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/mlb/game/_/gameId/401809302/dodgers-blue-jays",
+                  "text": "Gamecast"
+                },
+                {
+                  "rel": [
+                    "boxscore",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/mlb/boxscore/_/gameId/401809302",
+                  "text": "Box Score"
+                }
+              ],
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "wallclockAvailable": false,
+              "fauxcastAvailable": true,
+              "onWatch": false,
+              "competitionId": "401809302",
+              "location": "Rogers Centre",
+              "season": 2025,
+              "seasonStartDate": "2025-02-15T08:00:00Z",
+              "seasonEndDate": "2025-12-11T07:59:00Z",
+              "seasonType": "3",
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "3",
+                "name": "Postseason",
+                "abbreviation": "post",
+                "shortName": "post"
+              },
+              "link": "https://www.espn.com/mlb/game/_/gameId/401809302/dodgers-blue-jays",
+              "status": "post",
+              "summary": "Final",
+              "period": 9,
+              "wasSuspended": false,
+              "onFirst": 0,
+              "onSecond": 0,
+              "onThird": 0,
+              "outsText": "0 Outs",
+              "baseRunnersText": "Bases empty",
+              "note": "World Series - Game 6",
+              "broadcasts": [
+                {
+                  "typeId": 1,
+                  "priority": 0,
+                  "type": "TV",
+                  "isNational": true,
+                  "broadcasterId": 148,
+                  "broadcastId": 148,
+                  "name": "FOX",
+                  "shortName": "FOX",
+                  "callLetters": "FOX",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": "fox"
+                },
+                {
+                  "typeId": 5,
+                  "priority": 0,
+                  "type": "Radio",
+                  "isNational": true,
+                  "broadcasterId": 133,
+                  "broadcastId": 133,
+                  "name": "ESPN Radio",
+                  "shortName": "ERADM",
+                  "callLetters": "ERADM",
+                  "station": "13715732",
+                  "stationKey": "espn",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": "13715732"
+                }
+              ],
+              "broadcast": "FOX",
+              "odds": {
+                "details": "LAD -130",
+                "overUnder": 7.5,
+                "spread": 1.5,
+                "overOdds": 100,
+                "underOdds": -120,
+                "provider": {
+                  "id": "58",
+                  "name": "ESPN BET",
+                  "priority": 1,
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/espnbet/ESPN_Bet_Sportsbook_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/espnbet/ESPN_Bet_Sportsbook_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ]
+                },
+                "home": {
+                  "moneyLine": 114
+                },
+                "away": {
+                  "moneyLine": -130
+                },
+                "awayTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "underdog": false,
+                  "moneyLine": -130,
+                  "spreadOdds": 120,
+                  "team": {
+                    "id": "19",
+                    "abbreviation": "LAD",
+                    "displayName": "Los Angeles Dodgers",
+                    "name": "Dodgers"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "underdog": true,
+                  "moneyLine": 114,
+                  "spreadOdds": -145,
+                  "team": {
+                    "id": "14",
+                    "abbreviation": "TOR",
+                    "displayName": "Toronto Blue Jays",
+                    "name": "Blue Jays"
+                  }
+                },
+                "links": [
+                  {
+                    "language": "en-US",
+                    "rel": [
+                      "game",
+                      "desktop",
+                      "bets"
+                    ],
+                    "href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/baseball/organization/united-states/competition/mlb/event/e61c0b4c-5303-4a55-942d-098ac21682e5",
+                    "text": "Game",
+                    "shortText": "Game",
+                    "isExternal": true,
+                    "isPremium": false
+                  }
+                ],
+                "pointSpread": {
+                  "displayName": "Runline",
+                  "shortDisplayName": "RL",
+                  "home": {
+                    "current": {
+                      "line": "+1.5",
+                      "odds": "-200"
+                    },
+                    "open": {
+                      "line": "+1.5",
+                      "odds": "-145"
+                    },
+                    "close": {
+                      "line": "+1.5",
+                      "odds": "-145",
+                      "outcome": "LOSS"
+                    }
+                  },
+                  "away": {
+                    "current": {
+                      "line": "-1.5",
+                      "odds": "+150"
+                    },
+                    "open": {
+                      "line": "-1.5",
+                      "odds": "+120"
+                    },
+                    "close": {
+                      "line": "-1.5",
+                      "odds": "+120",
+                      "outcome": "WIN",
+                      "icon": "https://a.espncdn.com/i/espnbet/espn-bet-checkmark-bold.png",
+                      "iconDark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-checkmark-bold.png"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "displayName": "Moneyline",
+                  "shortDisplayName": "ML",
+                  "home": {
+                    "current": {
+                      "odds": "+190"
+                    },
+                    "open": {
+                      "odds": "+125"
+                    },
+                    "close": {
+                      "odds": "+114",
+                      "outcome": "LOSS"
+                    }
+                  },
+                  "away": {
+                    "current": {
+                      "odds": "-260"
+                    },
+                    "open": {
+                      "odds": "-145"
+                    },
+                    "close": {
+                      "odds": "-130",
+                      "outcome": "WIN",
+                      "icon": "https://a.espncdn.com/i/espnbet/espn-bet-checkmark-bold.png",
+                      "iconDark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-checkmark-bold.png"
+                    }
+                  }
+                },
+                "total": {
+                  "displayName": "Total Runs",
+                  "shortDisplayName": "Total",
+                  "over": {
+                    "current": {
+                      "line": "o4.5",
+                      "odds": "+165"
+                    },
+                    "open": {
+                      "line": "o7.5",
+                      "odds": "-130"
+                    },
+                    "close": {
+                      "line": "o7.5",
+                      "odds": "EVEN",
+                      "outcome": "LOSS"
+                    }
+                  },
+                  "under": {
+                    "current": {
+                      "line": "u4.5",
+                      "odds": "-240"
+                    },
+                    "open": {
+                      "line": "u7.5",
+                      "odds": "+110"
+                    },
+                    "close": {
+                      "line": "u7.5",
+                      "odds": "-120",
+                      "outcome": "WIN",
+                      "icon": "https://a.espncdn.com/i/espnbet/espn-bet-checkmark-bold.png",
+                      "iconDark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-checkmark-bold.png"
+                    }
+                  }
+                },
+                "header": {
+                  "logo": {
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                  },
+                  "text": "ESPN Bet Sportsbook"
+                }
+              },
+              "fullStatus": {
+                "period": 9,
+                "displayPeriod": "9th",
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Final",
+                  "detail": "Final",
+                  "shortDetail": "Final"
+                },
+                "periodPrefix": "End"
+              },
+              "competitors": [
+                {
+                  "id": "19",
+                  "guid": "fb7cf413-5156-9fc2-abe0-2273b89f70db",
+                  "uid": "s:1~l:10~t:19",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": true,
+                  "displayName": "Los Angeles Dodgers",
+                  "name": "Dodgers",
+                  "abbreviation": "LAD",
+                  "location": "Los Angeles",
+                  "color": "005a9c",
+                  "alternateColor": "ffffff",
+                  "score": "3",
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/_/name/lad/los-angeles-dodgers",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/roster/_/name/lad/los-angeles-dodgers",
+                      "text": "Roster",
+                      "shortText": "Roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/stats/_/name/lad/los-angeles-dodgers",
+                      "text": "Statistics",
+                      "shortText": "Statistics",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/schedule/_/name/lad",
+                      "text": "Schedule",
+                      "shortText": "Schedule",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "photos",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/photos/_/name/lad",
+                      "text": "photos",
+                      "shortText": "photos",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "transactions",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/transactions/_/name/lad",
+                      "text": "Transactions",
+                      "shortText": "Transactions",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "injuries",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/injuries/_/name/lad",
+                      "text": "Injuries",
+                      "shortText": "Injuries",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "depthchart",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/depth/_/name/lad",
+                      "text": "Depth Chart",
+                      "shortText": "Depth Chart",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "3-3",
+                  "records": [],
+                  "group": "6",
+                  "recordStats": {
+                    "gamesPlayed": {
+                      "value": 162
+                    },
+                    "wins": {
+                      "value": 93
+                    },
+                    "losses": {
+                      "value": 69
+                    },
+                    "ties": {
+                      "value": 0
+                    },
+                    "OTWins": {
+                      "value": 8
+                    },
+                    "OTLosses": {
+                      "value": 7
+                    },
+                    "homeWins": {
+                      "value": 52
+                    },
+                    "homeLosses": {
+                      "value": 29
+                    },
+                    "homeTies": {
+                      "value": 0
+                    },
+                    "roadWins": {
+                      "value": 41
+                    },
+                    "roadLosses": {
+                      "value": 40
+                    },
+                    "roadTies": {
+                      "value": 0
+                    },
+                    "divisionWins": {
+                      "value": 36
+                    },
+                    "divisionLosses": {
+                      "value": 16
+                    },
+                    "divisionTies": {
+                      "value": 0
+                    },
+                    "pointsFor": {
+                      "value": 825
+                    },
+                    "pointsAgainst": {
+                      "value": 683
+                    },
+                    "pointDifferential": {
+                      "value": 142
+                    },
+                    "streak": {
+                      "value": 5
+                    },
+                    "points": {
+                      "value": 12
+                    },
+                    "gamesBehind": {
+                      "value": 0
+                    },
+                    "playoffSeed": {
+                      "value": 3
+                    },
+                    "clincher": {
+                      "value": 1
+                    },
+                    "winPercent": {
+                      "value": 0.5740740895271301
+                    },
+                    "divisionWinPercent": {
+                      "value": 0.692307710647583
+                    },
+                    "leagueWinPercent": {
+                      "value": 0.5789473652839661
+                    },
+                    "avgPointsFor": {
+                      "value": 5.092592716217041
+                    },
+                    "avgPointsAgainst": {
+                      "value": 4.2160491943359375
+                    },
+                    "magicNumberDivision": {
+                      "value": -2
+                    },
+                    "magicNumberWildcard": {
+                      "value": -9
+                    },
+                    "playoffPercent": {
+                      "value": 100
+                    },
+                    "divisionPercent": {
+                      "value": 100
+                    },
+                    "wildCardPercent": {
+                      "value": 0
+                    },
+                    "divisionRank": {
+                      "value": 1
+                    },
+                    "divisionGamesBehind": {
+                      "value": 0
+                    },
+                    "divisionTied": {
+                      "value": 0
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/lad.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/scoreboard/lad.png",
+                  "summaryAthletes": [
+                    {
+                      "displayValue": "(4-1, 1.56)",
+                      "type": "STARTING_PITCHER",
+                      "athlete": {
+                        "displayName": "Yoshinobu Yamamoto",
+                        "shortName": "Y. Yamamoto"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "14",
+                  "guid": "0151aed9-9f11-ceae-195d-180ca603b64a",
+                  "uid": "s:1~l:10~t:14",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "displayName": "Toronto Blue Jays",
+                  "name": "Blue Jays",
+                  "abbreviation": "TOR",
+                  "location": "Toronto",
+                  "color": "134a8e",
+                  "alternateColor": "6cace5",
+                  "score": "1",
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "roster",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/roster/_/name/tor/toronto-blue-jays",
+                      "text": "Roster",
+                      "shortText": "Roster",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/stats/_/name/tor/toronto-blue-jays",
+                      "text": "Statistics",
+                      "shortText": "Statistics",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/schedule/_/name/tor",
+                      "text": "Schedule",
+                      "shortText": "Schedule",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "photos",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/photos/_/name/tor",
+                      "text": "photos",
+                      "shortText": "photos",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "transactions",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/transactions/_/name/tor",
+                      "text": "Transactions",
+                      "shortText": "Transactions",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "injuries",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/injuries/_/name/tor",
+                      "text": "Injuries",
+                      "shortText": "Injuries",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "depthchart",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/mlb/team/depth/_/name/tor",
+                      "text": "Depth Chart",
+                      "shortText": "Depth Chart",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "3-3",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "gamesPlayed": {
+                      "value": 162
+                    },
+                    "wins": {
+                      "value": 94
+                    },
+                    "losses": {
+                      "value": 68
+                    },
+                    "ties": {
+                      "value": 0
+                    },
+                    "OTWins": {
+                      "value": 10
+                    },
+                    "OTLosses": {
+                      "value": 4
+                    },
+                    "homeWins": {
+                      "value": 54
+                    },
+                    "homeLosses": {
+                      "value": 27
+                    },
+                    "homeTies": {
+                      "value": 0
+                    },
+                    "roadWins": {
+                      "value": 40
+                    },
+                    "roadLosses": {
+                      "value": 41
+                    },
+                    "roadTies": {
+                      "value": 0
+                    },
+                    "divisionWins": {
+                      "value": 29
+                    },
+                    "divisionLosses": {
+                      "value": 23
+                    },
+                    "divisionTies": {
+                      "value": 0
+                    },
+                    "pointsFor": {
+                      "value": 798
+                    },
+                    "pointsAgainst": {
+                      "value": 721
+                    },
+                    "pointDifferential": {
+                      "value": 77
+                    },
+                    "streak": {
+                      "value": 4
+                    },
+                    "points": {
+                      "value": 13
+                    },
+                    "gamesBehind": {
+                      "value": 0
+                    },
+                    "playoffSeed": {
+                      "value": 1
+                    },
+                    "clincher": {
+                      "value": 5
+                    },
+                    "winPercent": {
+                      "value": 0.5802469253540039
+                    },
+                    "divisionWinPercent": {
+                      "value": 0.557692289352417
+                    },
+                    "leagueWinPercent": {
+                      "value": 0.5614035129547119
+                    },
+                    "avgPointsFor": {
+                      "value": 4.9259257316589355
+                    },
+                    "avgPointsAgainst": {
+                      "value": 4.45061731338501
+                    },
+                    "magicNumberDivision": {
+                      "value": 1
+                    },
+                    "magicNumberWildcard": {
+                      "value": -6
+                    },
+                    "playoffPercent": {
+                      "value": 100
+                    },
+                    "divisionPercent": {
+                      "value": 100
+                    },
+                    "wildCardPercent": {
+                      "value": 0
+                    },
+                    "divisionRank": {
+                      "value": 1
+                    },
+                    "divisionGamesBehind": {
+                      "value": 0
+                    },
+                    "divisionTied": {
+                      "value": 0
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/mlb/500/scoreboard/tor.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/mlb/500-dark/scoreboard/tor.png",
+                  "summaryAthletes": [
+                    {
+                      "displayValue": "(2-3, 2.93)",
+                      "type": "STARTING_PITCHER",
+                      "athlete": {
+                        "displayName": "Kevin Gausman",
+                        "shortName": "K. Gausman"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "neutralSite": false,
+              "conferenceCompetition": false,
+              "onDisneyNetwork": true,
+              "video": {
+                "id": 46797813,
+                "dataSourceIdentifier": "7662d223066e8",
+                "cerebroId": "69058066c66a8438e7ae3627",
+                "pccId": "19b47d10-839b-432b-af70-b6e2e29999fc",
+                "source": "espn",
+                "headline": "Dodgers force Game 7 with thrilling finish vs. Blue Jays",
+                "caption": "The Dodgers eke out a tense 3-1 win to force a decisive Game 7 against the Blue Jays.",
+                "title": "Dodgers force Game 7 with thrilling finish vs. Blue Jays",
+                "description": "The Dodgers eke out a tense 3-1 win to force a decisive Game 7 against the Blue Jays.",
+                "lastModified": "2025-11-01T03:41:24Z",
+                "originalPublishDate": "2025-11-01T03:36:58Z",
+                "premium": false,
+                "syndicatable": true,
+                "duration": 70,
+                "videoRatio": "16:9,9:16",
+                "timeRestrictions": {
+                  "embargoDate": "2025-11-01T03:36:58Z",
+                  "expirationDate": "2025-11-03T03:36:58Z"
+                },
+                "deviceRestrictions": {
+                  "type": "whitelist",
+                  "devices": [
+                    "desktop",
+                    "ipad",
+                    "settop",
+                    "handset",
+                    "tablet"
+                  ]
+                },
+                "geoRestrictions": {
+                  "type": "whitelist",
+                  "countries": [
+                    "BF",
+                    "MV",
+                    "PA",
+                    "ML",
+                    "GD",
+                    "MU",
+                    "BQ",
+                    "US",
+                    "AS",
+                    "GU",
+                    "MP",
+                    "PR",
+                    "VI",
+                    "UM",
+                    "NG",
+                    "SS",
+                    "KE",
+                    "UG",
+                    "MH",
+                    "GH",
+                    "RW",
+                    "CO",
+                    "AO",
+                    "HT",
+                    "MW",
+                    "CM",
+                    "KY",
+                    "HN",
+                    "CR",
+                    "SD",
+                    "BM",
+                    "GW",
+                    "MX",
+                    "BS",
+                    "NA",
+                    "KM",
+                    "SZ",
+                    "BO",
+                    "SX",
+                    "GN",
+                    "VC",
+                    "BJ",
+                    "GB",
+                    "UK",
+                    "MQ",
+                    "TC",
+                    "BW",
+                    "SO",
+                    "JM",
+                    "MS",
+                    "NE",
+                    "PE",
+                    "AR",
+                    "CF",
+                    "NZ",
+                    "GM",
+                    "FK",
+                    "GT",
+                    "GP",
+                    "LC",
+                    "SV",
+                    "ER",
+                    "KN",
+                    "BL",
+                    "CL",
+                    "CD",
+                    "MZ",
+                    "PW",
+                    "AI",
+                    "AW",
+                    "PY",
+                    "CI",
+                    "SC",
+                    "CU",
+                    "GA",
+                    "RE",
+                    "NI",
+                    "FM",
+                    "FJ",
+                    "VE",
+                    "ZM",
+                    "DO",
+                    "LR",
+                    "GQ",
+                    "NL",
+                    "MF",
+                    "AG",
+                    "ST",
+                    "TD",
+                    "GY",
+                    "ZA",
+                    "MG",
+                    "SN",
+                    "BZ",
+                    "CV",
+                    "VG",
+                    "BB",
+                    "SL",
+                    "TG",
+                    "MR",
+                    "TZ",
+                    "LS",
+                    "EC",
+                    "UY",
+                    "TT",
+                    "BI",
+                    "AU",
+                    "CG",
+                    "DJ"
+                  ]
+                },
+                "gameId": 401809302,
+                "plays": [
+                  {
+                    "id": 4018093020405990000
+                  }
+                ],
+                "thumbnail": "https://a.espncdn.com/media/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e.jpg",
+                "images": [
+                  {
+                    "name": "Poster Image",
+                    "caption": "",
+                    "alt": "",
+                    "credit": "",
+                    "height": 324,
+                    "width": 576,
+                    "url": "https://media.video-cdn.espn.com/images/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e.jpg"
+                  }
+                ],
+                "posterImages": {
+                  "default": {
+                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_default.jpg",
+                    "width": 576,
+                    "height": 324
+                  },
+                  "full": {
+                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e.jpg"
+                  },
+                  "wide": {
+                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_5x2.jpg"
+                  },
+                  "square": {
+                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_1x1.jpg"
+                  },
+                  "vertical": {
+                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_9x16.jpg"
+                  },
+                  "verticalFirstFrame": {
+                    "href": "https://service-pkgespn.akamaized.net/opp/img/espn/9x16/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e/thumb-1-w406-h720-f4.jpg"
+                  }
+                },
+                "links": {
+                  "web": {
+                    "href": "https://www.espn.com/video/clip?id=46797813",
+                    "self": {
+                      "href": "https://www.espn.com/video/clip?id=46797813",
+                      "dsi": {
+                        "href": "https://www.espn.com/video/clip?id=7662d223066e8"
+                      }
+                    },
+                    "seo": {
+                      "href": "https://www.espn.com/video/clip/_/id/46797813"
+                    }
+                  },
+                  "mobile": {
+                    "source": {
+                      "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e.mp4"
+                    },
+                    "alert": {
+                      "href": "https://m.espn.com/general/video/videoAlert?vid=46797813"
+                    },
+                    "streaming": {
+                      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/19b47d10-839b-432b-af70-b6e2e29999fc/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=46797813"
+                    },
+                    "progressiveDownload": {
+                      "href": "https://watch.auth.api.espn.com/video/auth/brightcove/19b47d10-839b-432b-af70-b6e2e29999fc/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=46797813"
+                    }
+                  },
+                  "api": {
+                    "self": {
+                      "href": "https://content.core.api.espn.com/v1/video/clips/46797813"
+                    },
+                    "artwork": {
+                      "href": "https://artwork.api.espn.com/artwork/collections/media/19b47d10-839b-432b-af70-b6e2e29999fc"
+                    }
+                  },
+                  "source": {
+                    "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_360p30_1464k.mp4",
+                    "mezzanine": {
+                      "href": "https://media.video-origin.espn.com/espnvideo/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e.mp4"
+                    },
+                    "flash": {
+                      "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e.smil"
+                    },
+                    "hds": {
+                      "href": "https://hds.video-cdn.espn.com/z/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_rel.smil/manifest.f4m"
+                    },
+                    "HLS": {
+                      "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e/playlist.m3u8",
+                      "HD": {
+                        "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e/playlist.m3u8"
+                      },
+                      "cmaf": {
+                        "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e/playlist.m3u8",
+                        "9x16": {
+                          "href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/9x16/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e/playlist.m3u8"
+                        }
+                      },
+                      "9x16": {
+                        "href": "https://service-pkgespn.akamaized.net/opp/hls/espn/9x16/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e/playlist.m3u8"
+                      },
+                      "shield": {
+                        "href": "https://watch.auth.api.espn.com/video/auth/media/19b47d10-839b-432b-af70-b6e2e29999fc/asset"
+                      }
+                    },
+                    "HD": {
+                      "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_720p30_2896k.mp4"
+                    },
+                    "full": {
+                      "href": "https://media.video-cdn.espn.com/motion/wsc/2025/1101/27995a10-de5a-4e75-8e6b-f84e1644267e/27995a10-de5a-4e75-8e6b-f84e1644267e_360p30_1464k.mp4"
+                    }
+                  },
+                  "sportscenter": {
+                    "href": "sportscenter://x-callback-url/showVideo?videoID=46797813&videoDSI=7662d223066e8"
+                  }
+                },
+                "categories": [
+                  {
+                    "id": 165412,
+                    "type": "athlete",
+                    "uid": "s:1~l:10~a:38309",
+                    "guid": "3a8bceb7-f069-7c95-cf1b-76ec00d214b9",
+                    "description": "Will Smith",
+                    "sportId": 10,
+                    "athleteId": 38309,
+                    "athlete": {
+                      "id": 38309,
+                      "description": "Will Smith",
+                      "links": {
+                        "web": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/38309"
+                          }
+                        },
+                        "mobile": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/38309"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 125434,
+                    "type": "athlete",
+                    "uid": "s:1~l:10~a:33190",
+                    "guid": "73885c08-1817-3726-f379-b0a479a92aae",
+                    "description": "Tyler Glasnow",
+                    "sportId": 10,
+                    "athleteId": 33190,
+                    "athlete": {
+                      "id": 33190,
+                      "description": "Tyler Glasnow",
+                      "links": {
+                        "web": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/33190"
+                          }
+                        },
+                        "mobile": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/33190"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 181064,
+                    "type": "athlete",
+                    "uid": "s:1~l:10~a:39907",
+                    "guid": "0ffc6707-788d-30a1-0238-5cffffbec2f2",
+                    "description": "Tommy Edman",
+                    "sportId": 10,
+                    "athleteId": 39907,
+                    "athlete": {
+                      "id": 39907,
+                      "description": "Tommy Edman",
+                      "links": {
+                        "web": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/39907"
+                          }
+                        },
+                        "mobile": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/39907"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 80311,
+                    "type": "league",
+                    "uid": "s:1~l:10",
+                    "guid": "b38f959b-7865-31ac-8841-b88355519e10",
+                    "description": "MLB",
+                    "sportId": 10,
+                    "leagueId": 10,
+                    "league": {
+                      "id": 10,
+                      "description": "MLB",
+                      "abbreviation": "MLB",
+                      "links": {
+                        "web": {
+                          "leagues": {
+                            "href": "https://www.espn.com/mlb/"
+                          }
+                        },
+                        "mobile": {
+                          "leagues": {
+                            "href": "https://www.espn.com/mlb/"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "event",
+                    "uid": "s:1~l:10~e:401809302",
+                    "guid": "e77774d8-05d3-38d3-8c1e-a717afb057fc",
+                    "description": "Los Angeles Dodgers @ Toronto Blue Jays",
+                    "eventId": 401809302,
+                    "event": {
+                      "id": 401809302,
+                      "sport": "baseball",
+                      "league": "mlb",
+                      "description": "Los Angeles Dodgers @ Toronto Blue Jays",
+                      "links": {
+                        "web": {
+                          "event": {
+                            "href": "https://www.espn.com/mlb/game/_/gameId/401809302"
+                          }
+                        },
+                        "mobile": {
+                          "event": {
+                            "href": "https://www.espn.com/mlb/game/_/gameId/401809302"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 694,
+                    "type": "team",
+                    "uid": "s:1~l:10~t:19",
+                    "guid": "fb7cf413-5156-9fc2-abe0-2273b89f70db",
+                    "description": "Los Angeles Dodgers",
+                    "sportId": 10,
+                    "teamId": 19,
+                    "team": {
+                      "id": 19,
+                      "description": "Los Angeles Dodgers",
+                      "links": {
+                        "web": {
+                          "teams": {
+                            "href": "https://www.espn.com/mlb/team/_/name/lad/los-angeles-dodgers"
+                          }
+                        },
+                        "mobile": {
+                          "teams": {
+                            "href": "https://www.espn.com/mlb/team/_/name/lad/los-angeles-dodgers"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 527951,
+                    "type": "athlete",
+                    "uid": "s:1~l:10~a:4997589",
+                    "guid": "d9c1ec4a-fd25-3dad-bfd6-9886629c10b4",
+                    "description": "Addison Barger",
+                    "sportId": 10,
+                    "athleteId": 4997589,
+                    "athlete": {
+                      "id": 4997589,
+                      "description": "Addison Barger",
+                      "links": {
+                        "web": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/4997589"
+                          }
+                        },
+                        "mobile": {
+                          "athletes": {
+                            "href": "https://www.espn.com/mlb/player/_/id/4997589"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 711827,
+                    "type": "editorialindicator",
+                    "guid": "26380a67-7938-32a0-9c82-33abab9f7ad4",
+                    "description": "3 Star Rating"
+                  },
+                  {
+                    "id": 12023,
+                    "type": "league",
+                    "guid": "486b53e9-9924-4652-82e3-1542a5849276",
+                    "description": "Fantasy MLB",
+                    "sportId": 0,
+                    "leagueId": 3070,
+                    "league": {
+                      "id": 3070,
+                      "description": "Fantasy MLB",
+                      "links": {
+                        "web": {},
+                        "mobile": {}
+                      }
+                    }
+                  },
+                  {
+                    "id": 88,
+                    "type": "team",
+                    "uid": "s:1~l:10~t:14",
+                    "guid": "0151aed9-9f11-ceae-195d-180ca603b64a",
+                    "description": "Toronto Blue Jays",
+                    "sportId": 10,
+                    "teamId": 14,
+                    "team": {
+                      "id": 14,
+                      "description": "Toronto Blue Jays",
+                      "links": {
+                        "web": {
+                          "teams": {
+                            "href": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays"
+                          }
+                        },
+                        "mobile": {
+                          "teams": {
+                            "href": "https://www.espn.com/mlb/team/_/name/tor/toronto-blue-jays"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 711824,
+                    "type": "editorialindicator",
+                    "guid": "d348c764-47d9-3e31-bd75-d39dfde52c26",
+                    "description": "SC4U  - Eligible"
+                  },
+                  {
+                    "id": 711821,
+                    "type": "editorialindicator",
+                    "guid": "f3e05446-8d07-3064-a239-c10c32884ea2",
+                    "description": "SC4U - Full Highlight"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "3a8bceb7-f069-7c95-cf1b-76ec00d214b9"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "73885c08-1817-3726-f379-b0a479a92aae"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "0ffc6707-788d-30a1-0238-5cffffbec2f2"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "b38f959b-7865-31ac-8841-b88355519e10"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "e77774d8-05d3-38d3-8c1e-a717afb057fc"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "fb7cf413-5156-9fc2-abe0-2273b89f70db"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "d9c1ec4a-fd25-3dad-bfd6-9886629c10b4"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "26380a67-7938-32a0-9c82-33abab9f7ad4"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "486b53e9-9924-4652-82e3-1542a5849276"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "0151aed9-9f11-ceae-195d-180ca603b64a"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "d348c764-47d9-3e31-bd75-d39dfde52c26"
+                  },
+                  {
+                    "type": "guid",
+                    "guid": "f3e05446-8d07-3064-a239-c10c32884ea2"
+                  }
+                ],
+                "ad": {
+                  "sport": "mlb",
+                  "bundle": "mlbhighlightsoneplay"
+                },
+                "tracking": {
+                  "sportName": "baseball",
+                  "leagueName": "MLB",
+                  "coverageType": "Final Game Highlight",
+                  "trackingName": "MLB_One-Play (Dodgers force Game 7 with thrilling finish vs. Blue Jays) 2025/11/01 ESHEET",
+                  "trackingId": "dm_20251101_MLB_los_angeles_dodgers_vs_toronto_blue_jays_game_highlights"
+                },
+                "contributingPartner": "wsc",
+                "contributingSystem": "wsc"
+              },
+              "appLinks": [
+                {
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401809302",
+                  "text": "Gamecast",
+                  "shortText": "Summary"
+                },
+                {
+                  "rel": [
+                    "boxscore",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401809302",
+                  "text": "Box Score",
+                  "shortText": "Box Score"
+                },
+                {
+                  "rel": [
+                    "gamecast",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=baseball&leagueAbbrev=mlb&gameId=401809302",
+                  "text": "Gamecast",
+                  "shortText": "Gamecast"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,9 @@ import DisplayPage from "./pages/DisplayPage";
 import ControlPage from "./pages/ControlPage";
 import TickerDisplay from "./pages/TickerDisplay";
 import TickerDisplayN from "./pages/TickerDisplayN";
-import TailwindTest from "./TailwindTest";
+import LeagueTicker from './pages/LeagueTicker';
+import ParameterizedTicker from "./pages/ParameterizedTicker";
+
 
 export default function App() {
   return (
@@ -13,8 +15,23 @@ export default function App() {
         <Route path="/control" element={<ControlPage />} />
         <Route path="/ticker" element={<TickerDisplay />} />
         <Route path="/tracker" element={<TickerDisplayN />} />
-        <Route path="/tail" element={<TailwindTest />} />
+        {/* 1. Route for NFL showing 3 games */}
+                <Route 
+                    path="/LeagueTracker/nfl/3" 
+                    element={<LeagueTicker league="nfl" gameCount={3} leagueDisplayName="NFL" />} 
+                />
+                <Route 
+                    path="/LeagueTracker/epl/3" 
+                    element={<LeagueTicker league="epl" gameCount={3} leagueDisplayName="Premier League" />} 
+                />          
+        {/* ⭐️ SINGLE FLEXIBLE ROUTE DEFINITION ⭐️ */}
+                {/* This handles paths like /LeagueTracker/nfl/3 and /LeagueTracker/epl/1 */}
+                <Route 
+                    path="/LeagueTracker/:league/:count" 
+                    element={<ParameterizedTicker />} 
+                />                      
       </Routes>
     </BrowserRouter>
+    
   );
 }

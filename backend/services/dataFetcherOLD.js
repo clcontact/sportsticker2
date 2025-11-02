@@ -4,16 +4,17 @@ import axios from 'axios';
 import { promises as fs } from 'fs'; // Use promise-based fs for async/await
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 // --- ESM Global Variable Definitions ---
 // These replace the CommonJS '__dirname' and '__filename'
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); 
+const DATA_DIR = path.join(__dirname, 'data');
 
+const FETCH_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
 // --- Configuration ---
 const URL = 'https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl';
-const FETCH_INTERVAL_MS = 5 * 60 * 1000; // 5 minutes
-const DATA_DIR = path.join(__dirname, 'data');
+
+
 const FILE_PATH = path.join(DATA_DIR, 'data.json');
 
 /**
