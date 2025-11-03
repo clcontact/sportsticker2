@@ -14,7 +14,7 @@ const DisplayTracker = ({
   // Fetch latest games
   const fetchGames = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/games");
+      const res = await fetch("http://localhost:3000/api/games/nfl");
       const data = await res.json();
       setGames(data);
       setPageIndex(0); // reset paging

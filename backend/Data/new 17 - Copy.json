@@ -60,1203 +60,6 @@
 					],
 					"events": [
 						{
-							"id": "401772765",
-							"uid": "s:20~l:28~e:401772765~c:401772765",
-							"guid": "73286f84-98fd-3bc5-8d01-d4b50c435868",
-							"date": "2025-11-02T18:00:00Z",
-							"timeValid": true,
-							"recent": true,
-							"name": "Chicago Bears at Cincinnati Bengals",
-							"shortName": "CHI @ CIN",
-							"links": [
-								{
-									"rel": [
-										"live",
-										"desktop",
-										"event"
-									],
-									"href": "https://www.espn.com/nfl/game?gameId=401772765",
-									"text": "Gamecast"
-								},
-								{
-									"rel": [
-										"boxscore",
-										"desktop",
-										"event"
-									],
-									"href": "https://www.espn.com/nfl/boxscore/_/gameId/401772765",
-									"text": "Box Score"
-								}
-							],
-							"gamecastAvailable": true,
-							"playByPlayAvailable": true,
-							"commentaryAvailable": false,
-							"wallclockAvailable": true,
-							"fauxcastAvailable": true,
-							"onWatch": false,
-							"competitionId": "401772765",
-							"location": "Paycor Stadium",
-							"season": 2025,
-							"seasonStartDate": "2025-07-31T07:00:00Z",
-							"seasonEndDate": "2026-01-08T07:59:00Z",
-							"seasonType": "2",
-							"seasonTypeHasGroups": false,
-							"group": {
-								"groupId": "2",
-								"name": "Regular Season",
-								"abbreviation": "reg",
-								"shortName": "reg"
-							},
-							"week": 9,
-							"weekText": "Week 9",
-							"link": "https://www.espn.com/nfl/game?gameId=401772765",
-							"status": "in",
-							"summary": "0:17 - 4th",
-							"period": 4,
-							"clock": "0:17",
-							"downDistanceText": "1st & 10",
-							"possessionText": "CIN 35",
-							"possessionTeamId": "4",
-							"broadcasts": [
-								{
-									"typeId": 1,
-									"priority": 1,
-									"type": "TV",
-									"isNational": true,
-									"broadcasterId": 44,
-									"broadcastId": 44,
-									"name": "CBS",
-									"shortName": "CBS",
-									"callLetters": "CBS",
-									"station": "CBS",
-									"lang": "en",
-									"region": "us",
-									"slug": "cbs"
-								}
-							],
-							"broadcast": "CBS",
-							"odds": {
-								"details": "CHI -2.5",
-								"overUnder": 51.5,
-								"spread": 2.5,
-								"overOdds": -110,
-								"underOdds": -110,
-								"provider": {
-									"id": "58",
-									"name": "ESPN BET",
-									"priority": 1,
-									"logos": [
-										{
-											"href": "https://a.espncdn.com/i/espnbet/ESPN_Bet_Sportsbook_Light.svg",
-											"rel": [
-												"light"
-											]
-										},
-										{
-											"href": "https://a.espncdn.com/i/espnbet/ESPN_Bet_Sportsbook_Dark.svg",
-											"rel": [
-												"dark"
-											]
-										}
-									]
-								},
-								"home": {
-									"moneyLine": 140
-								},
-								"away": {
-									"moneyLine": -165
-								},
-								"awayTeamOdds": {
-									"favorite": true,
-									"favoriteAtOpen": true,
-									"underdog": false,
-									"moneyLine": -165,
-									"spreadOdds": -125,
-									"team": {
-										"id": "3",
-										"abbreviation": "CHI",
-										"displayName": "Chicago Bears",
-										"name": "Bears"
-									}
-								},
-								"homeTeamOdds": {
-									"favorite": false,
-									"favoriteAtOpen": false,
-									"underdog": false,
-									"moneyLine": 140,
-									"spreadOdds": 105,
-									"team": {
-										"id": "4",
-										"abbreviation": "CIN",
-										"displayName": "Cincinnati Bengals",
-										"name": "Bengals"
-									}
-								},
-								"links": [
-									{
-										"language": "en-US",
-										"rel": [
-											"game",
-											"desktop",
-											"bets"
-										],
-										"href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/fc8b1d91-a76e-42b5-b4a6-319dcd1b3f32",
-										"text": "Game",
-										"shortText": "Game",
-										"isExternal": true,
-										"isPremium": false
-									}
-								],
-								"pointSpread": {
-									"displayName": "Spread",
-									"shortDisplayName": "Spread",
-									"home": {
-										"open": {
-											"line": "+2.5",
-											"odds": "-115"
-										},
-										"close": {
-											"line": "+2.5",
-											"odds": "+105"
-										}
-									},
-									"away": {
-										"open": {
-											"line": "-2.5",
-											"odds": "-105"
-										},
-										"close": {
-											"line": "-2.5",
-											"odds": "-125"
-										}
-									}
-								},
-								"moneyline": {
-									"displayName": "Moneyline",
-									"shortDisplayName": "ML",
-									"home": {
-										"open": {
-											"odds": "+110"
-										},
-										"close": {
-											"odds": "+140"
-										}
-									},
-									"away": {
-										"open": {
-											"odds": "-130"
-										},
-										"close": {
-											"odds": "-165"
-										}
-									}
-								},
-								"total": {
-									"displayName": "Total",
-									"shortDisplayName": "Total",
-									"over": {
-										"open": {
-											"line": "o51.5",
-											"odds": "-105"
-										},
-										"close": {
-											"line": "o51.5",
-											"odds": "-110"
-										}
-									},
-									"under": {
-										"open": {
-											"line": "u51.5",
-											"odds": "-115"
-										},
-										"close": {
-											"line": "u51.5",
-											"odds": "-110"
-										}
-									}
-								},
-								"header": {
-									"logo": {
-										"light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
-										"dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
-										"exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
-										"exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
-									},
-									"text": "ESPN Bet Sportsbook"
-								}
-							},
-							"situation": {
-								"lastPlay": {
-									"id": "4017727655115",
-									"type": {
-										"id": "53",
-										"abbreviation": "K",
-										"text": "Kickoff"
-									},
-									"text": "C.Santos kicks 65 yards from CHI 35 to end zone, Touchback to the CIN 35.",
-									"shortText": "Cairo Santos 65 Yd Kickoff, Touchback ",
-									"period": {
-										"number": 4
-									},
-									"clock": {
-										"value": 17,
-										"displayValue": "0:17"
-									},
-									"team": {
-										"id": "4"
-									},
-									"scoreValue": 0,
-									"athletesInvolved": [
-										{
-											"id": "17427",
-											"displayName": "Cairo Santos",
-											"shortName": "C. Santos",
-											"fullName": "Cairo Santos",
-											"jersey": "8",
-											"team": {
-												"id": "3"
-											},
-											"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/17427.png",
-											"links": [
-												{
-													"rel": [
-														"playercard",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/_/id/17427/cairo-santos",
-													"isHidden": false
-												},
-												{
-													"rel": [
-														"stats",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/stats/_/id/17427/cairo-santos",
-													"isHidden": false
-												},
-												{
-													"rel": [
-														"splits",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/splits/_/id/17427/cairo-santos",
-													"isHidden": false
-												},
-												{
-													"rel": [
-														"gamelog",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/gamelog/_/id/17427/cairo-santos",
-													"isHidden": false
-												},
-												{
-													"rel": [
-														"news",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/news/_/id/17427/cairo-santos",
-													"isHidden": false
-												},
-												{
-													"rel": [
-														"bio",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/bio/_/id/17427/cairo-santos",
-													"isHidden": false
-												},
-												{
-													"rel": [
-														"overview",
-														"desktop",
-														"athlete"
-													],
-													"href": "https://www.espn.com/nfl/player/_/id/17427/cairo-santos",
-													"isHidden": false
-												}
-											],
-											"position": "PK"
-										}
-									],
-									"probability": {
-										"awayWinPercentage": 0.9901,
-										"homeWinPercentage": 0.0099,
-										"tiePercentage": 0.0,
-										"secondsLeft": 0
-									},
-									"drive": {
-										"description": "0 plays, 0 yards, 0:00",
-										"start": {
-											"yardLine": 0,
-											"text": "CIN 0"
-										},
-										"timeElapsed": {
-											"displayValue": "0:00"
-										}
-									},
-									"start": {
-										"team": {
-											"id": "3"
-										},
-										"yardLine": 65
-									},
-									"end": {
-										"team": {
-											"id": "4"
-										},
-										"yardLine": 35
-									},
-									"statYardage": 0
-								},
-								"awayTimeouts": 0,
-								"homeTimeouts": 0,
-								"distance": 10,
-								"yardLine": 35,
-								"down": 1,
-								"isRedZone": false,
-								"downDistanceText": "1st & 10 at CIN 35",
-								"shortDownDistanceText": "1st & 10",
-								"possession": "4",
-								"possessionText": "CIN 35"
-							},
-							"fullStatus": {
-								"clock": 17.0,
-								"displayClock": "0:17",
-								"period": 4,
-								"displayPeriod": "4th",
-								"type": {
-									"id": "2",
-									"name": "STATUS_IN_PROGRESS",
-									"state": "in",
-									"completed": false,
-									"description": "In Progress",
-									"detail": "0:17 - 4th Quarter",
-									"shortDetail": "0:17 - 4th"
-								}
-							},
-							"competitors": [
-								{
-									"id": "3",
-									"guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
-									"uid": "s:20~l:28~t:3",
-									"type": "team",
-									"order": 1,
-									"homeAway": "away",
-									"winner": false,
-									"displayName": "Chicago Bears",
-									"name": "Bears",
-									"abbreviation": "CHI",
-									"location": "Chicago",
-									"color": "0b1c3a",
-									"alternateColor": "e64100",
-									"score": "47",
-									"links": [
-										{
-											"language": "en-US",
-											"rel": [
-												"clubhouse",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears",
-											"text": "Clubhouse",
-											"shortText": "Clubhouse",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"roster",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/roster/_/name/chi/chicago-bears",
-											"text": "Roster",
-											"shortText": "Roster",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"stats",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/stats/_/name/chi/chicago-bears",
-											"text": "Statistics",
-											"shortText": "Statistics",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"schedule",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/schedule/_/name/chi",
-											"text": "Schedule",
-											"shortText": "Schedule",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"photos",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/photos/_/name/chi",
-											"text": "photos",
-											"shortText": "photos",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"draftpicks",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/draft/teams/_/name/chi/chicago-bears",
-											"text": "Draft Picks",
-											"shortText": "Draft Picks",
-											"isExternal": false,
-											"isPremium": true,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"transactions",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/transactions/_/name/chi",
-											"text": "Transactions",
-											"shortText": "Transactions",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"injuries",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/injuries/_/name/chi",
-											"text": "Injuries",
-											"shortText": "Injuries",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"depthchart",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/depth/_/name/chi",
-											"text": "Depth Chart",
-											"shortText": "Depth Chart",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										}
-									],
-									"record": "4-3",
-									"records": [],
-									"group": "10",
-									"recordStats": {
-										"avgPointsAgainst": {
-											"value": 26.428571701049805
-										},
-										"avgPointsFor": {
-											"value": 24.0
-										},
-										"conferenceLosses": {
-											"value": 2.0
-										},
-										"conferenceTies": {
-											"value": 0.0
-										},
-										"conferenceWinPct": {
-											"value": 0.6000000238418579
-										},
-										"conferenceWins": {
-											"value": 3.0
-										},
-										"divisionLosses": {
-											"value": 2.0
-										},
-										"divisionTies": {
-											"value": 0.0
-										},
-										"divisionWinPercent": {
-											"value": 0.0
-										},
-										"divisionWins": {
-											"value": 0.0
-										},
-										"gamesBehind": {
-											"value": 0.0
-										},
-										"gamesPlayed": {
-											"value": 7.0
-										},
-										"homeLosses": {
-											"value": 1.0
-										},
-										"homeTies": {
-											"value": 0.0
-										},
-										"homeWins": {
-											"value": 2.0
-										},
-										"leagueWinPercent": {
-											"value": 0.6000000238418579
-										},
-										"losses": {
-											"value": 3.0
-										},
-										"OTLosses": {
-											"value": 0.0
-										},
-										"OTWins": {
-											"value": 0.0
-										},
-										"playoffSeed": {
-											"value": 8.0
-										},
-										"points": {
-											"value": 0.5
-										},
-										"pointsAgainst": {
-											"value": 185.0
-										},
-										"pointsFor": {
-											"value": 168.0
-										},
-										"roadLosses": {
-											"value": 2.0
-										},
-										"roadTies": {
-											"value": 0.0
-										},
-										"roadWins": {
-											"value": 2.0
-										},
-										"streak": {
-											"value": -1.0
-										},
-										"ties": {
-											"value": 0.0
-										},
-										"winPercent": {
-											"value": 0.5714285969734192
-										},
-										"wins": {
-											"value": 4.0
-										},
-										"divisionRecord": {},
-										"conferenceRecord": {},
-										"differential": {}
-									},
-									"logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
-									"logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/chi.png"
-								},
-								{
-									"id": "4",
-									"guid": "75b8623b-8926-b411-0476-3d3602b78523",
-									"uid": "s:20~l:28~t:4",
-									"type": "team",
-									"order": 0,
-									"homeAway": "home",
-									"winner": false,
-									"displayName": "Cincinnati Bengals",
-									"name": "Bengals",
-									"abbreviation": "CIN",
-									"location": "Cincinnati",
-									"color": "fb4f14",
-									"alternateColor": "000000",
-									"score": "42",
-									"links": [
-										{
-											"language": "en-US",
-											"rel": [
-												"clubhouse",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals",
-											"text": "Clubhouse",
-											"shortText": "Clubhouse",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"roster",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/roster/_/name/cin/cincinnati-bengals",
-											"text": "Roster",
-											"shortText": "Roster",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"stats",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/stats/_/name/cin/cincinnati-bengals",
-											"text": "Statistics",
-											"shortText": "Statistics",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"schedule",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/schedule/_/name/cin",
-											"text": "Schedule",
-											"shortText": "Schedule",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"photos",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/photos/_/name/cin",
-											"text": "photos",
-											"shortText": "photos",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"draftpicks",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/draft/teams/_/name/cin/cincinnati-bengals",
-											"text": "Draft Picks",
-											"shortText": "Draft Picks",
-											"isExternal": false,
-											"isPremium": true,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"transactions",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/transactions/_/name/cin",
-											"text": "Transactions",
-											"shortText": "Transactions",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"injuries",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/injuries/_/name/cin",
-											"text": "Injuries",
-											"shortText": "Injuries",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										},
-										{
-											"language": "en-US",
-											"rel": [
-												"depthchart",
-												"desktop",
-												"team"
-											],
-											"href": "https://www.espn.com/nfl/team/depth/_/name/cin",
-											"text": "Depth Chart",
-											"shortText": "Depth Chart",
-											"isExternal": false,
-											"isPremium": false,
-											"isHidden": false
-										}
-									],
-									"record": "3-5",
-									"records": [],
-									"group": "12",
-									"recordStats": {
-										"avgPointsAgainst": {
-											"value": 31.625
-										},
-										"avgPointsFor": {
-											"value": 21.75
-										},
-										"conferenceLosses": {
-											"value": 2.0
-										},
-										"conferenceTies": {
-											"value": 0.0
-										},
-										"conferenceWinPct": {
-											"value": 0.6000000238418579
-										},
-										"conferenceWins": {
-											"value": 3.0
-										},
-										"divisionLosses": {
-											"value": 0.0
-										},
-										"divisionTies": {
-											"value": 0.0
-										},
-										"divisionWinPercent": {
-											"value": 1.0
-										},
-										"divisionWins": {
-											"value": 2.0
-										},
-										"gamesBehind": {
-											"value": 0.0
-										},
-										"gamesPlayed": {
-											"value": 8.0
-										},
-										"homeLosses": {
-											"value": 2.0
-										},
-										"homeTies": {
-											"value": 0.0
-										},
-										"homeWins": {
-											"value": 2.0
-										},
-										"leagueWinPercent": {
-											"value": 0.6000000238418579
-										},
-										"losses": {
-											"value": 5.0
-										},
-										"OTLosses": {
-											"value": 0.0
-										},
-										"OTWins": {
-											"value": 0.0
-										},
-										"playoffSeed": {
-											"value": 9.0
-										},
-										"points": {
-											"value": -1.0
-										},
-										"pointsAgainst": {
-											"value": 253.0
-										},
-										"pointsFor": {
-											"value": 174.0
-										},
-										"roadLosses": {
-											"value": 3.0
-										},
-										"roadTies": {
-											"value": 0.0
-										},
-										"roadWins": {
-											"value": 1.0
-										},
-										"streak": {
-											"value": -1.0
-										},
-										"ties": {
-											"value": 0.0
-										},
-										"winPercent": {
-											"value": 0.375
-										},
-										"wins": {
-											"value": 3.0
-										},
-										"divisionRecord": {},
-										"conferenceRecord": {},
-										"differential": {}
-									},
-									"logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
-									"logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/cin.png"
-								}
-							],
-							"leaders": [
-								{
-									"name": "passingYards",
-									"displayName": "Passing Leader",
-									"shortDisplayName": "PASS",
-									"abbreviation": "PYDS",
-									"leaders": [
-										{
-											"displayValue": "457 YDS, 4 TD, INT",
-											"value": 457.0,
-											"athlete": {
-												"id": "11252",
-												"displayName": "Joe Flacco",
-												"shortName": "J. Flacco",
-												"fullName": "Joe Flacco",
-												"jersey": "16",
-												"active": true,
-												"team": {
-													"id": "4"
-												},
-												"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/11252.png",
-												"links": [
-													{
-														"rel": [
-															"playercard",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/_/id/11252/joe-flacco",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"stats",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/stats/_/id/11252/joe-flacco",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"splits",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/splits/_/id/11252/joe-flacco",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"gamelog",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/gamelog/_/id/11252/joe-flacco",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"news",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/news/_/id/11252/joe-flacco",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"bio",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/bio/_/id/11252/joe-flacco",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"overview",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/_/id/11252/joe-flacco",
-														"isHidden": false
-													}
-												],
-												"position": {
-													"abbreviation": "QB"
-												}
-											},
-											"team": {
-												"id": "4"
-											}
-										}
-									]
-								},
-								{
-									"name": "rushingYards",
-									"displayName": "Rushing Leader",
-									"shortDisplayName": "RUSH",
-									"abbreviation": "RYDS",
-									"leaders": [
-										{
-											"displayValue": "26 CAR, 176 YDS",
-											"value": 176.0,
-											"athlete": {
-												"id": "4608686",
-												"displayName": "Kyle Monangai",
-												"shortName": "K. Monangai",
-												"fullName": "Kyle Monangai",
-												"jersey": "25",
-												"active": true,
-												"team": {
-													"id": "3"
-												},
-												"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4608686.png",
-												"links": [
-													{
-														"rel": [
-															"playercard",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"stats",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/stats/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"splits",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/splits/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"gamelog",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/gamelog/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"news",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/news/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"bio",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/bio/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"overview",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/_/id/4608686/kyle-monangai",
-														"isHidden": false
-													}
-												],
-												"position": {
-													"abbreviation": "RB"
-												}
-											},
-											"team": {
-												"id": "3"
-											}
-										}
-									]
-								},
-								{
-									"name": "receivingYards",
-									"displayName": "Receiving Leader",
-									"shortDisplayName": "REC",
-									"abbreviation": "RECYDS",
-									"leaders": [
-										{
-											"displayValue": "7 REC, 121 YDS, 2 TD",
-											"value": 121.0,
-											"athlete": {
-												"id": "4239993",
-												"displayName": "Tee Higgins",
-												"shortName": "T. Higgins",
-												"fullName": "Tee Higgins",
-												"jersey": "5",
-												"active": true,
-												"team": {
-													"id": "4"
-												},
-												"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239993.png",
-												"links": [
-													{
-														"rel": [
-															"playercard",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/_/id/4239993/tee-higgins",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"stats",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/stats/_/id/4239993/tee-higgins",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"splits",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/splits/_/id/4239993/tee-higgins",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"gamelog",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/gamelog/_/id/4239993/tee-higgins",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"news",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/news/_/id/4239993/tee-higgins",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"bio",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/bio/_/id/4239993/tee-higgins",
-														"isHidden": false
-													},
-													{
-														"rel": [
-															"overview",
-															"desktop",
-															"athlete"
-														],
-														"href": "https://www.espn.com/nfl/player/_/id/4239993/tee-higgins",
-														"isHidden": false
-													}
-												],
-												"position": {
-													"abbreviation": "WR"
-												}
-											},
-											"team": {
-												"id": "4"
-											}
-										}
-									]
-								}
-							],
-							"neutralSite": false,
-							"onDisneyNetwork": false,
-							"appLinks": [
-								{
-									"rel": [
-										"live",
-										"sportscenter",
-										"app",
-										"event"
-									],
-									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772765",
-									"text": "Gamecast",
-									"shortText": "Gamecast"
-								},
-								{
-									"rel": [
-										"boxscore",
-										"sportscenter",
-										"app",
-										"event"
-									],
-									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772765",
-									"text": "Box Score",
-									"shortText": "Box Score"
-								},
-								{
-									"rel": [
-										"gamecast",
-										"sportscenter",
-										"app",
-										"event"
-									],
-									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772765",
-									"text": "Gamecast",
-									"shortText": "Gamecast"
-								}
-							]
-						},
-						{
 							"id": "401772873",
 							"uid": "s:20~l:28~e:401772873~c:401772873",
 							"guid": "4fc0ac68-d665-367d-be20-8a508bc154b0",
@@ -1308,11 +111,11 @@
 							"weekText": "Week 9",
 							"link": "https://www.espn.com/nfl/game?gameId=401772873",
 							"status": "in",
-							"summary": "1:04 - 1st",
-							"period": 1,
-							"clock": "1:04",
+							"summary": "15:00 - 2nd",
+							"period": 2,
+							"clock": "15:00",
 							"downDistanceText": "1st & 10",
-							"possessionText": "LV 20",
+							"possessionText": "LV 42",
 							"possessionTeamId": "13",
 							"broadcasts": [
 								{
@@ -1415,6 +218,10 @@
 										"close": {
 											"line": "+1.5",
 											"odds": "-115"
+										},
+										"current": {
+											"line": "-1.5",
+											"odds": "-110"
 										}
 									},
 									"away": {
@@ -1425,6 +232,10 @@
 										"close": {
 											"line": "-1.5",
 											"odds": "-105"
+										},
+										"current": {
+											"line": "+1.5",
+											"odds": "-120"
 										}
 									}
 								},
@@ -1437,6 +248,9 @@
 										},
 										"close": {
 											"odds": "+110"
+										},
+										"current": {
+											"odds": "-130"
 										}
 									},
 									"away": {
@@ -1445,6 +259,9 @@
 										},
 										"close": {
 											"odds": "-130"
+										},
+										"current": {
+											"odds": "EVEN"
 										}
 									}
 								},
@@ -1459,6 +276,10 @@
 										"close": {
 											"line": "o44.5",
 											"odds": "-115"
+										},
+										"current": {
+											"line": "o33.5",
+											"odds": "-120"
 										}
 									},
 									"under": {
@@ -1469,6 +290,10 @@
 										"close": {
 											"line": "u44.5",
 											"odds": "-105"
+										},
+										"current": {
+											"line": "u33.5",
+											"odds": "-110"
 										}
 									}
 								},
@@ -1484,84 +309,75 @@
 							},
 							"situation": {
 								"lastPlay": {
-									"id": "401772873841",
+									"id": "401772873947",
 									"type": {
-										"id": "74",
-										"abbreviation": "Off TO",
-										"text": "Official Timeout"
+										"id": "2",
+										"abbreviation": "EP",
+										"text": "End Period"
 									},
-									"text": "Official Timeout at 01:04.",
-									"shortText": "Official Timeout At 01:04. ",
+									"text": "END QUARTER 1",
+									"shortText": "End Quarter 1 ",
 									"period": {
 										"number": 1
-									},
-									"clock": {
-										"value": 64,
-										"displayValue": "1:04"
 									},
 									"team": {
 										"id": "13"
 									},
 									"scoreValue": 0,
 									"probability": {
-										"awayWinPercentage": 0.5408,
-										"homeWinPercentage": 0.4592,
+										"awayWinPercentage": 0.5065,
+										"homeWinPercentage": 0.4935,
 										"tiePercentage": 0.0,
 										"secondsLeft": 0
 									},
 									"drive": {
-										"description": "17 plays, 81 yards, 10:27",
-										"result": "INT",
+										"description": "3 plays, 22 yards, 1:04",
 										"start": {
-											"yardLine": 83,
-											"text": "JAX 17"
-										},
-										"end": {
-											"yardLine": 2,
-											"text": "LV 2"
+											"yardLine": 20,
+											"text": "LV 20"
 										},
 										"timeElapsed": {
-											"displayValue": "10:27"
+											"displayValue": "1:04"
 										}
 									},
 									"start": {
 										"team": {
 											"id": "13"
 										},
-										"yardLine": 20
+										"yardLine": 42
 									},
 									"end": {
 										"team": {
 											"id": "13"
 										},
-										"yardLine": 20
+										"yardLine": 42
 									},
 									"statYardage": 0
 								},
 								"awayTimeouts": 2,
 								"homeTimeouts": 2,
 								"distance": 10,
-								"yardLine": 20,
+								"yardLine": 42,
 								"down": 1,
 								"isRedZone": false,
-								"downDistanceText": "1st & 10 at LV 20",
+								"downDistanceText": "1st & 10 at LV 42",
 								"shortDownDistanceText": "1st & 10",
 								"possession": "13",
-								"possessionText": "LV 20"
+								"possessionText": "LV 42"
 							},
 							"fullStatus": {
-								"clock": 64.0,
-								"displayClock": "1:04",
-								"period": 1,
-								"displayPeriod": "1st",
+								"clock": 900.0,
+								"displayClock": "15:00",
+								"period": 2,
+								"displayPeriod": "2nd",
 								"type": {
 									"id": "2",
 									"name": "STATUS_IN_PROGRESS",
 									"state": "in",
 									"completed": false,
 									"description": "In Progress",
-									"detail": "1:04 - 1st Quarter",
-									"shortDetail": "1:04 - 1st"
+									"detail": "15:00 - 2nd Quarter",
+									"shortDetail": "15:00 - 2nd"
 								}
 							},
 							"competitors": [
@@ -2157,8 +973,8 @@
 									"abbreviation": "RYDS",
 									"leaders": [
 										{
-											"displayValue": "2 CAR, 17 YDS",
-											"value": 17.0,
+											"displayValue": "4 CAR, 35 YDS",
+											"value": 35.0,
 											"athlete": {
 												"id": "4890973",
 												"displayName": "Ashton Jeanty",
@@ -2431,11 +1247,11 @@
 							"weekText": "Week 9",
 							"link": "https://www.espn.com/nfl/game?gameId=401772874",
 							"status": "in",
-							"summary": "2:21 - 1st",
+							"summary": "0:58 - 1st",
 							"period": 1,
-							"clock": "2:21",
+							"clock": "0:58",
 							"downDistanceText": "1st & 10",
-							"possessionText": "LAR 38",
+							"possessionText": "NO 42",
 							"possessionTeamId": "14",
 							"broadcasts": [
 								{
@@ -2540,8 +1356,8 @@
 											"odds": "-110"
 										},
 										"current": {
-											"line": "-20.5",
-											"odds": "-130"
+											"line": "-21.5",
+											"odds": "-120"
 										}
 									},
 									"away": {
@@ -2554,8 +1370,8 @@
 											"odds": "-110"
 										},
 										"current": {
-											"line": "+20.5",
-											"odds": "EVEN"
+											"line": "+21.5",
+											"odds": "-110"
 										}
 									}
 								},
@@ -2599,7 +1415,7 @@
 										},
 										"current": {
 											"line": "o43.5",
-											"odds": "-120"
+											"odds": "-115"
 										}
 									},
 									"under": {
@@ -2613,7 +1429,7 @@
 										},
 										"current": {
 											"line": "u43.5",
-											"odds": "-110"
+											"odds": "-115"
 										}
 									}
 								},
@@ -2629,74 +1445,148 @@
 							},
 							"situation": {
 								"lastPlay": {
-									"id": "401772874811",
+									"id": "401772874872",
 									"type": {
-										"id": "74",
-										"abbreviation": "Off TO",
-										"text": "Official Timeout"
+										"id": "24",
+										"abbreviation": "REC",
+										"text": "Pass Reception"
 									},
-									"text": "Official Timeout at 02:21.",
-									"shortText": "Official Timeout At 02:21. ",
+									"text": "(Shotgun) M.Stafford pass short left to T.Ferguson to NO 42 for 18 yards (J.Reid).",
+									"shortText": "Matthew Stafford Pass Complete for 18 Yds to Terrance Ferguson ",
 									"period": {
 										"number": 1
 									},
 									"clock": {
-										"value": 141,
-										"displayValue": "2:21"
+										"value": 58,
+										"displayValue": "0:58"
 									},
 									"team": {
 										"id": "14"
 									},
 									"scoreValue": 0,
+									"athletesInvolved": [
+										{
+											"id": "4570037",
+											"displayName": "Terrance Ferguson",
+											"shortName": "T. Ferguson",
+											"fullName": "Terrance Ferguson",
+											"jersey": "18",
+											"team": {
+												"id": "14"
+											},
+											"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4570037.png",
+											"links": [
+												{
+													"rel": [
+														"playercard",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"stats",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/stats/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"splits",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/splits/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"gamelog",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/gamelog/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"news",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/news/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"bio",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/bio/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"overview",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/_/id/4570037/terrance-ferguson",
+													"isHidden": false
+												}
+											],
+											"position": "TE"
+										}
+									],
 									"probability": {
-										"awayWinPercentage": 0.07430000000000003,
-										"homeWinPercentage": 0.9257,
+										"awayWinPercentage": 0.06710000000000005,
+										"homeWinPercentage": 0.9329,
 										"tiePercentage": 0.0,
 										"secondsLeft": 0
 									},
 									"drive": {
-										"description": "3 plays, 9 yards, 1:35",
-										"result": "PUNT",
+										"description": "3 plays, 20 yards, 1:23",
 										"start": {
-											"yardLine": 96,
-											"text": "NO 4"
-										},
-										"end": {
-											"yardLine": 87,
-											"text": "NO 13"
+											"yardLine": 38,
+											"text": "LAR 38"
 										},
 										"timeElapsed": {
-											"displayValue": "1:35"
+											"displayValue": "1:23"
 										}
 									},
 									"start": {
 										"team": {
 											"id": "14"
 										},
-										"yardLine": 38
+										"yardLine": 40
 									},
 									"end": {
 										"team": {
 											"id": "14"
 										},
-										"yardLine": 38
+										"yardLine": 58
 									},
-									"statYardage": 0
+									"statYardage": 18
 								},
 								"awayTimeouts": 3,
 								"homeTimeouts": 3,
 								"distance": 10,
-								"yardLine": 38,
+								"yardLine": 58,
 								"down": 1,
 								"isRedZone": false,
-								"downDistanceText": "1st & 10 at LAR 38",
+								"downDistanceText": "1st & 10 at NO 42",
 								"shortDownDistanceText": "1st & 10",
 								"possession": "14",
-								"possessionText": "LAR 38"
+								"possessionText": "NO 42"
 							},
 							"fullStatus": {
-								"clock": 141.0,
-								"displayClock": "2:21",
+								"clock": 58.0,
+								"displayClock": "0:58",
 								"period": 1,
 								"displayPeriod": "1st",
 								"type": {
@@ -2705,8 +1595,8 @@
 									"state": "in",
 									"completed": false,
 									"description": "In Progress",
-									"detail": "2:21 - 1st Quarter",
-									"shortDetail": "2:21 - 1st"
+									"detail": "0:58 - 1st Quarter",
+									"shortDetail": "0:58 - 1st"
 								}
 							},
 							"competitors": [
@@ -3207,8 +2097,8 @@
 									"abbreviation": "PYDS",
 									"leaders": [
 										{
-											"displayValue": "72 YDS, TD",
-											"value": 72.0,
+											"displayValue": "90 YDS, TD",
+											"value": 90.0,
 											"athlete": {
 												"id": "12483",
 												"displayName": "Matthew Stafford",
@@ -3302,8 +2192,8 @@
 									"abbreviation": "RYDS",
 									"leaders": [
 										{
-											"displayValue": "4 CAR, 16 YDS",
-											"value": 16.0,
+											"displayValue": "6 CAR, 18 YDS",
+											"value": 18.0,
 											"athlete": {
 												"id": "4430737",
 												"displayName": "Kyren Williams",
@@ -3576,10 +2466,12 @@
 							"weekText": "Week 9",
 							"link": "https://www.espn.com/nfl/game?gameId=401772768",
 							"status": "in",
-							"summary": "8:00 - 1st",
+							"summary": "7:16 - 1st",
 							"period": 1,
-							"clock": "8:00",
-							"possessionTeamId": "2",
+							"clock": "7:16",
+							"downDistanceText": "3rd & 7",
+							"possessionText": "KC 36",
+							"possessionTeamId": "12",
 							"broadcasts": [
 								{
 									"typeId": 1,
@@ -3681,6 +2573,10 @@
 										"close": {
 											"line": "+2.5",
 											"odds": "-104"
+										},
+										"current": {
+											"line": "-3.5",
+											"odds": "+110"
 										}
 									},
 									"away": {
@@ -3691,6 +2587,10 @@
 										"close": {
 											"line": "-2.5",
 											"odds": "-110"
+										},
+										"current": {
+											"line": "+3.5",
+											"odds": "-140"
 										}
 									}
 								},
@@ -3703,6 +2603,9 @@
 										},
 										"close": {
 											"odds": "+119"
+										},
+										"current": {
+											"odds": "-165"
 										}
 									},
 									"away": {
@@ -3711,6 +2614,9 @@
 										},
 										"close": {
 											"odds": "-135"
+										},
+										"current": {
+											"odds": "+130"
 										}
 									}
 								},
@@ -3725,6 +2631,10 @@
 										"close": {
 											"line": "o53.5",
 											"odds": "-104"
+										},
+										"current": {
+											"line": "o54.5",
+											"odds": "-115"
 										}
 									},
 									"under": {
@@ -3735,6 +2645,10 @@
 										"close": {
 											"line": "u53.5",
 											"odds": "-110"
+										},
+										"current": {
+											"line": "u54.5",
+											"odds": "-115"
 										}
 									}
 								},
@@ -3750,36 +2664,35 @@
 							},
 							"situation": {
 								"lastPlay": {
-									"id": "-239401",
+									"id": "401772768471",
 									"type": {
-										"id": "61",
-										"abbreviation": "XP",
-										"text": "Extra Point Good"
+										"id": "3",
+										"text": "Pass Incompletion"
 									},
-									"text": "(Matt Prater Kick)",
-									"shortText": "(Matt Prater Kick)",
+									"text": "(Shotgun) P.Mahomes pass incomplete short middle to M.Brown.",
+									"shortText": "Patrick Mahomes Incomplete Pass, Intended For Hollywood Brown",
 									"period": {
 										"number": 1
 									},
 									"clock": {
-										"value": 480,
-										"displayValue": "8:00"
+										"value": 436,
+										"displayValue": "7:16"
 									},
 									"team": {
-										"id": "2"
+										"id": "12"
 									},
-									"scoreValue": 1,
+									"scoreValue": 0,
 									"athletesInvolved": [
 										{
-											"id": "11122",
-											"displayName": "Matt Prater",
-											"shortName": "M. Prater",
-											"fullName": "Matt Prater",
-											"jersey": "15",
+											"id": "4241372",
+											"displayName": "Hollywood Brown",
+											"shortName": "H. Brown",
+											"fullName": "Hollywood Brown",
+											"jersey": "5",
 											"team": {
-												"id": "2"
+												"id": "12"
 											},
-											"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/11122.png",
+											"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241372.png",
 											"links": [
 												{
 													"rel": [
@@ -3787,7 +2700,7 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												},
 												{
@@ -3796,7 +2709,7 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/stats/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/stats/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												},
 												{
@@ -3805,7 +2718,7 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/splits/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/splits/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												},
 												{
@@ -3814,7 +2727,7 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/gamelog/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/gamelog/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												},
 												{
@@ -3823,7 +2736,7 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/news/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/news/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												},
 												{
@@ -3832,7 +2745,7 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/bio/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/bio/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												},
 												{
@@ -3841,53 +2754,57 @@
 														"desktop",
 														"athlete"
 													],
-													"href": "https://www.espn.com/nfl/player/_/id/11122/matt-prater",
+													"href": "https://www.espn.com/nfl/player/_/id/4241372/hollywood-brown",
 													"isHidden": false
 												}
 											],
-											"position": "PK"
+											"position": "WR"
 										}
 									],
+									"probability": {
+										"awayWinPercentage": 0.39780000000000004,
+										"homeWinPercentage": 0.6022,
+										"tiePercentage": 0.0,
+										"secondsLeft": 0
+									},
 									"drive": {
-										"description": "11 plays, 84 yards, 7:00",
-										"result": "TD",
+										"description": "2 plays, 3 yards, 0:44",
 										"start": {
-											"yardLine": 16,
-											"text": "BUF 16"
-										},
-										"end": {
-											"yardLine": 100,
-											"text": "KC 0"
+											"yardLine": 67,
+											"text": "KC 33"
 										},
 										"timeElapsed": {
-											"displayValue": "7:00"
+											"displayValue": "0:44"
 										}
 									},
 									"start": {
 										"team": {
-											"id": "2"
+											"id": "12"
 										},
-										"yardLine": 85
+										"yardLine": 64
 									},
 									"end": {
 										"team": {
-											"id": "2"
+											"id": "12"
 										},
-										"yardLine": 35
+										"yardLine": 64
 									},
 									"statYardage": 0
 								},
 								"awayTimeouts": 3,
 								"homeTimeouts": 3,
-								"distance": 10,
-								"yardLine": 35,
-								"down": 1,
+								"distance": 7,
+								"yardLine": 64,
+								"down": 3,
 								"isRedZone": false,
-								"possession": "2"
+								"downDistanceText": "3rd & 7 at KC 36",
+								"shortDownDistanceText": "3rd & 7",
+								"possession": "12",
+								"possessionText": "KC 36"
 							},
 							"fullStatus": {
-								"clock": 480.0,
-								"displayClock": "8:00",
+								"clock": 436.0,
+								"displayClock": "7:16",
 								"period": 1,
 								"displayPeriod": "1st",
 								"type": {
@@ -3896,8 +2813,8 @@
 									"state": "in",
 									"completed": false,
 									"description": "In Progress",
-									"detail": "8:00 - 1st Quarter",
-									"shortDetail": "8:00 - 1st"
+									"detail": "7:16 - 1st Quarter",
+									"shortDetail": "7:16 - 1st"
 								}
 							},
 							"competitors": [
@@ -4159,7 +3076,7 @@
 									"location": "Buffalo",
 									"color": "00338d",
 									"alternateColor": "d50a0a",
-									"score": "6",
+									"score": "7",
 									"links": [
 										{
 											"language": "en-US",
@@ -5483,6 +4400,446 @@
 							],
 							"neutralSite": false,
 							"onDisneyNetwork": false,
+							"video": {
+								"id": 46821562,
+								"dataSourceIdentifier": "2ee31b2125d65",
+								"cerebroId": "6907c9e54e62f67fb8df5ada",
+								"pccId": "10c69070-dbd7-4148-84ff-f0b38fb3832d",
+								"source": "espn",
+								"headline": "Patriots down Falcons for 6th win in a row",
+								"caption": "The Patriots hold on for the win over the Falcons for their sixth win in a row.",
+								"title": "Patriots down Falcons for 6th win in a row",
+								"description": "The Patriots hold on for the win over the Falcons for their sixth win in a row.",
+								"lastModified": "2025-11-02T21:26:42Z",
+								"originalPublishDate": "2025-11-02T21:15:15Z",
+								"premium": false,
+								"syndicatable": true,
+								"duration": 83,
+								"videoRatio": "16:9,9:16",
+								"timeRestrictions": {
+									"embargoDate": "2025-11-02T21:15:15Z",
+									"expirationDate": "2025-11-04T21:15:15Z"
+								},
+								"deviceRestrictions": {
+									"type": "whitelist",
+									"devices": [
+										"desktop",
+										"ipad",
+										"settop",
+										"handset",
+										"tablet"
+									]
+								},
+								"gameId": 401772763,
+								"plays": [
+									{
+										"id": 4017727631152
+									}
+								],
+								"thumbnail": "https://a.espncdn.com/media/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682.jpg",
+								"images": [
+									{
+										"name": "Poster Image",
+										"caption": "",
+										"alt": "",
+										"credit": "",
+										"height": 324,
+										"width": 576,
+										"url": "https://media.video-cdn.espn.com/images/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682.jpg"
+									}
+								],
+								"posterImages": {
+									"default": {
+										"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_default.jpg",
+										"width": 576,
+										"height": 324
+									},
+									"full": {
+										"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682.jpg"
+									},
+									"wide": {
+										"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_5x2.jpg"
+									},
+									"square": {
+										"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_1x1.jpg"
+									},
+									"vertical": {
+										"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_9x16.jpg"
+									},
+									"verticalFirstFrame": {
+										"href": "https://service-pkgespn.akamaized.net/opp/img/espn/9x16/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682/thumb-1-w406-h720-f4.jpg"
+									}
+								},
+								"links": {
+									"web": {
+										"href": "https://www.espn.com/video/clip?id=46821562",
+										"self": {
+											"href": "https://www.espn.com/video/clip?id=46821562"
+										},
+										"seo": {
+											"href": "https://www.espn.com/video/clip/_/id/46821562"
+										}
+									},
+									"mobile": {
+										"source": {
+											"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682.mp4"
+										},
+										"alert": {
+											"href": "https://m.espn.com/general/video/videoAlert?vid=46821562"
+										},
+										"streaming": {
+											"href": "https://watch.auth.api.espn.com/video/auth/brightcove/10c69070-dbd7-4148-84ff-f0b38fb3832d/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=46821562"
+										},
+										"progressiveDownload": {
+											"href": "https://watch.auth.api.espn.com/video/auth/brightcove/10c69070-dbd7-4148-84ff-f0b38fb3832d/asset?UMADPARAMreferer=https://www.espn.com/video/clip?id=46821562"
+										}
+									},
+									"api": {
+										"self": {
+											"href": "https://content.core.api.espn.com/v1/video/clips/46821562"
+										},
+										"artwork": {
+											"href": "https://artwork.api.espn.com/artwork/collections/media/10c69070-dbd7-4148-84ff-f0b38fb3832d"
+										}
+									},
+									"source": {
+										"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_360p30_1464k.mp4",
+										"mezzanine": {
+											"href": "https://media.video-origin.espn.com/espnvideo/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682.mp4"
+										},
+										"flash": {
+											"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682.smil"
+										},
+										"hds": {
+											"href": "https://hds.video-cdn.espn.com/z/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_rel.smil/manifest.f4m"
+										},
+										"HLS": {
+											"href": "https://service-pkgespn.akamaized.net/opp/hls/espn/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682/playlist.m3u8",
+											"HD": {
+												"href": "https://service-pkgespn.akamaized.net/opp/hls/espn/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682/playlist.m3u8"
+											},
+											"cmaf": {
+												"href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682/playlist.m3u8",
+												"9x16": {
+													"href": "https://service-pkgespn.akamaized.net/opp/cmaf/espn/9x16/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682/playlist.m3u8"
+												}
+											},
+											"9x16": {
+												"href": "https://service-pkgespn.akamaized.net/opp/hls/espn/9x16/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682/playlist.m3u8"
+											},
+											"shield": {
+												"href": "https://watch.auth.api.espn.com/video/auth/media/10c69070-dbd7-4148-84ff-f0b38fb3832d/asset"
+											}
+										},
+										"HD": {
+											"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_720p30_2896k.mp4"
+										},
+										"full": {
+											"href": "https://media.video-cdn.espn.com/motion/wsc/2025/1102/2253c15f-0c1b-41a9-8575-99bf76152682/2253c15f-0c1b-41a9-8575-99bf76152682_360p30_1464k.mp4"
+										}
+									},
+									"sportscenter": {
+										"href": "sportscenter://x-callback-url/showVideo?videoID=46821562&videoDSI=2ee31b2125d65"
+									}
+								},
+								"categories": [
+									{
+										"id": 530178,
+										"type": "athlete",
+										"uid": "s:20~l:28~a:4051167",
+										"guid": "99108130-9aa1-bc8d-79fd-8804fbbdc25a",
+										"description": "Parker Romo",
+										"sportId": 28,
+										"athleteId": 4051167,
+										"athlete": {
+											"id": 4051167,
+											"description": "Parker Romo",
+											"links": {
+												"web": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4051167/parker-romo"
+													}
+												},
+												"mobile": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4051167/parker-romo"
+													}
+												}
+											}
+										}
+									},
+									{
+										"id": 397857,
+										"type": "athlete",
+										"uid": "s:20~l:28~a:4427600",
+										"guid": "57923fdb-9c8d-b30c-0ce9-7af5b8c06ab8",
+										"description": "Terrell Jennings",
+										"sportId": 28,
+										"athleteId": 4427600,
+										"athlete": {
+											"id": 4427600,
+											"description": "Terrell Jennings",
+											"links": {
+												"web": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4427600/terrell-jennings"
+													}
+												},
+												"mobile": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4427600/terrell-jennings"
+													}
+												}
+											}
+										}
+									},
+									{
+										"id": 139089,
+										"type": "athlete",
+										"uid": "s:20~l:28~a:2976212",
+										"guid": "d6ba7023-458c-f59a-4af2-638770067518",
+										"description": "Stefon Diggs",
+										"sportId": 28,
+										"athleteId": 2976212,
+										"athlete": {
+											"id": 2976212,
+											"description": "Stefon Diggs",
+											"links": {
+												"web": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/2976212/stefon-diggs"
+													}
+												},
+												"mobile": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/2976212/stefon-diggs"
+													}
+												}
+											}
+										}
+									},
+									{
+										"type": "event",
+										"uid": "s:20~l:28~e:401772763",
+										"guid": "81ad6a48-dbb4-3424-9714-7aeb2ddfbd7f",
+										"description": "Atlanta Falcons @ New England Patriots",
+										"eventId": 401772763,
+										"event": {
+											"id": 401772763,
+											"sport": "football",
+											"league": "nfl",
+											"description": "Atlanta Falcons @ New England Patriots"
+										}
+									},
+									{
+										"id": 2321,
+										"type": "team",
+										"uid": "s:20~l:28~t:17",
+										"guid": "0078f353-fe3e-67ed-a42c-43cca0568e21",
+										"description": "New England Patriots",
+										"sportId": 28,
+										"teamId": 17,
+										"team": {
+											"id": 17,
+											"description": "New England Patriots",
+											"links": {
+												"web": {
+													"teams": {
+														"href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
+													}
+												},
+												"mobile": {
+													"teams": {
+														"href": "https://www.espn.com/nfl/team/_/name/ne/new-england-patriots"
+													}
+												}
+											}
+										}
+									},
+									{
+										"id": 208615,
+										"type": "athlete",
+										"uid": "s:20~l:28~a:4360423",
+										"guid": "28022fa1-9050-eee1-5160-c77a6a379ec2",
+										"description": "Michael Penix Jr",
+										"sportId": 28,
+										"athleteId": 4360423,
+										"athlete": {
+											"id": 4360423,
+											"description": "Michael Penix Jr",
+											"links": {
+												"web": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4360423/michael-penix-jr"
+													}
+												},
+												"mobile": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4360423/michael-penix-jr"
+													}
+												}
+											}
+										}
+									},
+									{
+										"id": 1979,
+										"type": "team",
+										"uid": "s:20~l:28~t:1",
+										"guid": "49fd392a-86fe-4df3-1b77-9bbfa18b2ad5",
+										"description": "Atlanta Falcons",
+										"sportId": 28,
+										"teamId": 1,
+										"team": {
+											"id": 1,
+											"description": "Atlanta Falcons",
+											"links": {
+												"web": {
+													"teams": {
+														"href": "https://www.espn.com/nfl/team/_/name/atl/atlanta-falcons"
+													}
+												},
+												"mobile": {
+													"teams": {
+														"href": "https://www.espn.com/nfl/team/_/name/atl/atlanta-falcons"
+													}
+												}
+											}
+										}
+									},
+									{
+										"id": 529351,
+										"type": "athlete",
+										"uid": "s:20~l:28~a:4426502",
+										"guid": "4eb7948a-431b-ee11-32de-2f4044548c60",
+										"description": "Drake London",
+										"sportId": 28,
+										"athleteId": 4426502,
+										"athlete": {
+											"id": 4426502,
+											"description": "Drake London",
+											"links": {
+												"web": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4426502/drake-london"
+													}
+												},
+												"mobile": {
+													"athletes": {
+														"href": "https://www.espn.com/nfl/player/_/id/4426502/drake-london"
+													}
+												}
+											}
+										}
+									},
+									{
+										"id": 177758,
+										"type": "topic",
+										"guid": "17256dc5-749f-706a-efe0-b8d4f205c4f3",
+										"description": "nfl game footage",
+										"sportId": 0,
+										"topicId": 615
+									},
+									{
+										"id": 711824,
+										"type": "editorialindicator",
+										"guid": "d348c764-47d9-3e31-bd75-d39dfde52c26",
+										"description": "SC4U  - Eligible"
+									},
+									{
+										"id": 711821,
+										"type": "editorialindicator",
+										"guid": "f3e05446-8d07-3064-a239-c10c32884ea2",
+										"description": "SC4U - Full Highlight"
+									},
+									{
+										"id": 9572,
+										"type": "league",
+										"uid": "s:20~l:28",
+										"guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4",
+										"description": "NFL",
+										"sportId": 28,
+										"leagueId": 28,
+										"league": {
+											"id": 28,
+											"description": "NFL",
+											"abbreviation": "NFL",
+											"links": {
+												"web": {
+													"leagues": {
+														"href": "https://www.espn.com/nfl/"
+													}
+												},
+												"mobile": {
+													"leagues": {
+														"href": "https://www.espn.com/nfl/"
+													}
+												}
+											}
+										}
+									},
+									{
+										"type": "guid",
+										"guid": "99108130-9aa1-bc8d-79fd-8804fbbdc25a"
+									},
+									{
+										"type": "guid",
+										"guid": "57923fdb-9c8d-b30c-0ce9-7af5b8c06ab8"
+									},
+									{
+										"type": "guid",
+										"guid": "d6ba7023-458c-f59a-4af2-638770067518"
+									},
+									{
+										"type": "guid",
+										"guid": "81ad6a48-dbb4-3424-9714-7aeb2ddfbd7f"
+									},
+									{
+										"type": "guid",
+										"guid": "0078f353-fe3e-67ed-a42c-43cca0568e21"
+									},
+									{
+										"type": "guid",
+										"guid": "28022fa1-9050-eee1-5160-c77a6a379ec2"
+									},
+									{
+										"type": "guid",
+										"guid": "49fd392a-86fe-4df3-1b77-9bbfa18b2ad5"
+									},
+									{
+										"type": "guid",
+										"guid": "4eb7948a-431b-ee11-32de-2f4044548c60"
+									},
+									{
+										"type": "guid",
+										"guid": "17256dc5-749f-706a-efe0-b8d4f205c4f3"
+									},
+									{
+										"type": "guid",
+										"guid": "d348c764-47d9-3e31-bd75-d39dfde52c26"
+									},
+									{
+										"type": "guid",
+										"guid": "f3e05446-8d07-3064-a239-c10c32884ea2"
+									},
+									{
+										"type": "guid",
+										"guid": "ad4c3bd2-ddb6-3f8c-8abf-744855a08fa4"
+									}
+								],
+								"ad": {
+									"sport": "nfl",
+									"bundle": "sportscenter"
+								},
+								"tracking": {
+									"sportName": "football",
+									"leagueName": "NFL",
+									"coverageType": "Final Game Highlight",
+									"trackingName": "COM_NFL Highlight (Patriots down Falcons for 6th win in a row) 2025/11/02 ESHEET",
+									"trackingId": "dm_20251102_NFL_patriots_down_falcons_for_6th_win_in_a_row"
+								},
+								"contributingPartner": "wsc",
+								"contributingSystem": "wsc"
+							},
 							"appLinks": [
 								{
 									"rel": [
@@ -6681,6 +6038,778 @@
 										"event"
 									],
 									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772764",
+									"text": "Gamecast",
+									"shortText": "Gamecast"
+								}
+							]
+						},
+						{
+							"id": "401772765",
+							"uid": "s:20~l:28~e:401772765~c:401772765",
+							"guid": "73286f84-98fd-3bc5-8d01-d4b50c435868",
+							"date": "2025-11-02T18:00:00Z",
+							"timeValid": true,
+							"recent": true,
+							"name": "Chicago Bears at Cincinnati Bengals",
+							"shortName": "CHI @ CIN",
+							"links": [
+								{
+									"rel": [
+										"summary",
+										"desktop",
+										"event"
+									],
+									"href": "https://www.espn.com/nfl/game/_/gameId/401772765/bears-bengals",
+									"text": "Gamecast"
+								},
+								{
+									"rel": [
+										"boxscore",
+										"desktop",
+										"event"
+									],
+									"href": "https://www.espn.com/nfl/boxscore/_/gameId/401772765",
+									"text": "Box Score"
+								}
+							],
+							"gamecastAvailable": true,
+							"playByPlayAvailable": true,
+							"commentaryAvailable": false,
+							"wallclockAvailable": true,
+							"fauxcastAvailable": true,
+							"onWatch": false,
+							"competitionId": "401772765",
+							"location": "Paycor Stadium",
+							"season": 2025,
+							"seasonStartDate": "2025-07-31T07:00:00Z",
+							"seasonEndDate": "2026-01-08T07:59:00Z",
+							"seasonType": "2",
+							"seasonTypeHasGroups": false,
+							"group": {
+								"groupId": "2",
+								"name": "Regular Season",
+								"abbreviation": "reg",
+								"shortName": "reg"
+							},
+							"week": 9,
+							"weekText": "Week 9",
+							"link": "https://www.espn.com/nfl/game/_/gameId/401772765/bears-bengals",
+							"status": "post",
+							"summary": "Final",
+							"period": 4,
+							"clock": "0:00",
+							"broadcasts": [
+								{
+									"typeId": 1,
+									"priority": 1,
+									"type": "TV",
+									"isNational": true,
+									"broadcasterId": 44,
+									"broadcastId": 44,
+									"name": "CBS",
+									"shortName": "CBS",
+									"callLetters": "CBS",
+									"station": "CBS",
+									"lang": "en",
+									"region": "us",
+									"slug": "cbs"
+								}
+							],
+							"broadcast": "CBS",
+							"odds": {
+								"details": "CHI -2.5",
+								"overUnder": 51.5,
+								"spread": 2.5,
+								"overOdds": -110,
+								"underOdds": -110,
+								"provider": {
+									"id": "58",
+									"name": "ESPN BET",
+									"priority": 1,
+									"logos": [
+										{
+											"href": "https://a.espncdn.com/i/espnbet/ESPN_Bet_Sportsbook_Light.svg",
+											"rel": [
+												"light"
+											]
+										},
+										{
+											"href": "https://a.espncdn.com/i/espnbet/ESPN_Bet_Sportsbook_Dark.svg",
+											"rel": [
+												"dark"
+											]
+										}
+									]
+								},
+								"home": {
+									"moneyLine": 140
+								},
+								"away": {
+									"moneyLine": -165
+								},
+								"awayTeamOdds": {
+									"favorite": true,
+									"favoriteAtOpen": true,
+									"underdog": false,
+									"moneyLine": -165,
+									"spreadOdds": -125,
+									"team": {
+										"id": "3",
+										"abbreviation": "CHI",
+										"displayName": "Chicago Bears",
+										"name": "Bears"
+									}
+								},
+								"homeTeamOdds": {
+									"favorite": false,
+									"favoriteAtOpen": false,
+									"underdog": false,
+									"moneyLine": 140,
+									"spreadOdds": 105,
+									"team": {
+										"id": "4",
+										"abbreviation": "CIN",
+										"displayName": "Cincinnati Bengals",
+										"name": "Bengals"
+									}
+								},
+								"links": [
+									{
+										"language": "en-US",
+										"rel": [
+											"game",
+											"desktop",
+											"bets"
+										],
+										"href": "https://espnbet.app.link/integrations?%243p=a_espn&clr=espnbettingintegration&$canonical_url=/sport/football/organization/united-states/competition/nfl/event/fc8b1d91-a76e-42b5-b4a6-319dcd1b3f32",
+										"text": "Game",
+										"shortText": "Game",
+										"isExternal": true,
+										"isPremium": false
+									}
+								],
+								"pointSpread": {
+									"displayName": "Spread",
+									"shortDisplayName": "Spread",
+									"home": {
+										"open": {
+											"line": "+2.5",
+											"odds": "-115"
+										},
+										"close": {
+											"line": "+2.5",
+											"odds": "+105",
+											"outcome": "PENDING"
+										}
+									},
+									"away": {
+										"open": {
+											"line": "-2.5",
+											"odds": "-105"
+										},
+										"close": {
+											"line": "-2.5",
+											"odds": "-125",
+											"outcome": "PENDING"
+										}
+									}
+								},
+								"moneyline": {
+									"displayName": "Moneyline",
+									"shortDisplayName": "ML",
+									"home": {
+										"open": {
+											"odds": "+110"
+										},
+										"close": {
+											"odds": "+140",
+											"outcome": "PENDING"
+										}
+									},
+									"away": {
+										"open": {
+											"odds": "-130"
+										},
+										"close": {
+											"odds": "-165",
+											"outcome": "PENDING"
+										}
+									}
+								},
+								"total": {
+									"displayName": "Total",
+									"shortDisplayName": "Total",
+									"over": {
+										"open": {
+											"line": "o51.5",
+											"odds": "-105"
+										},
+										"close": {
+											"line": "o51.5",
+											"odds": "-110",
+											"outcome": "PENDING"
+										}
+									},
+									"under": {
+										"open": {
+											"line": "u51.5",
+											"odds": "-115"
+										},
+										"close": {
+											"line": "u51.5",
+											"odds": "-110",
+											"outcome": "PENDING"
+										}
+									}
+								},
+								"header": {
+									"logo": {
+										"light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+										"dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+										"exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+										"exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+									},
+									"text": "ESPN Bet Sportsbook"
+								}
+							},
+							"fullStatus": {
+								"clock": 0.0,
+								"displayClock": "0:00",
+								"period": 4,
+								"displayPeriod": "4th",
+								"type": {
+									"id": "3",
+									"name": "STATUS_FINAL",
+									"state": "post",
+									"completed": true,
+									"description": "Final",
+									"detail": "Final",
+									"shortDetail": "Final"
+								}
+							},
+							"competitors": [
+								{
+									"id": "3",
+									"guid": "19d73366-b5a5-cca2-a176-a2c024ce0bb3",
+									"uid": "s:20~l:28~t:3",
+									"type": "team",
+									"order": 1,
+									"homeAway": "away",
+									"winner": true,
+									"displayName": "Chicago Bears",
+									"name": "Bears",
+									"abbreviation": "CHI",
+									"location": "Chicago",
+									"color": "0b1c3a",
+									"alternateColor": "e64100",
+									"score": "47",
+									"links": [
+										{
+											"language": "en-US",
+											"rel": [
+												"clubhouse",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/_/name/chi/chicago-bears",
+											"text": "Clubhouse",
+											"shortText": "Clubhouse",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"roster",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/roster/_/name/chi/chicago-bears",
+											"text": "Roster",
+											"shortText": "Roster",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"stats",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/stats/_/name/chi/chicago-bears",
+											"text": "Statistics",
+											"shortText": "Statistics",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"schedule",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/schedule/_/name/chi",
+											"text": "Schedule",
+											"shortText": "Schedule",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"photos",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/photos/_/name/chi",
+											"text": "photos",
+											"shortText": "photos",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"draftpicks",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/draft/teams/_/name/chi/chicago-bears",
+											"text": "Draft Picks",
+											"shortText": "Draft Picks",
+											"isExternal": false,
+											"isPremium": true,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"transactions",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/transactions/_/name/chi",
+											"text": "Transactions",
+											"shortText": "Transactions",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"injuries",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/injuries/_/name/chi",
+											"text": "Injuries",
+											"shortText": "Injuries",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"depthchart",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/depth/_/name/chi",
+											"text": "Depth Chart",
+											"shortText": "Depth Chart",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										}
+									],
+									"record": "5-3",
+									"records": [],
+									"group": "10",
+									"recordStats": {
+										"avgPointsAgainst": {
+											"value": 5.25
+										},
+										"avgPointsFor": {
+											"value": 5.875
+										},
+										"conferenceLosses": {
+											"value": 2.0
+										},
+										"conferenceTies": {
+											"value": 0.0
+										},
+										"conferenceWinPct": {
+											"value": 0.6000000238418579
+										},
+										"conferenceWins": {
+											"value": 3.0
+										},
+										"divisionLosses": {
+											"value": 2.0
+										},
+										"divisionTies": {
+											"value": 0.0
+										},
+										"divisionWinPercent": {
+											"value": 0.0
+										},
+										"divisionWins": {
+											"value": 0.0
+										},
+										"gamesBehind": {
+											"value": 0.0
+										},
+										"gamesPlayed": {
+											"value": 8.0
+										},
+										"homeLosses": {
+											"value": 1.0
+										},
+										"homeTies": {
+											"value": 0.0
+										},
+										"homeWins": {
+											"value": 2.0
+										},
+										"leagueWinPercent": {
+											"value": 0.6000000238418579
+										},
+										"losses": {
+											"value": 3.0
+										},
+										"OTLosses": {
+											"value": 0.0
+										},
+										"OTWins": {
+											"value": 0.0
+										},
+										"playoffSeed": {
+											"value": 8.0
+										},
+										"points": {
+											"value": 1.0
+										},
+										"pointsAgainst": {
+											"value": 42.0
+										},
+										"pointsFor": {
+											"value": 47.0
+										},
+										"roadLosses": {
+											"value": 2.0
+										},
+										"roadTies": {
+											"value": 0.0
+										},
+										"roadWins": {
+											"value": 3.0
+										},
+										"streak": {
+											"value": 1.0
+										},
+										"ties": {
+											"value": 0.0
+										},
+										"winPercent": {
+											"value": 0.625
+										},
+										"wins": {
+											"value": 5.0
+										},
+										"divisionRecord": {},
+										"conferenceRecord": {},
+										"differential": {}
+									},
+									"logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+									"logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/chi.png"
+								},
+								{
+									"id": "4",
+									"guid": "75b8623b-8926-b411-0476-3d3602b78523",
+									"uid": "s:20~l:28~t:4",
+									"type": "team",
+									"order": 0,
+									"homeAway": "home",
+									"winner": false,
+									"displayName": "Cincinnati Bengals",
+									"name": "Bengals",
+									"abbreviation": "CIN",
+									"location": "Cincinnati",
+									"color": "fb4f14",
+									"alternateColor": "000000",
+									"score": "42",
+									"links": [
+										{
+											"language": "en-US",
+											"rel": [
+												"clubhouse",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/_/name/cin/cincinnati-bengals",
+											"text": "Clubhouse",
+											"shortText": "Clubhouse",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"roster",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/roster/_/name/cin/cincinnati-bengals",
+											"text": "Roster",
+											"shortText": "Roster",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"stats",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/stats/_/name/cin/cincinnati-bengals",
+											"text": "Statistics",
+											"shortText": "Statistics",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"schedule",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/schedule/_/name/cin",
+											"text": "Schedule",
+											"shortText": "Schedule",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"photos",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/photos/_/name/cin",
+											"text": "photos",
+											"shortText": "photos",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"draftpicks",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/draft/teams/_/name/cin/cincinnati-bengals",
+											"text": "Draft Picks",
+											"shortText": "Draft Picks",
+											"isExternal": false,
+											"isPremium": true,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"transactions",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/transactions/_/name/cin",
+											"text": "Transactions",
+											"shortText": "Transactions",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"injuries",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/injuries/_/name/cin",
+											"text": "Injuries",
+											"shortText": "Injuries",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										},
+										{
+											"language": "en-US",
+											"rel": [
+												"depthchart",
+												"desktop",
+												"team"
+											],
+											"href": "https://www.espn.com/nfl/team/depth/_/name/cin",
+											"text": "Depth Chart",
+											"shortText": "Depth Chart",
+											"isExternal": false,
+											"isPremium": false,
+											"isHidden": false
+										}
+									],
+									"record": "3-6",
+									"records": [],
+									"group": "12",
+									"recordStats": {
+										"avgPointsAgainst": {
+											"value": 5.222222328186035
+										},
+										"avgPointsFor": {
+											"value": 4.666666507720947
+										},
+										"conferenceLosses": {
+											"value": 2.0
+										},
+										"conferenceTies": {
+											"value": 0.0
+										},
+										"conferenceWinPct": {
+											"value": 0.6000000238418579
+										},
+										"conferenceWins": {
+											"value": 3.0
+										},
+										"divisionLosses": {
+											"value": 0.0
+										},
+										"divisionTies": {
+											"value": 0.0
+										},
+										"divisionWinPercent": {
+											"value": 1.0
+										},
+										"divisionWins": {
+											"value": 2.0
+										},
+										"gamesBehind": {
+											"value": 0.0
+										},
+										"gamesPlayed": {
+											"value": 9.0
+										},
+										"homeLosses": {
+											"value": 3.0
+										},
+										"homeTies": {
+											"value": 0.0
+										},
+										"homeWins": {
+											"value": 2.0
+										},
+										"leagueWinPercent": {
+											"value": 0.6000000238418579
+										},
+										"losses": {
+											"value": 6.0
+										},
+										"OTLosses": {
+											"value": 0.0
+										},
+										"OTWins": {
+											"value": 0.0
+										},
+										"playoffSeed": {
+											"value": 11.0
+										},
+										"points": {
+											"value": -1.5
+										},
+										"pointsAgainst": {
+											"value": 47.0
+										},
+										"pointsFor": {
+											"value": 42.0
+										},
+										"roadLosses": {
+											"value": 3.0
+										},
+										"roadTies": {
+											"value": 0.0
+										},
+										"roadWins": {
+											"value": 1.0
+										},
+										"streak": {
+											"value": -2.0
+										},
+										"ties": {
+											"value": 0.0
+										},
+										"winPercent": {
+											"value": 0.3333333432674408
+										},
+										"wins": {
+											"value": 3.0
+										},
+										"divisionRecord": {},
+										"conferenceRecord": {},
+										"differential": {}
+									},
+									"logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+									"logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/cin.png"
+								}
+							],
+							"neutralSite": false,
+							"onDisneyNetwork": false,
+							"appLinks": [
+								{
+									"rel": [
+										"summary",
+										"sportscenter",
+										"app",
+										"event"
+									],
+									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772765",
+									"text": "Gamecast",
+									"shortText": "Summary"
+								},
+								{
+									"rel": [
+										"boxscore",
+										"sportscenter",
+										"app",
+										"event"
+									],
+									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772765",
+									"text": "Box Score",
+									"shortText": "Box Score"
+								},
+								{
+									"rel": [
+										"gamecast",
+										"sportscenter",
+										"app",
+										"event"
+									],
+									"href": "sportscenter://x-callback-url/showGame?sportName=football&leagueAbbrev=nfl&gameId=401772765",
 									"text": "Gamecast",
 									"shortText": "Gamecast"
 								}

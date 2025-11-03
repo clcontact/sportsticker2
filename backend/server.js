@@ -10,6 +10,7 @@ import { dirname } from 'path';
 // --- MODULE IMPORTS ---
 import { changeKioskUrl } from "./kioskController.js";
 import { setupGameRoutes } from "./gameApi.js";
+import { setupGameDetailRoutes } from "./gameDetailApi.js";
 import commandRouter from './routes/commandRouter.js'; // Use import for the router
 
 // --- END MODULE IMPORTS ---
@@ -63,6 +64,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // 1. Data API Routes (Modularized by gameApi.js)
 setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
 
 // 2. General Games Endpoint
 app.get("/api/games", (req, res) => {
@@ -131,7 +133,7 @@ server.listen(3000, () => {
          console.log("✅ Server running on port 3000");
          console.log(`✅ Kiosk Control Panel available at http://localhost:3000/`);
          FEEDS.forEach(feed => {
-                            startDataPolling(feed.url, feed.file, ABSOLUTE_DATA_DIR); 
-                    });
+                    startDataPolling(feed.url, feed.file, ABSOLUTE_DATA_DIR); 
+            });
          }
 );

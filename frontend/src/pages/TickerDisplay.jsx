@@ -10,7 +10,7 @@ export default function TickerDisplay() {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/games");
+        const res = await axios.get("http://localhost:3000/api/games/nfl");
         
         const newScores = {};
         res.data.forEach(g => {

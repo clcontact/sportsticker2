@@ -1,0 +1,534 @@
+{
+		"events": [
+						{
+							"id": "401772768",
+							"uid": "s:20~l:28~e:401772768~c:401772768",
+							"guid": "bd3e90dc-8b3f-3c10-bd93-2591f138b43e",
+							"date": "2025-11-02T21:25:00Z",
+							"timeValid": true,
+							"recent": true,
+							"name": "Kansas City Chiefs at Buffalo Bills",
+							"shortName": "KC @ BUF",
+							"gamecastAvailable": true,
+							"playByPlayAvailable": true,
+							"commentaryAvailable": false,
+							"wallclockAvailable": true,
+							"fauxcastAvailable": true,
+							"onWatch": false,
+							"competitionId": "401772768",
+							"location": "Highmark Stadium",
+							"season": 2025,
+							"seasonStartDate": "2025-07-31T07:00:00Z",
+							"seasonEndDate": "2026-01-08T07:59:00Z",
+							"seasonType": "2",
+							"seasonTypeHasGroups": false,
+							"week": 9,
+							"weekText": "Week 9",
+							"link": "https://www.espn.com/nfl/game?gameId=401772768",
+							"status": "in",
+							"summary": "8:00 - 1st",
+							"period": 1,
+							"clock": "8:00",
+							"possessionTeamId": "2",
+							"broadcasts": [
+								{
+									"typeId": 1,
+									"priority": 1,
+									"type": "TV",
+									"isNational": true,
+									"broadcasterId": 44,
+									"broadcastId": 44,
+									"name": "CBS",
+									"shortName": "CBS",
+									"callLetters": "CBS",
+									"station": "CBS",
+									"lang": "en",
+									"region": "us",
+									"slug": "cbs"
+								}
+							],
+							"broadcast": "CBS",
+							"situation": {
+								"lastPlay": {
+									"id": "-239401",
+									"type": {
+										"id": "61",
+										"abbreviation": "XP",
+										"text": "Extra Point Good"
+									},
+									"text": "(Matt Prater Kick)",
+									"shortText": "(Matt Prater Kick)",
+									"period": {
+										"number": 1
+									},
+									"clock": {
+										"value": 480,
+										"displayValue": "8:00"
+									},
+									"team": {
+										"id": "2"
+									},
+									"scoreValue": 1,
+									"athletesInvolved": [
+										{
+											"id": "11122",
+											"displayName": "Matt Prater",
+											"shortName": "M. Prater",
+											"fullName": "Matt Prater",
+											"jersey": "15",
+											"team": {
+												"id": "2"
+											},
+											"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/11122.png",
+											"links": [
+												{
+													"rel": [
+														"playercard",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/_/id/11122/matt-prater",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"stats",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/stats/_/id/11122/matt-prater",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"splits",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/splits/_/id/11122/matt-prater",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"gamelog",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/gamelog/_/id/11122/matt-prater",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"news",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/news/_/id/11122/matt-prater",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"bio",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/bio/_/id/11122/matt-prater",
+													"isHidden": false
+												},
+												{
+													"rel": [
+														"overview",
+														"desktop",
+														"athlete"
+													],
+													"href": "https://www.espn.com/nfl/player/_/id/11122/matt-prater",
+													"isHidden": false
+												}
+											],
+											"position": "PK"
+										}
+									],
+									"drive": {
+										"description": "11 plays, 84 yards, 7:00",
+										"result": "TD",
+										"start": {
+											"yardLine": 16,
+											"text": "BUF 16"
+										},
+										"end": {
+											"yardLine": 100,
+											"text": "KC 0"
+										},
+										"timeElapsed": {
+											"displayValue": "7:00"
+										}
+									},
+									"start": {
+										"team": {
+											"id": "2"
+										},
+										"yardLine": 85
+									},
+									"end": {
+										"team": {
+											"id": "2"
+										},
+										"yardLine": 35
+									},
+									"statYardage": 0
+								},
+								"awayTimeouts": 3,
+								"homeTimeouts": 3,
+								"distance": 10,
+								"yardLine": 35,
+								"down": 1,
+								"isRedZone": false,
+								"possession": "2"
+							},
+							"fullStatus": {
+								"clock": 480.0,
+								"displayClock": "8:00",
+								"period": 1,
+								"displayPeriod": "1st",
+								"type": {
+									"id": "2",
+									"name": "STATUS_IN_PROGRESS",
+									"state": "in",
+									"completed": false,
+									"description": "In Progress",
+									"detail": "8:00 - 1st Quarter",
+									"shortDetail": "8:00 - 1st"
+								}
+							},
+							"competitors": [
+								{
+									"id": "12",
+									"guid": "f68f2343-8ceb-7a02-740d-af6338be21d2",
+									"uid": "s:20~l:28~t:12",
+									"type": "team",
+									"order": 1,
+									"homeAway": "away",
+									"winner": false,
+									"displayName": "Kansas City Chiefs",
+									"name": "Chiefs",
+									"abbreviation": "KC",
+									"location": "Kansas City",
+									"color": "e31837",
+									"alternateColor": "ffb612",
+									"score": "0",
+									"record": "5-3",
+									"group": "6",
+									"logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+									"logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/kc.png"
+								},
+								{
+									"id": "2",
+									"guid": "232afaf2-01ac-fcc2-8bd6-66550df1703a",
+									"uid": "s:20~l:28~t:2",
+									"type": "team",
+									"order": 0,
+									"homeAway": "home",
+									"winner": false,
+									"displayName": "Buffalo Bills",
+									"name": "Bills",
+									"abbreviation": "BUF",
+									"location": "Buffalo",
+									"color": "00338d",
+									"alternateColor": "d50a0a",
+									"score": "6",
+									"record": "5-2",
+									"group": "4",
+									"logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+									"logoDark": "https://a.espncdn.com/i/teamlogos/nfl/500-dark/scoreboard/buf.png"
+								}
+							],
+							"leaders": [
+								{
+									"name": "passingYards",
+									"displayName": "Passing Leader",
+									"shortDisplayName": "PASS",
+									"abbreviation": "PYDS",
+									"leaders": [
+										{
+											"displayValue": "52 YDS, TD",
+											"value": 52.0,
+											"athlete": {
+												"id": "3918298",
+												"displayName": "Josh Allen",
+												"shortName": "J. Allen",
+												"fullName": "Josh Allen",
+												"jersey": "17",
+												"active": true,
+												"team": {
+													"id": "2"
+												},
+												"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3918298.png",
+												"links": [
+													{
+														"rel": [
+															"playercard",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"stats",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/stats/_/id/3918298/josh-allen",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"splits",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/splits/_/id/3918298/josh-allen",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"gamelog",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/gamelog/_/id/3918298/josh-allen",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"news",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/news/_/id/3918298/josh-allen",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"bio",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/bio/_/id/3918298/josh-allen",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"overview",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/_/id/3918298/josh-allen",
+														"isHidden": false
+													}
+												],
+												"position": {
+													"abbreviation": "QB"
+												}
+											},
+											"team": {
+												"id": "2"
+											}
+										}
+									]
+								},
+								{
+									"name": "rushingYards",
+									"displayName": "Rushing Leader",
+									"shortDisplayName": "RUSH",
+									"abbreviation": "RYDS",
+									"leaders": [
+										{
+											"displayValue": "5 CAR, 27 YDS",
+											"value": 27.0,
+											"athlete": {
+												"id": "4379399",
+												"displayName": "James Cook III",
+												"shortName": "J. Cook III",
+												"fullName": "James Cook III",
+												"jersey": "4",
+												"active": true,
+												"team": {
+													"id": "2"
+												},
+												"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4379399.png",
+												"links": [
+													{
+														"rel": [
+															"playercard",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"stats",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/stats/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"splits",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/splits/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"gamelog",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/gamelog/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"news",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/news/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"bio",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/bio/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"overview",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/_/id/4379399/james-cook-iii",
+														"isHidden": false
+													}
+												],
+												"position": {
+													"abbreviation": "RB"
+												}
+											},
+											"team": {
+												"id": "2"
+											}
+										}
+									]
+								},
+								{
+									"name": "receivingYards",
+									"displayName": "Receiving Leader",
+									"shortDisplayName": "REC",
+									"abbreviation": "RECYDS",
+									"leaders": [
+										{
+											"displayValue": "1 REC, 23 YDS, TD",
+											"value": 23.0,
+											"athlete": {
+												"id": "4385690",
+												"displayName": "Dalton Kincaid",
+												"shortName": "D. Kincaid",
+												"fullName": "Dalton Kincaid",
+												"jersey": "86",
+												"active": true,
+												"team": {
+													"id": "2"
+												},
+												"headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4385690.png",
+												"links": [
+													{
+														"rel": [
+															"playercard",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"stats",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/stats/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"splits",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/splits/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"gamelog",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/gamelog/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"news",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/news/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"bio",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/bio/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													},
+													{
+														"rel": [
+															"overview",
+															"desktop",
+															"athlete"
+														],
+														"href": "https://www.espn.com/nfl/player/_/id/4385690/dalton-kincaid",
+														"isHidden": false
+													}
+												],
+												"position": {
+													"abbreviation": "TE"
+												}
+											},
+											"team": {
+												"id": "2"
+											}
+										}
+									]
+								}
+							]
+				}
+		]
+}

@@ -5,6 +5,8 @@ import TickerDisplay from "./pages/TickerDisplay";
 import TickerDisplayN from "./pages/TickerDisplayN";
 import LeagueTicker from './pages/LeagueTicker';
 import ParameterizedTicker from "./pages/ParameterizedTicker";
+import GameDetailsPage from "./pages/GameDetailsPage";
+import GameDetailsPage2 from "./pages/GameDetailsPage2";
 
 
 export default function App() {
@@ -29,7 +31,12 @@ export default function App() {
                 <Route 
                     path="/LeagueTracker/:league/:count" 
                     element={<ParameterizedTicker />} 
-                />                      
+                />  
+                <Route 
+                    path="/GameDetailsPage/:league/:team/" 
+                    element={<GameDetailsPage />} 
+                />                                      
+                <Route path="/GameDetailsPage2/:league/:team/"  element={<GameDetailsPage2 />} />                  
       </Routes>
     </BrowserRouter>
     

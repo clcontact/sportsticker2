@@ -9,7 +9,7 @@ const Ticker = () => {
 
   const fetchGamesSnapshot = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/games");
+      const res = await fetch("http://localhost:3000/api/games/nfl");
       const data = await res.json();
       setGames(data);
     } catch (err) {
@@ -74,11 +74,15 @@ const Ticker = () => {
         {games.length === 0 ? (
           <span>Waiting for games...</span>
         ) : (
-          games.map((g) => (
-            <span key={g.id} style={{ marginRight: "3rem" }}>
-              {g.away} {g.awayScore}-{g.homeScore} {g.home}
-            </span>
-          ))
+          games.map((g) => {
+            const away = g.teams.find((t) => t.homeAway === "away");
+            const home = g.teams.find((t) => t.homeAway === "home");
+            return (
+              <span key={g.id} style={{ marginRight: "3rem" }}>
+                {away?.abbreviation} {away?.score}-{home?.score} {home?.abbreviation}
+              </span>
+            );
+          })
         )}
       </div>
     </div>
