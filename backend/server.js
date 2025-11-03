@@ -90,8 +90,7 @@ app.get('/', (req, res) => {
             gap: 1rem;
             padding: 1.5rem;
             max-width: 500px;
-            margin: 0 auto;
-        ">
+            margin: 0 auto;">
             ${URL_BUTTONS.map(button => `
                 <button
                     class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 
@@ -104,6 +103,26 @@ app.get('/', (req, res) => {
                     ${button.label}
                 </button>
             `).join('')}
+        </div>
+        <div style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto;">
+                        <button
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 
+                           rounded-xl shadow-lg transition duration-150 ease-in-out 
+                           transform hover:scale-[1.02] active:scale-[0.98] w-full text-lg"
+                    style="max-width: 100%; word-wrap: break-word;"
+                    data-url="http://localhost:3001/GameDetailsPage2/nfl/phi"
+                    onclick="changeUrl(this.getAttribute('data-url'))"
+                >
+                    Philly Philly
+                </button>
         </div>
     `;
 
