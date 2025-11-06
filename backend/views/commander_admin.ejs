@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Remote Commander Admin</title>
+    <!-- Tailwind is assumed to be loaded by the main template, but using pure CSS for robustness here -->
+    <style>
+        body { font-family: sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
+        h1 { color: #4a5568; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #4a5568; }
+        input[type="password"], select { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #4c51bf; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; transition: background-color 0.3s; }
+        button:hover:not(:disabled) { background-color: #434190; }
+        button:disabled { background-color: #a0aec0; cursor: not-allowed; }
+        .output-area { background-color: #2d3748; color: #e2e8f0; padding: 15px; border-radius: 4px; white-space: pre-wrap; font-family: monospace; overflow: auto; max-height: 400px; margin-top: 20px; }
+        .status-message { padding: 10px; margin-bottom: 15px; border-radius: 4px; border-left: 5px solid; }
+        .status-ready { background-color: #ebf8ff; color: #2b6cb0; border-color: #4c51bf; }
+        .status-executing { background-color: #fffaf0; color: #b7791f; border-color: #f6ad55; }
+        .status-success { background-color: #f0fff4; color: #2f855a; border-color: #48bb78; }
+        .status-error { background-color: #fff5f5; color: #c53030; border-color: #f56565; }
+    </style>
+    <% 
+        // FIX: Define EJS variables using 'var' to ensure template-wide scoping and prevent 'Cannot access before initialization' errors
+        var baseUrl = typeof baseUrl !== 'undefined' ? baseUrl : '/admin';
+        var activePage = typeof activePage !== 'undefined' ? activePage : 'commander';
+    %>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation to Admin Pages (using the EJS variables) -->
+        <nav class="flex justify-center space-x-2 mb-8 border-b pb-4 text-sm">
+            <a href="<%= baseUrl %>" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'control' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Control Panel</a>
+            <a href="<%= baseUrl %>/config" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'config' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Feed Config</a>
+            <a href="<%= baseUrl %>/status" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'status' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">System Status</a>
+            <a href="<%= baseUrl %>/commander" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'commander' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Commander</a>
+        </nav>
+
+        <h1>Pi Remote Commander</h1>
+        <div id="status-display" class="status-message status-ready">Status: Ready</div>
+
+        <div id="loading" style="display: none; text-align: center; font-style: italic;">Loading commands...</div>
+
+        <label for="secret-key">Secret Key:</label>
+        <input type="password" id="secret-key" placeholder="Enter COMMAND_SECRET_KEY">
+
+        <label for="command-select">Select Command:</label>
+        <select id="command-select">
+            <option value="" disabled selected>Loading...</option>
+        </select>
+
+        <button id="execute-button">Execute Command</button>
+
+        <h2>Command Output</h2>
+        <pre id="output-area" class="output-area">Output will appear here.</pre>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        // This MUST match the mounting path in server.js, which is /api/remote
+        const BASE_API_URL = '/api/remote'; 
+        // ---------------------
+
+        const secretKeyInput = document.getElementById('secret-key');
+        const commandSelect = document.getElementById('command-select');
+        const executeButton = document.getElementById('execute-button');
+        const outputArea = document.getElementById('output-area');
+        const statusDisplay = document.getElementById('status-display');
+        const loadingDiv = document.getElementById('loading');
+        
+        // State management
+        var isExecuting = false;
+
+        function setStatus(status, message) {
+            statusDisplay.className = `status-message status-${status}`;
+            statusDisplay.textContent = `Status: ${message}`;
+        }
+
+        function setExecuting(executing) {
+            isExecuting = executing;
+            executeButton.disabled = executing;
+            secretKeyInput.disabled = executing;
+            commandSelect.disabled = executing;
+            executeButton.textContent = executing ? 'Executing...' : 'Execute Command';
+        }
+
+        // 1. Fetch available commands
+        async function fetchCommands() {
+            setStatus('executing', 'Loading commands from backend...');
+            loadingDiv.style.display = 'block';
+
+            try {
+                const response = await fetch(`${BASE_API_URL}/commands`);
+                const commands = await response.json();
+
+                commandSelect.innerHTML = ''; // Clear existing options
+                if (commands.length === 0) {
+                    const opt = document.createElement('option');
+                    opt.textContent = 'No commands defined in commandRouter.js';
+                    commandSelect.appendChild(opt);
+                    setStatus('error', 'No commands loaded.');
+                } else {
+                    commands.forEach(cmd => {
+                        const opt = document.createElement('option');
+                        opt.value = cmd.key;
+                        opt.textContent = cmd.name;
+                        commandSelect.appendChild(opt);
+                    });
+                    setStatus('ready', 'Commands loaded. Enter key and execute.');
+                }
+            } catch (error) {
+                setStatus('error', `Failed to fetch commands: ${error.message}`);
+                outputArea.textContent = `NETWORK ERROR: Ensure the Node server is running and the BASE_API_URL is correct.`;
+            } finally {
+                loadingDiv.style.display = 'none';
+            }
+        }
+
+        // 2. Execute command handler
+        async function handleExecute() {
+            if (isExecuting) return;
+
+            const secretKey = secretKeyInput.value.trim();
+            const command = commandSelect.value;
+
+            if (!secretKey) {
+                // Using status display instead of alert()
+                setStatus('error', 'The Secret Key is required.');
+                outputArea.textContent = 'VALIDATION ERROR: Please enter the Secret Key to proceed.';
+                return;
+            }
+            if (!command) {
+                // Using status display instead of alert()
+                setStatus('error', 'Please select a command.');
+                outputArea.textContent = 'VALIDATION ERROR: Please select a command from the list.';
+                return;
+            }
+
+            setExecuting(true);
+            outputArea.textContent = 'Starting execution...';
+            setStatus('executing', `Executing command: ${command}`);
+
+            try {
+                const response = await fetch(`${BASE_API_URL}/command/execute`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Secret-Key': secretKey // Pass the key via header
+                    },
+                    body: JSON.stringify({ command: command })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.success) {
+                    setStatus('success', result.message);
+                    outputArea.textContent = `\n--- SUCCESS ---\n${result.output || 'No output received.'}`;
+                } else {
+                    // Authentication error (403) or Command failure (500/400)
+                    setStatus('error', result.error || result.message || `HTTP ${response.status} Error`);
+                    outputArea.textContent = `\n--- EXECUTION FAILED ---\n${result.output || 'No specific error output.'}`;
+                }
+
+            } catch (error) {
+                setStatus('error', 'Network/Server connection failed.');
+                outputArea.textContent = `NETWORK ERROR: Could not connect to the API. Details: ${error.message}`;
+            } finally {
+                setExecuting(false);
+            }
+        }
+
+        // Event Listeners
+        executeButton.addEventListener('click', handleExecute);
+        document.addEventListener('DOMContentLoaded', fetchCommands);
+
+    </script>
+</body>
+</html>
