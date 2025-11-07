@@ -22,8 +22,9 @@ function findEventByTeamName(events, teamName) {
  * @param {string} ABSOLUTE_DATA_DIR Absolute path to the directory containing data files.
  */
 function setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
-    
-    app.get('/api/games/:league/:team', (req, res) => {
+    //nfltracker
+    //app.get('/api/games/:league/:team', (req, res) => {
+    app.get('/api/nfltracker/:league/:team', (req, res) => {
         const league = req.params.league.toLowerCase();
         const team = req.params.team.toLowerCase();
         const feedConfig = FEEDS.find(f => f.route === league);

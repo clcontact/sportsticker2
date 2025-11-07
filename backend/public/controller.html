@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Display Controller</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+    }
+    .screen {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      width: 70%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      background: #0078d4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background: #005ea1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Display Controller</h1>
+
+  <div class="screen">
+    <h2>Left Display</h2>
+    <p>Current URL: <span id="left-url">Loading...</span></p>
+    <form id="left-form">
+      <label for="left-input">New URL:</label><br>
+      <input type="text" id="left-input" placeholder="https://example.com">
+      <button type="submit">Change</button>
+    </form>
+  </div>
+
+  <div class="screen">
+    <h2>Right Display</h2>
+    <p>Current URL: <span id="right-url">Loading...</span></p>
+    <form id="right-form">
+      <label for="right-input">New URL:</label><br>
+      <input type="text" id="right-input" placeholder="https://example.com">
+      <button type="submit">Change</button>
+    </form>
+  </div>
+
+  <script>
+    async function refresh() {
+      try {
+        const res = await fetch("/displays/info");
+        const data = await res.json();
+
+        document.getElementById("left-url").textContent = data.left?.url || "Unavailable";
+        document.getElementById("right-url").textContent = data.right?.url || "Unavailable";
+      } catch (err) {
+        console.error("Error refreshing:", err);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      refresh();
+
+      document.getElementById("left-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const url = document.getElementById("left-input").value;
+        console.log("Changing LEFT display to:", url);
+        await fetch("/displays/change", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ screen: "left", url })
+        });
+        await refresh();
+      });
+
+      document.getElementById("right-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const url = document.getElementById("right-input").value;
+        console.log("Changing RIGHT display to:", url);
+        await fetch("/displays/change", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ screen: "left", url })
+        });
+        await refresh();
+      });
+    });
+  </script>
+</body>
+</html>

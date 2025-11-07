@@ -17,7 +17,9 @@ const GameDetailsPage2 = () => {
         setError(null);
 
         const response = await fetch(
-          `http://localhost:3000/api/games/${league}/${team}`
+          ///api/nfltracker
+          //`http://localhost:3000/api/games/${league}/${team}`
+          `http://localhost:3000/api/nfltracker/${league}/${team}`
         );
 
         if (!response.ok) throw new Error(`Error ${response.status}`);

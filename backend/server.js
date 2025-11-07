@@ -7,20 +7,26 @@ import cors from "cors";
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import bodyParser from "body-parser";
 
 // --- MODULE IMPORTS ---
 import { changeKioskUrl } from "./kioskController.js";
-import { setupGameRoutes } from "./gameApi.js";
+import { isChromeRunning, startChrome, restartChrome } from "./chromeSupervisor.js";
+//import { setupGameRoutes, setupNCAAGameRoutes } from "./gameApi.js";
+//import { setupUnifiedGameRoutes } from "./gameApi.js";
+import { setupUnifiedGameRoutes } from "./gameApi.js";
 import { setupGameDetailRoutes } from "./gameDetailApi.js";
 import commandRouter from './routes/commandRouter.js';
 import adminRouter from './routes/adminRouter.js'; // Assumes this handles Kiosk Control
+import { getDisplayInfo, changeDisplay } from "./controller.js";
 
 // --- SERVICE IMPORTS ---
-import {getCurrentGames, startTicker } from "./services/tickerDataService.js"
+import {getCurrentGames, startTicker, startNCAATicker } from "./services/tickerDataService.js"
 import { startDataPolling } from './services/dataFetcher.js';
 import { registerSocket } from "./services/monitorService.js";
-//import "./utils/logger.js";
 import { setSocket } from "./utils/logger.js";
+import { startGameTrackerPolling } from "./services/gameTrackerService.js";
+
 // --- Path Setup ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename); 
@@ -39,7 +45,13 @@ const MLB_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header
 const EPL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1", file: "premier_data.json", route: "epl" };
 const NBA_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba", file: "nba_data.json", route: "nba" };
 const NHL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=hockey&league=nhl", file: "nhl_data.json", route: "nhl" };
-const FEEDS = [NFL_FEED, MLB_FEED, EPL_FEED,NBA_FEED,NHL_FEED];
+const COLLEGE_FB_FEED = { url: "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard", file: "ncaaf_data.json", route: "ncaaf" };
+const COLLEGE_BB_FEED = { url: "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard", file: "ncaam_data.json", route: "ncaam" };
+//
+const NFLTRACKER_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl&team=phi", file: "nflGameTracker_data.json", route: "nfltracker" };
+const FEEDS = [NFL_FEED, MLB_FEED, EPL_FEED,NBA_FEED,NHL_FEED,NFLTRACKER_FEED,COLLEGE_FB_FEED,COLLEGE_BB_FEED];
+
+//const NCAA = [COLLEGE_FB_FEED,COLLEGE_BB_FEED];
 
 // Group all Kiosk config for easy passing to routers
 const KIOSK_CONFIG = { RPI_IP, CDP_PORT, KIOSK_FRONTEND_BASE_URL, FEEDS };
@@ -60,19 +72,40 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(bodyParser.json());
 // ===============================================
 // --- ROUTE REGISTRATION (CLEANED) ---
 // ===============================================
 
 // 1. Data API Routes (Game Data)
-setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+//setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+//setupNCAAGameRoutes(app, NCAA, ABSOLUTE_DATA_DIR);
+setupUnifiedGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+//setupUnifiedGameRoutes(app);
 setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
 
 // 2. General Games Endpoint
 app.get("/api/games", (req, res) => {
     res.json(getCurrentGames());
 });
+/** Get this working but not now.
+app.get("/api/ncaagames", (req, res) => {
+    res.json(getNCAACurrentGames());
+});
+*/
+
+app.get("/displays", async (req, res) => {
+  const ports = [9222, 9223];
+  const results = await Promise.all(ports.map(p => getDisplayInfo(p)));
+  res.json(results.flat());
+});
+app.get("/displays/info", async (req, res) => {
+  const left = await getDisplayInfo(9222);
+  const right = await getDisplayInfo(9223);
+  res.json({ left, right });
+});
+
+app.post("/displays/change", changeDisplay);
 
 // 3. Admin Pages Routes (Kiosk Control Panel and others)
 // The adminRouter now handles the root Kiosk Control Panel page (at /admin) 
@@ -89,7 +122,30 @@ app.get('/commander', (req, res) => {
     // Renders the new EJS template for the Pi Remote Commander UI
     res.render('commander_admin'); 
 });
+app.get("/controller", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/controller.html"));
+});
+/**Chrome management paths: */
+app.get("/chrome/status", async (req, res) => {
+  const left = await isChromeRunning(9222);
+  const right = await isChromeRunning(9223);
+  res.json({ left, right });
+});
 
+app.post("/chrome/start/:screen", async (req, res) => {
+  const { screen } = req.params;
+  const result = await startChrome(screen);
+  res.json(result);
+});
+
+app.post("/chrome/restart/:screen", async (req, res) => {
+  const { screen } = req.params;
+  const result = await restartChrome(screen);
+  res.json(result);
+});
+app.get("/supervisor", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/supervisor.html"));
+});
 // 5. Default Route (Removed old HTML string route app.get('/'))
 // Redirects the root path to the new Kiosk Control Panel page
 app.get('/', (req, res) => {
@@ -107,6 +163,7 @@ app.get('/', (req, res) => {
 // --- SERVER STARTUP AND POLLING ---
 // ===============================================
 startTicker(io, FEEDS, ABSOLUTE_DATA_DIR);
+//startNCAATicker(io, NCAA, ABSOLUTE_DATA_DIR);
 
 server.listen(3000, () => {
     console.log("✅ Server running on port 3000");
@@ -115,4 +172,12 @@ server.listen(3000, () => {
     FEEDS.forEach(feed => {
         startDataPolling(feed.url, feed.file, ABSOLUTE_DATA_DIR); 
     });
+
+
+    // 🔹 Start high-frequency game tracker polling (near real-time)
+    const GAME_TRACKER_FEED = {
+        url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl", // example
+        file: "live_tracker.json"
+    };
+    startGameTrackerPolling(GAME_TRACKER_FEED.url, GAME_TRACKER_FEED.file, ABSOLUTE_DATA_DIR);    
 });

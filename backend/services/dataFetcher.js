@@ -10,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const hbDir = path.join(__dirname, "Data", "hb");
 const HEARTBEAT_FILE = path.join(hbDir, "dataFetcher_heartbeat.json");
+const HEARTBEAT_FILEName = "dataFetcher_heartbeat.json";
 fs.mkdirSync(hbDir, { recursive: true });
 
 async function fetchDataAndSave(url, fileName, dataDir) {
@@ -57,7 +58,7 @@ export function startDataPolling(url, file, dataDir) {
 
     if (day === 0 || day === 6) return true; // Weekend
     // Weekdays: 5 PM (17:00) to 11:50 PM (23:50)
-    if (hour > 16 && (hour < 23 || (hour === 23 && minute <= 50))) return true;
+    if (hour > 10 && (hour < 23 || (hour === 23 && minute <= 50))) return true;
 
     return false;
   }
@@ -102,6 +103,36 @@ export function startDataPolling(url, file, dataDir) {
   poll();
   console.log(`⏰ Polling started for ${file}`);
 }
+export function getLatestFeed(feedType) {
+  try {
+    // Use the same Data directory your fetcher writes to
+    const dataDir = path.join(__dirname, "Data");
+
+    // Find a file that matches this feed (e.g., "nba_feed.json" or "ncaab_feed.json")
+    const fileMatch = fs.readdirSync(dataDir).find(f => f.toLowerCase().includes(feedType.toLowerCase()));
+
+    if (!fileMatch) {
+      console.warn(`⚠️ No feed file found for type: ${feedType}`);
+      return [];
+    }
+
+    const filePath = path.join(dataDir, fileMatch);
+    const raw = fs.readFileSync(filePath, "utf8");
+
+    // Some feeds may not be pure JSON, so try to safely parse
+    try {
+      const parsed = JSON.parse(raw);
+      return parsed;
+    } catch (err) {
+      console.error(`⚠️ Invalid JSON in ${fileMatch}:`, err.message);
+      return [];
+    }
+  } catch (error) {
+    console.error(`Error reading feed ${feedType}:`, error.message);
+    return [];
+  }
+}
+
 function writeHeartbeat() {
   //const HEARTBEAT_FILE = path.join('/backend/Data/hb/',HEARTBEAT_FILEName );
   const data = {

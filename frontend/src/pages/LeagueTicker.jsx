@@ -41,6 +41,72 @@ export default function LeagueTicker({ league, gameCount, leagueDisplayName }) {
     const tickerLength = allGames.length;
     const displayWindowSize = gamesToDisplay.length;
 
+const fetchGames = async () => {
+    const API_URL = `http://localhost:3000/api/games/${league}`;
+    try {
+        const res = await axios.get(API_URL);
+        const rawGames = Array.isArray(res.data) ? res.data : [];
+
+        const normalizedGames = rawGames.map((g) => {
+            // If teams array already exists, use it
+            if (Array.isArray(g.teams)) {
+                return {
+                    ...g,
+                    teams: g.teams.map((t) => ({
+                        ...t,
+                        color: t.color || "9e2237",
+                        alternateColor: t.alternateColor || "ffcc00",
+                        score: t.score ?? 0,
+                    })),
+                };
+            }
+
+            // Otherwise convert legacy format
+            return {
+                ...g,
+                teams: [
+                    {
+                        homeAway: "away",
+                        abbreviation: g.awayTeam || "?",
+                        displayName: g.awayTeam || "?",
+                        logo: g.awayLogo || "",
+                        score: g.awayScore ?? 0,
+                        color: g.awayColor || "9e2237",
+                        alternateColor: g.awayAltColor || "ffcc00",
+                        record: g.awayRecord || "",
+                    },
+                    {
+                        homeAway: "home",
+                        abbreviation: g.homeTeam || "?",
+                        displayName: g.homeTeam || "?",
+                        logo: g.homeLogo || "",
+                        score: g.homeScore ?? 0,
+                        color: g.homeColor || "9e2237",
+                        alternateColor: g.homeAltColor || "ffcc00",
+                        record: g.homeRecord || "",
+                    },
+                ],
+            };
+        });
+
+        const newScores = {};
+        normalizedGames.forEach((g) => {
+            g.teams.forEach((t) => {
+                newScores[t.abbreviation] = t.score;
+            });
+        });
+
+        setAllGames(normalizedGames);
+        setPrevScores(newScores);
+    } catch (err) {
+        console.error(`Error fetching games for ${league}:`, err);
+        setAllGames([]);
+    }
+};
+
+
+
+    /*
     const fetchGames = async () => {
         const API_URL = `http://localhost:3000/api/games/${league}`;
         try {
@@ -58,6 +124,7 @@ export default function LeagueTicker({ league, gameCount, leagueDisplayName }) {
             setAllGames([]);
         }
     };
+    */
 
     useEffect(() => {
         fetchGames();

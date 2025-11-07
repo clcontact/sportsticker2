@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Browser Supervisor</title>
+  </head>
+  <body>
+    <h1>Browser Supervisor</h1>
+    <button onclick="start('left')">Start Left</button>
+    <button onclick="restart('left')">Restart Left</button>
+    <br />
+    <button onclick="start('right')">Start Right</button>
+    <button onclick="restart('right')">Restart Right</button>
+    <br /><br />
+    <button onclick="refresh()">Refresh Status</button>
+    <pre id="status">Loading...</pre>
+
+    <script>
+      async function refresh() {
+        const res = await fetch("/chrome/status");
+        const data = await res.json();
+        document.getElementById("status").textContent = JSON.stringify(data, null, 2);
+      }
+      async function start(screen) {
+        await fetch(`/chrome/start/${screen}`, { method: "POST" });
+        refresh();
+      }
+      async function restart(screen) {
+        await fetch(`/chrome/restart/${screen}`, { method: "POST" });
+        refresh();
+      }
+      refresh();
+    </script>
+  </body>
+</html>
