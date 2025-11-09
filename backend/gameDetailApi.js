@@ -10,9 +10,7 @@ function findEventByTeamName(events, teamName) {
     console.log("findEventByName->events->"+ events);
     console.log("findEventByName->teamName->"+ teamName);
     //console.log("findEventByName->eventlist->"+JSON.stringify(events, null, 2));
-events.forEach(user => {
-  console.log(`ID: ${events.id}, Name: ${events.name}, compet: ${events.competitors?.[0]?.abbreviation}`);
-});    
+   
     return events.find(event => {
         const nameMatch = event.name && event.name.toLowerCase().includes(searchName);
         const shortNameMatch = event.shortName && event.shortName.toLowerCase().includes(searchName);
