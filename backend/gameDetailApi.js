@@ -7,10 +7,18 @@ import fs from 'fs';
  */
 function findEventByTeamName(events, teamName) {
     const searchName = teamName.toLowerCase();
+    console.log("findEventByName->events->"+ events);
+    console.log("findEventByName->teamName->"+ teamName);
+    //console.log("findEventByName->eventlist->"+JSON.stringify(events, null, 2));
+events.forEach(user => {
+  console.log(`ID: ${events.id}, Name: ${events.name}, compet: ${events.competitors?.[0]?.abbreviation}`);
+});    
     return events.find(event => {
         const nameMatch = event.name && event.name.toLowerCase().includes(searchName);
         const shortNameMatch = event.shortName && event.shortName.toLowerCase().includes(searchName);
-        return nameMatch || shortNameMatch;
+        const abbrevMatch = event.competitors?.[0]?.abbreviation && event.competitors?.[0]?.abbreviation.toLowerCase().includes(searchName);
+        const abbrevAwayMatch = event.competitors?.[1]?.abbreviation && event.competitors?.[1]?.abbreviation.toLowerCase().includes(searchName);
+        return nameMatch || shortNameMatch ||abbrevMatch ||abbrevAwayMatch;
     });
 }
 
@@ -38,7 +46,7 @@ function setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
         }
 
         const FILE_PATH = path.join(ABSOLUTE_DATA_DIR, feedConfig.file);
-
+console.log("FILE_PATH->"+ FILE_PATH);
         // Read and process the file content
         try {
             const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
@@ -50,11 +58,11 @@ function setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
 
             // 1. Find the single event object
             const foundEvent = findEventByTeamName(events, team);
-
+console.log("foundEvent->"+ foundEvent);
             // 2. Wrap the single event in an array (if found) to allow mapping, 
             //    otherwise use an empty array.
             const eventsToMap = foundEvent ? [foundEvent] : [];
-
+console.log("eventsToMap->"+ eventsToMap);
             // 3. Map the event(s) to the desired structure
             const gameDetail = eventsToMap.map((e) => {
                 

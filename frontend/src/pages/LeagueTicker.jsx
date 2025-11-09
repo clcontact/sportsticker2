@@ -48,42 +48,44 @@ const fetchGames = async () => {
         const rawGames = Array.isArray(res.data) ? res.data : [];
 
         const normalizedGames = rawGames.map((g) => {
-            // If teams array already exists, use it
+            // If API already provides teams in ESPN-style format, keep it as-is
             if (Array.isArray(g.teams)) {
                 return {
                     ...g,
                     teams: g.teams.map((t) => ({
                         ...t,
-                        color: t.color || "9e2237",
-                        alternateColor: t.alternateColor || "ffcc00",
-                        score: t.score ?? 0,
+                        color: t.color?.replace("#", "") || null,
+                        alternateColor: t.alternateColor?.replace("#", "") || null,
+                        score: t.score ?? "0",
+                        logo: t.logo || null,
+                        record: t.record || null,
                     })),
                 };
             }
 
-            // Otherwise convert legacy format
+            // Otherwise, handle legacy format safely
             return {
                 ...g,
                 teams: [
                     {
                         homeAway: "away",
-                        abbreviation: g.awayTeam || "?",
-                        displayName: g.awayTeam || "?",
-                        logo: g.awayLogo || "",
-                        score: g.awayScore ?? 0,
-                        color: g.awayColor || "9e2237",
-                        alternateColor: g.awayAltColor || "ffcc00",
-                        record: g.awayRecord || "",
+                        abbreviation: g.awayTeam || "",
+                        displayName: g.awayTeam || "",
+                        logo: g.awayLogo || null,
+                        score: g.awayScore ?? "0",
+                        color: g.awayColor?.replace("#", "") || null,
+                        alternateColor: g.awayAltColor?.replace("#", "") || null,
+                        record: g.awayRecord || null,
                     },
                     {
                         homeAway: "home",
-                        abbreviation: g.homeTeam || "?",
-                        displayName: g.homeTeam || "?",
-                        logo: g.homeLogo || "",
-                        score: g.homeScore ?? 0,
-                        color: g.homeColor || "9e2237",
-                        alternateColor: g.homeAltColor || "ffcc00",
-                        record: g.homeRecord || "",
+                        abbreviation: g.homeTeam || "",
+                        displayName: g.homeTeam || "",
+                        logo: g.homeLogo || null,
+                        score: g.homeScore ?? "0",
+                        color: g.homeColor?.replace("#", "") || null,
+                        alternateColor: g.homeAltColor?.replace("#", "") || null,
+                        record: g.homeRecord || null,
                     },
                 ],
             };
@@ -103,6 +105,7 @@ const fetchGames = async () => {
         setAllGames([]);
     }
 };
+
 
 
 

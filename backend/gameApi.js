@@ -15,104 +15,81 @@ import { getLatestFeed } from "./services/dataFetcher.js";
  */
 
 export function parseGames(data) {
-    const games = [];
+  // Detect source type (college vs. professional)
+  const isCollege = !!data.events; // NCAAF, NCAAM, etc.
+  const isPro = !!data.sports; // EPL, NBA, NFL, etc.
 
-    const isPro = Array.isArray(data.sports);
-    const isNCAA = Array.isArray(data.leagues) || Array.isArray(data.events);
+  const games = [];
 
-    let leagues = [];
+  if (isCollege) {
+    for (const event of data.events || []) {
+      const comp = event.competitions?.[0];
+      if (!comp) continue;
 
-    if (isPro) {
-        leagues = data.sports.flatMap(s => s.leagues || []);
-    } else if (isNCAA) {
-        leagues = data.leagues || [];
-    } else {
-        console.warn("⚠️ Unknown feed structure:", Object.keys(data));
-        return [];
+      const teams = comp.competitors?.map((team) => ({
+        homeAway: team.homeAway,
+        abbreviation: team.team?.abbreviation || "",
+        displayName: team.team?.displayName || team.team?.name || "",
+        color: team.team?.color || "000000",
+        alternateColor: team.team?.alternateColor || "FFFFFF",
+        score: team.score || "0",
+        record:
+          team.records?.find((r) => r.type === "total" || r.name === "overall")
+            ?.summary || "",
+        logo: team.team?.logo || "",
+      }));
+
+      games.push({
+        id: event.id,
+        shortName: event.shortName || event.name || "",
+        weekText: event.week?.number ? `Week ${event.week.number}` : "",
+        status: comp.status?.type?.description || event.status?.type?.description || "Unknown",
+        summary: comp.status?.type?.shortDetail || event.status?.type?.shortDetail || "",
+        period: comp.status?.period || 0,
+        clock: comp.status?.displayClock || "",
+        teams,
+      });
     }
-
-    const extractRecord = (competitor) => {
-        if (!competitor) return "";
-
-        // Pro: team.record
-        if (competitor.team?.record) return competitor.team.record;
-
-        // NCAA: check competitor.records first, then team.records
-        const recordsArray = competitor.records || competitor.team?.records;
-        if (Array.isArray(recordsArray)) {
-            const overall = recordsArray.find(r => r.abbreviation === "overall");
-            return overall?.summary || "";
-        }
-
-        return "";
-    };
-
+  } else if (isPro) {
+    // Handle EPL / Pro Sports
+    const leagues = data.sports?.flatMap((s) => s.leagues || []);
     for (const league of leagues) {
-        const events = league.events || data.events || [];
+      for (const event of league.events || []) {
+        const teams = event.competitors?.map((t) => ({
+          homeAway: t.homeAway,
+          abbreviation: t.abbreviation || "",
+          displayName: t.displayName || t.name || "",
+          color: t.color || "000000",
+          alternateColor: t.alternateColor || "FFFFFF",
+          score: t.score || "0",
+          record: t.record || "",
+          logo: t.logo || "",
+        }));
 
-        for (const event of events) {
-            const comp = event.competitions?.[0] || event;
-            const competitors = comp.competitors || event.competitors || [];
-            if (!competitors.length) continue;
-
-            const home = competitors.find(t => t.homeAway === "home") || {};
-            const away = competitors.find(t => t.homeAway === "away") || {};
-
-            games.push({
-                league: league.abbreviation || league.name || "Unknown League",
-                id: event.id,
-                shortName: event.shortName || `${away.team?.abbreviation ?? "?"} @ ${home.team?.abbreviation ?? "?"}`,
-                homeTeam: home.team?.displayName || home.displayName || "",
-                homeLogo: home.team?.logo || home.logo || "",
-                homeColor: home.team?.color || home.color || "000000",
-                homeAltColor: home.team?.alternateColor || home.alternateColor || "FFFFFF",
-                homeRecord: extractRecord(home),
-                awayTeam: away.team?.displayName || away.displayName || "",
-                awayLogo: away.team?.logo || away.logo || "",
-                awayColor: away.team?.color || away.color || "000000",
-                awayAltColor: away.team?.alternateColor || away.alternateColor || "FFFFFF",
-                awayRecord: extractRecord(away),
-                broadcast: comp.broadcasts?.[0]?.name || "",
-                startTime: comp.startDate || event.date || event.startDate || null,
-                status: comp.status?.type?.description || event.status?.type?.description || "Unknown",
-            });
-        }
+        games.push({
+          id: event.id,
+          shortName: event.shortName || event.name || "",
+          weekText: "",
+          status:
+            event.fullStatus?.type?.description ||
+            event.status ||
+            "Unknown",
+          summary:
+            event.fullStatus?.type?.shortDetail ||
+            event.summary ||
+            "",
+          period: event.fullStatus?.period || event.period || null,
+          clock: event.fullStatus?.displayClock || event.clock || "",
+          teams,
+        });
+      }
     }
+  }
 
-    // --- Fallback ---
-    if (games.length === 0 && Array.isArray(data.events)) {
-        for (const event of data.events) {
-            const comp = event.competitions?.[0] || event;
-            const competitors = comp.competitors || event.competitors || [];
-            if (!competitors.length) continue;
-
-            const home = competitors.find(t => t.homeAway === "home") || {};
-            const away = competitors.find(t => t.homeAway === "away") || {};
-
-            games.push({
-                league: "Unknown",
-                id: event.id,
-                shortName: event.shortName || `${away.team?.abbreviation ?? "?"} @ ${home.team?.abbreviation ?? "?"}`,
-                homeTeam: home.team?.displayName || home.displayName || "",
-                homeLogo: home.team?.logo || home.logo || "",
-                homeColor: home.team?.color || home.color || "000000",
-                homeAltColor: home.team?.alternateColor || home.alternateColor || "FFFFFF",
-                homeRecord: extractRecord(home.team ?? home),
-                awayTeam: away.team?.displayName || away.displayName || "",
-                awayLogo: away.team?.logo || away.logo || "",
-                awayColor: away.team?.color || away.color || "000000",
-                awayAltColor: away.team?.alternateColor || away.alternateColor || "FFFFFF",
-                awayRecord: extractRecord(away.team ?? away),
-                broadcast: comp.broadcasts?.[0]?.name || "",
-                startTime: comp.startDate || event.date || event.startDate || null,
-                status: comp.status?.type?.description || event.status?.type?.description || "Unknown",
-            });
-        }
-    }
-
-    console.log(`📡 Broadcasted a total of ${games.length} games.`);
-    return games;
+  return games;
 }
+
+
 
 
 

@@ -27,7 +27,7 @@ const getReadableColor = (primary, alternate) => {
   return selected;
 };
 
-const Ticker = ({ apiUrl = "http://localhost:3000/api/games/nfl", fontSize = "2rem" }) => {
+const Ticker = ({ apiUrl = "http://localhost:3000/api/games/nhl", fontSize = "2rem" }) => {
   const [games, setGames] = useState([]);
   const containerRef = useRef(null);
   const scrollRef = useRef(null);

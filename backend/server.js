@@ -148,6 +148,10 @@ app.get("/supervisor", (req, res) => {
 });
 // 5. Default Route (Removed old HTML string route app.get('/'))
 // Redirects the root path to the new Kiosk Control Panel page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+/*
 app.get('/', (req, res) => {
     res.send(`
         <div style="font-family: sans-serif; padding: 50px; text-align: center;">
@@ -157,7 +161,7 @@ app.get('/', (req, res) => {
         </div>
     `);
 });
-
+*/
 
 // ===============================================
 // --- SERVER STARTUP AND POLLING ---

@@ -37,14 +37,14 @@ export async function startChrome(screen) {
 console.log(`startChrome->profileDir->${profileDir} `);
   const port = screen === "left" ? LEFT_PORT : RIGHT_PORT;
   console.log(`startChrome->port->${port} `);
-  const startUrl = screen === "left" ? `${BASE_URL}/LeagueTracker/nfl/4` : `${BASE_URL}/GameDetailsPage2/nfl/phi`;
+  const startUrl = screen === "left" ? `${BASE_URL}/LeagueTracker/nfl/4` : `${BASE_URL}/GameDetailsPage2/nfl/eagles`;
 console.log(`startChrome->startUrl->${startUrl} `);
   let cmd;
   if (process.platform === "win32") {
     cmd = `"${CHROME_CMD}" --remote-debugging-port=${port} --no-first-run --disable-infobars --disable-session-crashed-bubble --user-data-dir="${profileDir}" --kiosk ${startUrl}`;
   } else {
     //may have to tweek this for PI
-    cmd = `${CHROME_CMD} --remote-debugging-port=${port} --user-data-dir=${profileDir} --kiosk ${startUrl} --noerrdialogs --disable-session-crashed-bubble --disable-infobars --start-fullscreen --window-position=${
+    cmd = `${CHROME_CMD} --remote-debugging-port=${port} --user-data-dir=${profileDir} --kiosk ${startUrl} --noerrdialogs --disable-session-crashed-bubble --disable-infobars --start-fullscreen --ozone-platform=x11 --window-position=${
       screen === "left" ? "0,0" : "1920,0"
     }`;
   }
