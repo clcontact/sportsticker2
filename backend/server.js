@@ -33,6 +33,9 @@ const __dirname = dirname(__filename);
 const ABSOLUTE_DATA_DIR = path.join(__dirname, 'data');
 // --------------------
 
+//this is for the ncaam game tracker for now on the backend
+let trackedGameId = null;
+
 // ===============================================
 // --- CONFIGURATION ---
 // ===============================================
@@ -151,6 +154,13 @@ app.get("/supervisor", (req, res) => {
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
+app.get("/ncaam", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/ncaam.html"));
+});
+app.get("/ncaamtrack/:gameid", (req, res) => {
+  const { gameid } = req.params;
+  res.sendFile(path.join(__dirname, "public/ncaamtrack.html"));
+});
 /*
 app.get('/', (req, res) => {
     res.send(`
@@ -162,7 +172,41 @@ app.get('/', (req, res) => {
     `);
 });
 */
+//NCAA Mens basketball
+// Proxy ESPN APIs to bypass CORS
+app.get("/api/ncaagamesm", async (req, res) => {
+  try {
+    const response = await fetch(
+      "https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard"
+    );
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+app.get("/api/ncaagamesm/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const response = await fetch(
+      `https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard/${id}`
+    );
+    const data = await response.json();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
 
+// Store a "tracked" game id (if you want to preselect one for a display)
+app.post("/api/track", (req, res) => {
+  trackedGameId = req.body.gameId;
+  res.json({ ok: true, gameId: trackedGameId });
+});
+
+app.get("/api/track", (req, res) => {
+  res.json({ gameId: trackedGameId });
+});
 // ===============================================
 // --- SERVER STARTUP AND POLLING ---
 // ===============================================

@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1080, height=1920, initial-scale=1" />
+  <title>College Basketball Live — Track Game</title>
+  <style>
+    /* Designed for 1080 x 1920 portrait */
+    html,body {height:100%;margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:#000;color:#fff}
+    .wrap {width:1080px;height:1920px;margin:0 auto;display:flex;flex-direction:column;overflow:hidden}
+    .top {display:flex;height:420px;align-items:center;padding:24px;gap:24px}
+    .team {flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;padding:20px}
+    .logo {width:320px;height:320px;object-fit:contain;background:rgba(255,255,255,0.03);border-radius:12px}
+    .name {margin-top:12px;font-size:40px;font-weight:700;text-align:center}
+    .score {font-size:120px;font-weight:800;margin-top:6px}
+    .meta {display:flex;justify-content:space-between;padding:16px 24px;align-items:center;background:rgba(0,0,0,0.45)}
+    .clock {font-size:36px}
+    .body {display:flex;flex:1;gap:8px;padding:24px;box-sizing:border-box}
+    .col {flex:1;background:rgba(0,0,0,0.6);border-radius:12px;padding:16px;overflow:auto}
+    .stat-row {display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .leader {display:flex;gap:12px;align-items:center;padding:8px 0}
+    .headshot {width:64px;height:64px;border-radius:50%;object-fit:cover}
+    .small {font-size:20px;color:rgba(255,255,255,0.8)}
+  </style>
+</head>
+<body>
+  <div class="wrap" id="wrap">
+    <div class="top" id="top">
+      <div class="team" id="team-home">
+        <img class="logo" id="homeLogo" src="" alt="home logo"/>
+        <div class="name" id="homeName">Home</div>
+        <div class="score" id="homeScore">0</div>
+      </div>
+      <div style="width:24px"></div>
+      <div class="team" id="team-away">
+        <img class="logo" id="awayLogo" src="" alt="away logo"/>
+        <div class="name" id="awayName">Away</div>
+        <div class="score" id="awayScore">0</div>
+      </div>
+    </div>
+
+    <div class="meta" id="meta">
+      <div class="small" id="stadium">Venue</div>
+      <div class="clock" id="gameClock">0:00</div>
+      <div class="small" id="period">Period</div>
+    </div>
+
+    <div class="body">
+      <div class="col" id="leftCol">
+        <h2 style="margin-top:0">Team Stats</h2>
+        <div id="teamStats"></div>
+      </div>
+      <div class="col" id="rightCol">
+        <h2 style="margin-top:0">Leaders</h2>
+        <div id="leaders"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(async function(){
+  const apiBase = ""; // same origin
+  // get gameId from querystring or backend
+  const qs = new URLSearchParams(location.search);
+  let gameId = qs.get("gameId");
+  if (!gameId) {
+    try {
+      const r = await fetch(apiBase + "/api/track");
+      const js = await r.json();
+      gameId = js?.gameId;
+    } catch(e){ console.warn("no tracked id", e); }
+  }
+  if (!gameId) {
+    document.body.innerHTML = "<div style='color:#fff;padding:40px'>No gameId provided. Use ?gameId=401817529 or POST to /api/track to set one.</div>";
+    return;
+  }
+
+  // main fetch & render loop (every 15s)
+  async function fetchAndRender() {
+    try {
+      const resp = await fetch(apiBase + "/api/game/" + encodeURIComponent(gameId));
+      if (!resp.ok) throw new Error("not found");
+      const data = await resp.json();
+
+      // competitions[0] is main object per your files
+      const comp = (data.competitions && data.competitions[0]) || data;
+      const compsTeams = comp.competitors || [];
+      const home = compsTeams.find(t => t.homeAway === "home") || compsTeams[0];
+      const away = compsTeams.find(t => t.homeAway === "away") || compsTeams[1] || {};
+
+      // fill top
+      document.getElementById("homeLogo").src = home.team?.logo || home.logo || "";
+      document.getElementById("awayLogo").src = away.team?.logo || away.logo || "";
+      document.getElementById("homeName").textContent = home.team?.displayName || home.team?.location || home.team?.name || "Home";
+      document.getElementById("awayName").textContent = away.team?.displayName || away.team?.location || away.team?.name || "Away";
+      document.getElementById("homeScore").textContent = home.score ?? "0";
+      document.getElementById("awayScore").textContent = away.score ?? "0";
+
+      // colors
+      const homeColor = "#" + (home.team?.color || home.color || "000000");
+      const awayColor = "#" + (away.team?.color || away.color || "000000");
+      document.getElementById("team-home").style.background = homeColor;
+      document.getElementById("team-away").style.background = awayColor;
+      // choose text color for contrast
+      function textColor(hex) {
+        // simple luminance
+        const c = hex.replace("#",""); const r=parseInt(c.substring(0,2),16), g=parseInt(c.substring(2,4),16), b=parseInt(c.substring(4,6),16);
+        const lum = 0.2126*r + 0.7152*g + 0.0722*b;
+        return lum > 140 ? "#000":"#fff";
+      }
+      document.getElementById("team-home").style.color = textColor(homeColor);
+      document.getElementById("team-away").style.color = textColor(awayColor);
+
+      // meta
+      const venue = comp?.venue?.fullName || data.venue?.fullName || "";
+      document.getElementById("stadium").textContent = venue;
+      const status = comp?.status || data?.status || {};
+      document.getElementById("gameClock").textContent = status.displayClock || status.clock || "";
+      document.getElementById("period").textContent = status.detail || status.shortDetail || "";
+
+      // team stats: combine home and away stats; statistics array presents name/displayValue
+      const left = document.getElementById("teamStats");
+      left.innerHTML = "";
+      function renderStatsBlock(teamObj, label) {
+        const h = document.createElement("div");
+        h.innerHTML = `<h3 style="margin:8px 0">${label}</h3>`;
+        const stats = teamObj.statistics || teamObj.team?.statistics || [];
+        if (!stats.length) {
+          h.innerHTML += `<div class="small">No stats available</div>`;
+        } else {
+          stats.forEach(s => {
+            const row = document.createElement("div");
+            row.className = "stat-row";
+            row.innerHTML = `<div class="small">${s.displayName || s.name || s.abbreviation || ""}</div><div class="small">${s.displayValue ?? s.value ?? ""}</div>`;
+            h.appendChild(row);
+          });
+        }
+        return h;
+      }
+      left.appendChild(renderStatsBlock(home, "Home"));
+      left.appendChild(renderStatsBlock(away, "Away"));
+
+      // leaders
+      const leadersEl = document.getElementById("leaders");
+      leadersEl.innerHTML = "";
+      // comp.competitors[].leaders exist at team level in your data structure:
+      // we'll gather all leader groups (points, rebounds, assists...) and display top for each team
+      const leaderGroups = new Map(); // name -> array of entries
+      (comp.competitors || []).forEach(teamObj => {
+        (teamObj.leaders || []).forEach(lg => {
+          const name = lg.name || lg.displayName;
+          if (!leaderGroups.has(name)) leaderGroups.set(name, []);
+          const entry = lg.leaders && lg.leaders[0] ? lg.leaders[0] : null;
+          if (entry) leaderGroups.get(name).push({
+            teamId: teamObj.id || teamObj.team?.id,
+            teamName: teamObj.team?.shortDisplayName || teamObj.team?.displayName || teamObj.team?.location,
+            value: entry.displayValue ?? entry.value,
+            athlete: entry.athlete ? { name: entry.athlete.displayName || entry.athlete.fullName, headshot: entry.athlete.headshot } : null
+          });
+        });
+      });
+      // render leader groups
+      leaderGroups.forEach((arr, name) => {
+        const container = document.createElement("div");
+        container.style.marginBottom = "8px";
+        container.innerHTML = `<div style="font-weight:700;margin-bottom:6px">${name}</div>`;
+        arr.forEach(item => {
+          const d = document.createElement("div");
+          d.className = "leader";
+          d.innerHTML = `
+            <img class="headshot" src="${item.athlete?.headshot||''}" onerror="this.style.display='none'"/>
+            <div>
+              <div style="font-weight:700">${item.athlete?.name || item.teamName}</div>
+              <div class="small">${item.teamName} — ${item.value}</div>
+            </div>
+          `;
+          container.appendChild(d);
+        });
+        leadersEl.appendChild(container);
+      });
+
+    } catch (err) {
+      console.error("fetch error", err);
+    }
+  }
+
+  // initial and interval
+  await fetchAndRender();
+  setInterval(fetchAndRender, 15000); // 15 seconds
+})();
+</script>
+</body>
+</html>

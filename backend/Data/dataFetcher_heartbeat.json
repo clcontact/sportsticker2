@@ -1,5 +1,5 @@
 {
-  "status": "Running",
-  "lastFetch": 1762716118241,
-  "ok": true
+  "status": "Error",
+  "lastFetch": 1762934594170,
+  "message": "request to https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl failed, reason: read ECONNRESET"
 }
