@@ -7,6 +7,7 @@ import LeagueTicker from './pages/LeagueTicker';
 import ParameterizedTicker from "./pages/ParameterizedTicker";
 import GameDetailsPage from "./pages/GameDetailsPage";
 import GameDetailsPage2 from "./pages/GameDetailsPage2";
+import GameDetailsPageEPL from "./pages/GameDetailsPageEPL";
 
 
 export default function App() {
@@ -36,7 +37,12 @@ export default function App() {
                     path="/GameDetailsPage/:league/:team/" 
                     element={<GameDetailsPage />} 
                 />                                      
-                <Route path="/GameDetailsPage2/:league/:team/"  element={<GameDetailsPage2 />} />                  
+                <Route path="/GameDetailsPage2/:league/:team/"  element={<GameDetailsPage2 />} />    
+                <Route path="/GameDetailsPageEPL/:league/:team/"  element={<GameDetailsPageEPL />} />
+                {/*<Route path="/GameDetailsPageNBA/:league/:team/"  element={<GameDetailsPageNBA />} />
+                <Route path="/GameDetailsPageNHL/:league/:team/"  element={<GameDetailsPageNHL />} />
+                <Route path="/GameDetailsPageMLB/:league/:team/"  element={<GameDetailsPageMLB />} />   
+                */}           
       </Routes>
     </BrowserRouter>
     

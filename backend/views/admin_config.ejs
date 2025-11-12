@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Configuration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f9; }
+    </style>
+    <% 
+        // Define EJS variables using 'var' to ensure template-wide scoping and prevent 'Cannot access before initialization' errors
+        var baseUrl = typeof baseUrl !== 'undefined' ? baseUrl : '/admin';
+        var activePage = typeof activePage !== 'undefined' ? activePage : 'config';
+    %>
+</head>
+<body class="p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl p-8 space-y-8">
+        <h1 class="text-4xl font-extrabold text-gray-800 border-b-4 border-teal-500 pb-4">
+            Feed Configuration Management
+        </h1>
+        
+        <!-- Navigation to Admin Pages (Copied from admin_panel.ejs for consistency) -->
+        <nav class="flex justify-center space-x-2 mb-8 border-b pb-4 text-sm">
+            <a href="<%= baseUrl %>" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'control' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Control Panel</a>
+            <a href="<%= baseUrl %>/config" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'config' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Feed Config</a>
+            <a href="<%= baseUrl %>/status" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'status' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">System Status</a>
+            <a href="<%= baseUrl %>/commander" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'commander' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Commander</a>
+            <a href="<%= baseUrl %>/supervisor" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'supervisor' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Supervisor</a>
+            <a href="<%= baseUrl %>/controller" class="px-3 py-1 rounded transition duration-200 text-<%= activePage === 'controller' ? 'white bg-indigo-600 font-bold shadow-md' : 'gray-600 hover:bg-gray-100' %> font-medium">Controller</a>
+        </nav>
+
+        <div class="p-6 bg-teal-50 rounded-lg border border-teal-300 shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-teal-700">Currently Configured Feeds</h2>
+            
+            <ul class="space-y-3">
+                <% FEEDS.forEach(feed => { %>
+                    <li class="p-3 bg-white border border-gray-200 rounded-lg flex justify-between items-center shadow-sm">
+                        <span class="font-semibold text-gray-800"><%= feed.name %> (<%= feed.route %>)</span>
+                        <span class="text-sm text-green-600">Active</span>
+                    </li>
+                <% }); %>
+
+                <% if (FEEDS.length === 0) { %>
+                    <li class="p-3 text-center text-gray-500">No feeds configured.</li>
+                <% } %>
+            </ul>
+        </div>
+
+        <div class="p-6 bg-white rounded-lg shadow-md border border-gray-100">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700">Add New Feed</h2>
+            <form>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Feed Name (e.g., Baseball)</label>
+                        <input type="text" placeholder="MLB" class="w-full px-3 py-2 border rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Route (e.g., mlb)</label>
+                        <input type="text" placeholder="mlb" class="w-full px-3 py-2 border rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                    </div>
+                </div>
+                <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-xl shadow transition duration-150 w-full">
+                    Add Feed
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

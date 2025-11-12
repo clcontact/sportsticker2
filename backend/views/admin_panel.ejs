@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiosk Control Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-xl mx-auto bg-white shadow-xl rounded-lg p-6">
+        <h1 class="text-3xl font-bold mb-6 text-indigo-800 text-center">
+            Kiosk Control (<%= RPI_IP %>)
+        </h1>
+        
+        <nav class="flex justify-center space-x-4 mb-8 border-b pb-4">
+            <a href="/admin" class="text-<%= activePage === 'control' ? 'indigo-700 font-bold' : 'gray-600' %> hover:text-indigo-800 font-medium">Control Panel</a>
+            <a href="/admin/config" class="text-<%= activePage === 'config' ? 'indigo-700 font-bold' : 'gray-600' %> hover:text-indigo-800 font-medium">Feed Config</a>
+            <a href="/admin/status" class="text-<%= activePage === 'status' ? 'indigo-700 font-bold' : 'gray-600' %> hover:text-indigo-800 font-medium">System Status</a>
+            <a href="/commander" class="text-<%= activePage === 'commander' ? 'indigo-700 font-bold' : 'gray-600' %> hover:text-indigo-800 font-medium">Commander</a>
+            
+        </nav>
+
+        <div id="content-area">
+            <h2 class="text-2xl font-semibold mb-4">Quick URL Switches</h2>
+            <div class="flex flex-col gap-4">
+                <% URL_BUTTONS.forEach(button => { %>
+                    <button 
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition duration-150 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] w-full text-lg"
+                        data-url="<%= button.url %>" 
+                        onclick="changeUrl(this.getAttribute('data-url'))"
+                    >
+                        <%= button.label %>
+                    </button>
+                <% }); %>
+            </div>
+            
+            <div class="mt-4 flex flex-col gap-4">
+                <h3 class="text-xl font-semibold mb-2 mt-4 border-t pt-4">Custom Links</h3>
+                <button
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition duration-150 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] w-full text-lg"
+                    data-url="http://localhost:3001/GameDetailsPage2/nfl/phi"
+                    onclick="changeUrl(this.getAttribute('data-url'))">
+                    Philly Philly Page
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function changeUrl(url) {
+                console.log('Sending command to change URL to:', url);
+                
+                // Note: The path is relative to the /admin route where this page is served.
+                fetch('/admin/change-url', { 
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url: url })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const message = data.success 
+                        ? '✅ Success! Kiosk is changing URL to ' + url 
+                        : '❌ Error changing URL: ' + (data.message || 'Unknown error');
+                    
+                    alert(message);
+                    console.log('API Response:', data);
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    alert('Communication Error: Could not reach the server or the API failed.');
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

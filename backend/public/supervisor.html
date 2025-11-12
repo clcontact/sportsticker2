@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Supervisor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f4f7f9; }
+    </style>
+</head>  
+  <body>
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl p-8 space-y-8">
+        <h1 class="text-4xl font-extrabold text-gray-800 border-b-4 border-teal-500 pb-4">
+            Admin pages
+        </h1>
+        
+        <!-- Navigation to Admin Pages (Copied from admin_panel.ejs for consistency) -->
+        <nav class="flex justify-center space-x-2 mb-8 border-b pb-4 text-sm">
+            <a href="http://localhost:3000" class="px-3 py-1 rounded transition duration-200 text-white bg-indigo-600 font-bold shadow-md font-medium">Control Panel</a>
+            <a href="http://localhost:3000/config" class="px-3 py-1 rounded transition duration-200 text-white bg-indigo-600 font-bold shadow-md  font-medium">Feed Config</a>
+            <a href="http://localhost:3000/status" class="px-3 py-1 rounded transition duration-200 text-white bg-indigo-600 font-bold shadow-md font-medium">System Status</a>
+            <a href="http://localhost:3000/commander" class="px-3 py-1 rounded transition duration-200 text-white bg-indigo-600 font-bold shadow-md font-medium">Commander</a>
+            <a href="http://localhost:3000/supervisor" class="px-3 py-1 rounded transition duration-200 text-white bg-indigo-600 font-bold shadow-md font-medium">Supervisor</a>
+            <a href="http://localhost:3000/controller" class="px-3 py-1 rounded transition duration-200 text-white bg-indigo-600 font-bold shadow-md font-medium">Controller</a>
+        </nav>
+    </div>    
+    <h1>Browser Supervisor</h1>
+    <button onclick="start('left')">Start Left</button>
+    <button onclick="restart('left')">Restart Left</button>
+    <br />
+    <button onclick="start('right')">Start Right</button>
+    <button onclick="restart('right')">Restart Right</button>
+    <br /><br />
+    <button onclick="refresh()">Refresh Status</button>
+    <pre id="status">Loading...</pre>
+
+    <script>
+      async function refresh() {
+        const res = await fetch("/chrome/status");
+        const data = await res.json();
+        document.getElementById("status").textContent = JSON.stringify(data, null, 2);
+      }
+      async function start(screen) {
+        await fetch(`/chrome/start/${screen}`, { method: "POST" });
+        refresh();
+      }
+      async function restart(screen) {
+        await fetch(`/chrome/restart/${screen}`, { method: "POST" });
+        refresh();
+      }
+      refresh();
+    </script>
+  </body>
+</html>

@@ -1,19 +1,31 @@
+// server.js (CLEANED AND MODULARIZED)
+
 import express from "express";
 import http from "http";
 import { Server } from "socket.io";
 import cors from "cors";
 import path from 'path';
-import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import bodyParser from "body-parser";
 
 // --- MODULE IMPORTS ---
 import { changeKioskUrl } from "./kioskController.js";
-import { setupGameRoutes } from "./gameApi.js";
+import { isChromeRunning, startChrome, restartChrome } from "./chromeSupervisor.js";
+//import { setupGameRoutes, setupNCAAGameRoutes } from "./gameApi.js";
+//import { setupUnifiedGameRoutes } from "./gameApi.js";
+import { setupUnifiedGameRoutes } from "./gameApi.js";
 import { setupGameDetailRoutes } from "./gameDetailApi.js";
-import commandRouter from './routes/commandRouter.js'; // Use import for the router
+import commandRouter from './routes/commandRouter.js';
+import adminRouter from './routes/adminRouter.js'; // Assumes this handles Kiosk Control
+import { getDisplayInfo, changeDisplay } from "./controller.js";
 
-// --- END MODULE IMPORTS ---
+// --- SERVICE IMPORTS ---
+import {getCurrentGames, startTicker, startNCAATicker } from "./services/tickerDataService.js"
+import { startDataPolling } from './services/dataFetcher.js';
+import { registerSocket } from "./services/monitorService.js";
+import { setSocket } from "./utils/logger.js";
+import { startGameTrackerPolling } from "./services/gameTrackerService.js";
 
 // --- Path Setup ---
 const __filename = fileURLToPath(import.meta.url);
@@ -21,31 +33,28 @@ const __dirname = dirname(__filename);
 const ABSOLUTE_DATA_DIR = path.join(__dirname, 'data');
 // --------------------
 
-import {getCurrentGames, startTicker } from "./services/tickerDataService.js"
-import { startDataPolling } from './services/dataFetcher.js';
-
 // ===============================================
-// --- KIOSK CONFIGURATION (EDIT THIS) ---
+// --- CONFIGURATION ---
 // ===============================================
-const RPI_IP = 'localhost'; // !!! CHANGE THIS TO YOUR RPi's IP !!!
+const RPI_IP = 'localhost'; 
 const CDP_PORT = 9222;
 const KIOSK_FRONTEND_BASE_URL = 'http://localhost:3001/LeagueTracker'; 
 
-// --- Define your feeds ---
 const NFL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl", file: "nfl_data.json", route: "nfl" };
 const MLB_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=baseball&league=mlb", file: "mlb_data.json", route: "mlb" };
 const EPL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1", file: "premier_data.json", route: "epl" };
 const NBA_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba", file: "nba_data.json", route: "nba" };
 const NHL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=hockey&league=nhl", file: "nhl_data.json", route: "nhl" };
+const COLLEGE_FB_FEED = { url: "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard", file: "ncaaf_data.json", route: "ncaaf" };
+const COLLEGE_BB_FEED = { url: "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard", file: "ncaam_data.json", route: "ncaam" };
+//
+const NFLTRACKER_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl&team=phi", file: "nflGameTracker_data.json", route: "nfltracker" };
+const FEEDS = [NFL_FEED, MLB_FEED, EPL_FEED,NBA_FEED,NHL_FEED,NFLTRACKER_FEED,COLLEGE_FB_FEED,COLLEGE_BB_FEED];
 
-const FEEDS = [NFL_FEED, MLB_FEED, EPL_FEED,NBA_FEED,NHL_FEED];
+//const NCAA = [COLLEGE_FB_FEED,COLLEGE_BB_FEED];
 
-// Define buttons based on FEEDS
-const URL_BUTTONS = FEEDS.map(feed => ({
-    label: `${feed.route.toUpperCase()} Live Scoreboard`,
-    url: `${KIOSK_FRONTEND_BASE_URL}/${feed.route}/4`
-}));
-URL_BUTTONS.push({ label: "Blank Screen (About:Blank)", url: 'about:blank' });
+// Group all Kiosk config for easy passing to routers
+const KIOSK_CONFIG = { RPI_IP, CDP_PORT, KIOSK_FRONTEND_BASE_URL, FEEDS };
 
 // ===============================================
 // --- EXPRESS AND SOCKET.IO SETUP ---
@@ -53,106 +62,126 @@ URL_BUTTONS.push({ label: "Blank Screen (About:Blank)", url: 'about:blank' });
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
+registerSocket(io);
+// connect logger to socket
+setSocket(io);
+// EJS Configuration for Dynamic Pages (VIEWS)
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views')); 
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(bodyParser.json());
 // ===============================================
-// --- ROUTE REGISTRATION ---
+// --- ROUTE REGISTRATION (CLEANED) ---
 // ===============================================
 
-// 1. Data API Routes (Modularized by gameApi.js)
-setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+// 1. Data API Routes (Game Data)
+//setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+//setupNCAAGameRoutes(app, NCAA, ABSOLUTE_DATA_DIR);
+setupUnifiedGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+//setupUnifiedGameRoutes(app);
 setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
 
 // 2. General Games Endpoint
 app.get("/api/games", (req, res) => {
-         res.json(getCurrentGames());
+    res.json(getCurrentGames());
+});
+/** Get this working but not now.
+app.get("/api/ncaagames", (req, res) => {
+    res.json(getNCAACurrentGames());
+});
+*/
+
+app.get("/displays", async (req, res) => {
+  const ports = [9222, 9223];
+  const results = await Promise.all(ports.map(p => getDisplayInfo(p)));
+  res.json(results.flat());
+});
+app.get("/displays/info", async (req, res) => {
+  const left = await getDisplayInfo(9222);
+  const right = await getDisplayInfo(9223);
+  res.json({ left, right });
 });
 
-// 3. Kiosk Control API Endpoint (Uses kioskController.js)
-app.post('/api/change-url', async (req, res) => {
-    const { url } = req.body;
-    if (!url) { return res.status(400).json({ success: false, message: 'Missing "url" parameter.' }); }
-    const result = await changeKioskUrl(url, RPI_IP, CDP_PORT);
-    return res.status(result.success ? 200 : 500).json(result);
+app.post("/displays/change", changeDisplay);
+
+// 3. Admin Pages Routes (Kiosk Control Panel and others)
+// The adminRouter now handles the root Kiosk Control Panel page (at /admin) 
+// and the /api/change-url endpoint (now /admin/change-url)
+app.use('/admin', adminRouter(KIOSK_CONFIG, changeKioskUrl));
+
+// 4. Remote Command API and Admin HTML
+// The /api/remote is for the API calls (e.g., /api/remote/commands)
+app.use('/api/remote', commandRouter); 
+app.use('/api/commander', commandRouter); // 2. Mount it under the URL path /api/commander
+// The /commander route serves the new "Pi Remote Commander" UI
+ 
+app.get('/commander', (req, res) => {
+    // Renders the new EJS template for the Pi Remote Commander UI
+    res.render('commander_admin'); 
+});
+app.get("/controller", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/controller.html"));
+});
+/**Chrome management paths: */
+app.get("/chrome/status", async (req, res) => {
+  const left = await isChromeRunning(9222);
+  const right = await isChromeRunning(9223);
+  res.json({ left, right });
 });
 
-// 4. Kiosk Control Panel HTML Route (GET /)
+app.post("/chrome/start/:screen", async (req, res) => {
+  const { screen } = req.params;
+  const result = await startChrome(screen);
+  res.json(result);
+});
+
+app.post("/chrome/restart/:screen", async (req, res) => {
+  const { screen } = req.params;
+  const result = await restartChrome(screen);
+  res.json(result);
+});
+app.get("/supervisor", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/supervisor.html"));
+});
+// 5. Default Route (Removed old HTML string route app.get('/'))
+// Redirects the root path to the new Kiosk Control Panel page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+/*
 app.get('/', (req, res) => {
-    const buttonsHtml = `
-        <div style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            max-width: 500px;
-            margin: 0 auto;">
-            ${URL_BUTTONS.map(button => `
-                <button
-                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 
-                           rounded-xl shadow-lg transition duration-150 ease-in-out 
-                           transform hover:scale-[1.02] active:scale-[0.98] w-full text-lg"
-                    style="max-width: 100%; word-wrap: break-word;"
-                    data-url="${button.url}"
-                    onclick="changeUrl(this.getAttribute('data-url'))"
-                >
-                    ${button.label}
-                </button>
-            `).join('')}
+    res.send(`
+        <div style="font-family: sans-serif; padding: 50px; text-align: center;">
+            <h1 style="color: #4f46e5;">Kiosk Admin Console</h1>
+            <p>Go to the admin panel:</p>
+            <a href="/admin" style="display: inline-block; padding: 10px 20px; background-color: #4f46e5; color: white; border-radius: 8px; text-decoration: none;">Launch Admin 1</a>
         </div>
-        <div style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            max-width: 500px;
-            margin: 0 auto;">
-                        <button
-                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 
-                           rounded-xl shadow-lg transition duration-150 ease-in-out 
-                           transform hover:scale-[1.02] active:scale-[0.98] w-full text-lg"
-                    style="max-width: 100%; word-wrap: break-word;"
-                    data-url="http://localhost:3001/GameDetailsPage2/nfl/phi"
-                    onclick="changeUrl(this.getAttribute('data-url'))"
-                >
-                    Philly Philly
-                </button>
-        </div>
-    `;
-
-    try {
-        let htmlContent = fs.readFileSync(path.join(__dirname, 'control_panel.html'), 'utf8');
-        htmlContent = htmlContent.replace('', buttonsHtml);
-        htmlContent = htmlContent.replace('{{RPI_IP}}', RPI_IP);
-        res.send(htmlContent);
-    } catch (e) {
-        console.error("Error loading control_panel.html:", e.message);
-        res.status(500).send("Error loading control panel template.");
-    }
+    `);
 });
-app.use('/api/remote', commandRouter);
-// 2. Serve the static admin file on the /admin route
-app.get('/admin', (req, res) => {
-    // This sends the admin.html file located in the 'public' folder
-    res.sendFile(path.join(__dirname, 'public', 'admin.html'));
-});
+*/
 
 // ===============================================
 // --- SERVER STARTUP AND POLLING ---
 // ===============================================
 startTicker(io, FEEDS, ABSOLUTE_DATA_DIR);
+//startNCAATicker(io, NCAA, ABSOLUTE_DATA_DIR);
 
 server.listen(3000, () => {
-         console.log("✅ Server running on port 3000");
-         console.log(`✅ Kiosk Control Panel available at http://localhost:3000/`);
-         FEEDS.forEach(feed => {
-                    startDataPolling(feed.url, feed.file, ABSOLUTE_DATA_DIR); 
-            });
-         }
-);
+    console.log("✅ Server running on port 3000");
+    console.log(`✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin`);
+    console.log(`✅ Remote Commander UI available at http://localhost:3000/commander`);
+    FEEDS.forEach(feed => {
+        startDataPolling(feed.url, feed.file, ABSOLUTE_DATA_DIR); 
+    });
+
+
+    // 🔹 Start high-frequency game tracker polling (near real-time)
+    const GAME_TRACKER_FEED = {
+        url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl", // example
+        file: "live_tracker.json"
+    };
+    startGameTrackerPolling(GAME_TRACKER_FEED.url, GAME_TRACKER_FEED.file, ABSOLUTE_DATA_DIR);    
+});

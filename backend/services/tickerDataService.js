@@ -9,6 +9,7 @@ let DATA_DIR = "";
 // A Map to hold the current games data, using the file name as the key.
 // Key: file name (e.g., "nfl_data.json"), Value: array of flattened game objects
 let allGamesData = new Map();
+let allNCAAGamesData = new Map();
 let ioInstance = null;
 let watchListeners = {}; // To store and manage file watch handlers
 
@@ -18,6 +19,9 @@ export function getCurrentGames() {
  return Array.from(allGamesData.values()).flat();
 }
 
+export function getNCAACurrentGames() {
+ return Array.from(allNCAAGamesData.values()).flat();
+}
 // --- Helper Functions ---
 
 /**
@@ -67,7 +71,54 @@ function loadSingleFile(filePath) {
 	 	 return [];
 	 }
 }
+function loadSingleNCAAFile(filePath) {
+  const fileName = path.basename(filePath);
+  try {
+	 	 // Check if the file exists before attempting to read
+	 	 if (!fs.existsSync(filePath)) {
+	 	 	 	 console.warn(`⚠️ File not found: ${fileName}. Skipping load.`);
+	 	 	 	 return [];
+	 	 }
+	 	 //console.log(`loadSingleNCAAFile-> filepath-> ${filePath}`);
+	 	 const raw = fs.readFileSync(filePath);
+	 	 const json = JSON.parse(raw);
+		 
 
+	 	const leagues = json.leagues || [];
+		const events = json.events;
+		//console.log(`loadSingleNCAAFile->mapping the events->${events.length}`);
+	 	 // ⭐️ ORIGINAL FLATTENING LOGIC (Preserved) ⭐️
+		const games = events.map((e) => ({
+			id: e.id,
+			uid: e.uid,
+			date: e.date,
+			name: e.name,
+			shortName: e.shortName,
+			weekText: e.week?.number ?? null,
+			status: e.status?.type?.shortDetail ?? null,
+			summary: e.summary ?? null,
+			period: e.competitions[0]?.status?.period ?? null,
+			clock: e.competitions[0]?.status?.clock ?? null,
+			teams: e.competitions[0]?.competitors?.map((c) => ({
+				homeAway: c.homeAway,
+				abbreviation: c.team.abbreviation,
+				color: c.team.color,
+				alternateColor: c.team.alternateColor,
+				score: c.score,
+				record: c.records?.find(r => r.type === "total")?.summary ?? null,
+				logo: c.team.logo,
+				displayName: c.team.displayName,
+				shortDisplayName: c.team.shortDisplayName
+			})) ?? []
+		}));
+
+	 	 console.log(`✅ Loaded ${games.length} games from ${fileName}`);
+	 	 return games;
+	 } catch (err) {
+	 	 console.error(`❌ Error reading or parsing ${fileName}:`, err);
+	 	 return [];
+	 }
+}
 /**
  * 🔹 Loads data from all monitored feeds and updates allGamesData map.
  * @param {Array<Object>} feeds - The array of feed objects (with a 'file' property).
@@ -84,6 +135,22 @@ function loadAllData(feeds) {
 	 	 allGameObjects.push(...games);
 	 }
 	 return allGameObjects;
+}
+function loadAllNCAAData(feeds) {
+    const allGames = [];
+    const allGameNCAAObjects = new Map(); // optional: still store by file
+    for (const feed of feeds) {
+        const fileName = feed.file;
+        const filePath = path.join(DATA_DIR, fileName); 
+        const games = loadSingleNCAAFile(filePath);
+
+        console.log(`loadAllNCAAData -> games load-> ${games.length}`);
+        console.log(`loadAllNCAADatafileName-> fileName-> ${fileName}`);
+
+        allGameNCAAObjects.set(fileName, games); // keep grouped if needed
+        allGames.push(...games);                 // combine into one array
+    }
+    return allGames; // ✅ returns array, like your original function
 }
 
 // --- Ticker Service Functions ---
@@ -144,6 +211,33 @@ export function startTicker(io, feeds, dataDir, intervalMs = 15000) {
 
 	 // 1. Initial load of all files from the defined feeds
 	 const initialGames = loadAllData(feeds);
+	 console.log('feeds->'+ feeds);
+	 broadcastGames();
+
+	 console.log(
+	 	 `📡 Broadcasting ${initialGames.length} combined games every ${
+	 	 	 intervalMs / 1000
+   }s from ${feeds.length} feeds. (Data Dir: ${DATA_DIR})`
+   );
+
+// 2. Auto reload on file changes for ALL monitored feeds
+  for (const feed of feeds) {
+     watchFeedFile(feed);
+  }
+
+  // 3. Periodic updates
+  setInterval(() => {
+   broadcastGames();
+ }, intervalMs);
+}
+export function startNCAATicker(io, feeds, dataDir, intervalMs = 15000) {
+	 ioInstance = io;
+	 // ⭐️ SET THE GLOBAL DATA_DIR TO THE ABSOLUTE PATH ⭐️
+	 DATA_DIR = dataDir; 
+
+	 // 1. Initial load of all files from the defined feeds
+	 const initialGames = loadAllNCAAData(feeds);
+	 console.log('NCAAfeeds->'+ feeds);
 	 broadcastGames();
 
 	 console.log(
