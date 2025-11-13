@@ -15,6 +15,7 @@ import { isChromeRunning, startChrome, restartChrome } from "./chromeSupervisor.
 //import { setupGameRoutes, setupNCAAGameRoutes } from "./gameApi.js";
 //import { setupUnifiedGameRoutes } from "./gameApi.js";
 import { setupUnifiedGameRoutes } from "./gameApi.js";
+import { setupGameScoreboardRoutes } from "./gamescoreboardApi.js"
 import { setupGameDetailRoutes } from "./gameDetailApi.js";
 import commandRouter from './routes/commandRouter.js';
 import adminRouter from './routes/adminRouter.js'; // Assumes this handles Kiosk Control
@@ -43,11 +44,11 @@ const RPI_IP = 'localhost';
 const CDP_PORT = 9222;
 const KIOSK_FRONTEND_BASE_URL = 'http://localhost:3001/LeagueTracker'; 
 
-const NFL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl", file: "nfl_data.json", route: "nfl" };
-const MLB_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=baseball&league=mlb", file: "mlb_data.json", route: "mlb" };
-const EPL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1", file: "premier_data.json", route: "epl" };
-const NBA_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba", file: "nba_data.json", route: "nba" };
-const NHL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=hockey&league=nhl", file: "nhl_data.json", route: "nhl" };
+const NFL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl", file: "nfl_data.json", route: "nfl", scoreUrl: "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard" };
+const MLB_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=baseball&league=mlb", file: "mlb_data.json", route: "mlb", scoreUrl: "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard" };
+const EPL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1", file: "premier_data.json", route: "epl", scoreUrl: "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard" };
+const NBA_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba", file: "nba_data.json", route: "nba", scoreurl: "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard" };
+const NHL_FEED = { url: "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=hockey&league=nhl", file: "nhl_data.json", route: "nhl", scoreUrl: "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard" };
 const COLLEGE_FB_FEED = { url: "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard", file: "ncaaf_data.json", route: "ncaaf" };
 const COLLEGE_BB_FEED = { url: "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard", file: "ncaam_data.json", route: "ncaam" };
 //
@@ -84,6 +85,7 @@ app.use(bodyParser.json());
 //setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
 //setupNCAAGameRoutes(app, NCAA, ABSOLUTE_DATA_DIR);
 setupUnifiedGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
+setupGameScoreboardRoutes(app, FEEDS);
 //setupUnifiedGameRoutes(app);
 setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR);
 
@@ -157,9 +159,18 @@ app.get("/", (req, res) => {
 app.get("/ncaam", (req, res) => {
   res.sendFile(path.join(__dirname, "public/ncaam.html"));
 });
+app.get("/scoreboard/:league", (req, res) => {
+  const { league } = req.params.league.toLowerCase();;
+  res.sendFile(path.join(__dirname, "public/scoreboard.html"));
+});
 app.get("/ncaamtrack/:gameid", (req, res) => {
   const { gameid } = req.params;
   res.sendFile(path.join(__dirname, "public/ncaamtrack.html"));
+});
+app.get("/scoreboardSingle/:league/:gameid", (req, res) => {
+  const { league } = req.params.league;
+  const { gameid } = req.params.gameid;
+  res.sendFile(path.join(__dirname, "public/scoreboardsingle.html"));
 });
 /*
 app.get('/', (req, res) => {
