@@ -48,7 +48,7 @@ const GameDetailsSwitch = () => {
   useEffect(() => {
     const viewInterval = setInterval(() => {
       setCurrentView(prev => (prev + 1) % 3);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(viewInterval);
   }, []);
 
@@ -163,25 +163,23 @@ const GameDetailsSwitch = () => {
           <h3 className="text-yellow-400 font-bold mb-4 text-3xl">Current Drive</h3>
           <div className="flex justify-between items-start text-gray-300 mb-4">
             <div>
-              <p className="text-2xl">
+              <p className="text-3xl">
                 <span className="font-bold text-white">Down:</span> {situation.down || "-"} &nbsp;
                 <span className="font-bold text-white">Distance:</span> {situation.distance || "-"} &nbsp;
                 <span className="font-bold text-white">Yard Line:</span> {situation.yardLine || "-"}
               </p>
-              <p className="mt-1 text-2xl">
-                <span className="font-bold text-white">Possession:</span>{" "}
-                {competition?.competitors?.find(c => c.id === possessionTeamId)?.team?.abbreviation || "-"}
-              </p>
+<p className="mt-1 text-3xl"><span className="font-bold text-white">Time:</span> {status?.displayClock || "-"}</p>
+
             </div>
             <div className="text-right text-2xl">
               <p><span className="font-bold text-white">Location:</span> {competition?.venue?.fullName || "-"}</p>
-              <p><span className="font-bold text-white">Time:</span> {status?.displayClock || "-"}</p>
+
               <p><span className="font-bold text-white">Broadcast:</span> {competition?.broadcast || "-"}</p>
             </div>
           </div>
           {situation.lastPlay?.text && (
             <div className="mt-2 bg-gray-800 rounded-xl p-4 text-gray-300">
-              <p className="text-xl">
+              <p className="text-3xl">
                 <span className="font-bold text-white">Last Play:</span>{" "}
                 {situation.lastPlay.text}
               </p>
@@ -292,7 +290,7 @@ const TeamLeadersView = ({ statsData, competition, targetTeam, awayTeam, homeTea
               </p>
               <p className="text-gray-400 text-2xl mb-2">
                 {topLeader.athlete.jersey ? `#${topLeader.athlete.jersey}` : ''} 
-                {topLeader.athlete.position?.abbreviation ? ` • ${topLeader.athlete.position.abbreviation}` : ''}
+                {topLeader.athlete.position?.abbreviation ? ` â€¢ ${topLeader.athlete.position.abbreviation}` : ''}
               </p>
               <p className="text-gray-300 text-xl mb-2 italic">
                 {teamLeadersData.team?.displayName || targetTeam?.team?.displayName || ''}
@@ -347,7 +345,7 @@ const StatsView = ({ statsData, awayTeam, homeTeam }) => {
           <div></div>
           <div className="text-center">
             <img src={homeTeam?.team?.logo} alt="" className="w-20 h-20 mx-auto mb-2" />
-            <p className="text-2xl font-bold">{homeTeam?.team?.abbreviation}</p>
+            <p className="text-4xl font-bold">{homeTeam?.team?.abbreviation}</p>
           </div>
         </div>
 
@@ -359,7 +357,7 @@ const StatsView = ({ statsData, awayTeam, homeTeam }) => {
             <div className="text-right text-3xl font-bold text-yellow-400">
               {getStatValue(awayStats, cat.key)}
             </div>
-            <div className="text-center text-xl text-gray-300 font-semibold">{cat.label}</div>
+            <div className="text-center text-3xl text-gray-300 font-semibold">{cat.label}</div>
             <div className="text-left text-3xl font-bold text-yellow-400">
               {getStatValue(homeStats, cat.key)}
             </div>
