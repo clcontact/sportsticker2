@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>College Basketball Live Admin (Compact)</title>
+  <title>Pro Sports Live Admin (Compact)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body { font-family: Inter, Arial, sans-serif; background: #f8f9fb; color: #222; margin: 0; }
@@ -73,46 +73,22 @@ console.log('this is data-> ' + data);
 
         const div = document.createElement("div");
         div.className = "game";
-        div.onclick = async () => {
-        const url ="";
-        console.log("Changing RIGHT display to:", url);
-        window.open(`/scoreboardSingle/${league}/${g.id}`, "_blank");
-          /*
-          await fetch("/displays/change", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ screen: "right", url }) // fixed here
-          });          
-          */
-        }
-/*         div.onclick = async () => {
-          await fetch("/api/track", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ gameId: g.id })
-          });
-          document.getElementById("message").textContent = `Tracking ${g.shortName}. Opening display...`;
-          setTimeout(() => {
-            window.open(`ncaamtrack/${g.id}`, "_blank");
-          }, 800);
-        }; 
-        
-      document.getElementById("right-form").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const url = document.getElementById("right-input").value;
-        if (!url) return;
-        console.log("Changing RIGHT display to:", url);
+const league = pathSegments[pathSegments.length - 1];
 
-        await fetch("/displays/change", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ screen: "right", url }) // fixed here
-        });
+let pageName = "GameDetailsSwitch.jsx"; // default
+if (league === "nba") pageName = "GameDetailsSwitchNBA.jsx";
+if (league === "nhl") pageName = "GameDetailsSwitchNHL.jsx";
 
-        document.getElementById("right-input").value = ""; // clear input
-        await refresh();
-      });        
-        */
+div.onclick = async () => {
+  const url = `http://localhost:3001/${pageName}/${league}/${g.id}`;
+  console.log("Changing RIGHT display to:", url);
+
+  await fetch("/displays/change", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ screen: "right", url })
+  });
+};
 
         div.innerHTML = `
           <div class="teams">
