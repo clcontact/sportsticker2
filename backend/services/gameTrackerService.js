@@ -10,7 +10,7 @@ async function fetchGameTracker(url, fileName, dataDir) {
   const feedName = fileName.split("_")[0].toUpperCase();
 
   try {
-    console.log(`\n⚡ [Tracker] Fetching ${feedName} live data from: ${url}`);
+    //console.log(`\n⚡ [Tracker] Fetching ${feedName} live data from: ${url}`);
     const response = await fetch(url);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
@@ -18,7 +18,7 @@ async function fetchGameTracker(url, fileName, dataDir) {
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
     fs.writeFileSync(filePath, data);
 
-    console.log(`✅ [Tracker] Updated ${fileName} at ${new Date().toLocaleTimeString()}`);
+    //console.log(`✅ [Tracker] Updated ${fileName} at ${new Date().toLocaleTimeString()}`);
   } catch (error) {
     console.error(`❌ [Tracker] Error fetching ${fileName}: ${error.message}`);
   }
@@ -30,5 +30,5 @@ export function startGameTrackerPolling(url, fileName, dataDir) {
     setTimeout(poll, TRACKER_INTERVAL_MS);
   }
   poll();
-  console.log(`🚀 Live Game Tracker polling started every ${TRACKER_INTERVAL_MS / 1000}s`);
+  //console.log(`🚀 Live Game Tracker polling started every ${TRACKER_INTERVAL_MS / 1000}s`);
 }

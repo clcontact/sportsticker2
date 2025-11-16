@@ -130,6 +130,9 @@ app.get('/commander', (req, res) => {
 app.get("/controller", (req, res) => {
   res.sendFile(path.join(__dirname, "public/controller.html"));
 });
+app.get("/cp", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/control_panel.html"));
+});
 /**Chrome management paths: */
 app.get("/chrome/status", async (req, res) => {
   const left = await isChromeRunning(9222);

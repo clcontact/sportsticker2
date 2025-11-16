@@ -4,166 +4,177 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1080, height:1920, initial-scale=1" />
   <title>Live Game Display</title>
-  <style>
-    html,body {
-      height:100%;
-      margin:0;
-      font-family:Inter,Arial,sans-serif;
-      background:#000;
-      color:#fff;
-      overflow:hidden;
-    }
-    
-    .main-container {
-      display:flex; 
-      flex-direction:column; 
-      height:100%;
-      width:1080px; 
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-    
-    .wrap {
-      display:flex; 
-      flex-direction: column;
-      flex: 1; 
-      padding:24px;
-      box-sizing: border-box;
-    }
+<style>
+:root {
+  --scale: 1;
+  --radius: calc(12px * var(--scale));
+  --pad: calc(18px * var(--scale));
 
-    .teams-row {
-        display: flex;
-        gap: 24px;
-    }
+  --logoSize: calc(18vh * var(--scale));
+  --topHeight: calc(24vh * var(--scale));
+  --scoreFontSize: calc(12vh * var(--scale));
+  --nameFontSize: calc(2.2vh * var(--scale));
+  --metaFontSize: calc(2.2vh * var(--scale));
 
-    .game-info-bar {
-      display:flex;
-      justify-content:space-between;
-      padding:16px 48px; 
-      align-items:center;
-      background:rgba(0,0,0,0.45);
-      font-size:var(--metaFontSize);
-      width: 100%;
-      box-sizing: border-box;
-      margin: 16px 0;
-      border-radius: 8px;
-    }
+  --statFontSize: calc(1.65vh * var(--scale));     /* Bigger stats text */
+  --leaderNameFont: calc(1.7vh * var(--scale));  /* Bigger leader name */
+  --leaderValueFont: calc(1.65vh * var(--scale)); /* Bigger leader stat value */
 
-    .team-column {
-      flex: 1; 
-      display: flex;
-      flex-direction: column;
-      background: rgba(0,0,0,0.6); 
-      border-radius: 12px;
-      overflow: hidden; 
-    }
+  --leadersHeight: calc(1vh * var(--scale));
+}
 
-    .top {
-      display:flex;
-      align-items:center;
-      justify-content:center; 
-      padding:var(--topPadding);
-      height:var(--topHeight);
-      flex-direction: column; 
-      box-sizing: border-box;
-    }
-    
-    .game-time {
-      display: none;
-    }
-    .logo {
-      width:var(--logoSize);
-      height:var(--logoSize);
-      object-fit:contain;
-      background:rgba(255,255,255,0.05);
-      border-radius:12px;
-    }
-    .score {
-      font-size:var(--scoreFontSize);
-      font-weight:900;
-      margin-top:8px;
-      line-height:1;
-    }
-    .name {
-      font-size:var(--nameFontSize);
-      font-weight:700;
-      margin-top:4px;
-      text-align:center;
-    }
+html,body {
+  height:100%;
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  background:#000;
+  color:#fff;
+  overflow:hidden;
+}
 
-    .body {
-      display:flex;
-      flex:1;
-      gap:8px; 
-      padding:16px; 
-      box-sizing:border-box;
-      flex-direction:column; 
-      background:rgba(0,0,0,0.4); 
-    }
-    
-    .stats-container { 
-      flex-grow: 0; 
-      padding: 8px 16px; 
-      overflow: auto;
-      background: rgba(255,255,255,0.05);
-      border-radius: 8px;
-    }
-    .stat-row {
-      display:flex;
-      justify-content:space-between;
-      padding:6px 0;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-    .leaders-container {
-      flex: 0 0 var(--leadersHeight); 
-      padding: 16px;
-      overflow: auto;
-      background: rgba(255,255,255,0.05);
-      border-radius: 8px;
-    }
-    .leader {
-      position:relative;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      padding:8px 0;
-    }
-    .headshot {
-      width:72px;
-      height:72px;
-      border-radius:50%;
-      object-fit:cover;
-      border:2px solid rgba(255,255,255,0.2);
-    }
-    .team-icon {
-      position:absolute;
-      bottom:-4px;
-      right:-4px;
-      width:32px;
-      height:32px;
-      border-radius:50%;
-      border:2px solid #fff;
-      background:#000;
-      object-fit:cover;
-    }
-    h2 {
-      margin-top:0;
-      font-size:30px;
-    }
-    h3 {
-        font-size: 24px;
-        margin-top: 0;
-        margin-bottom: 8px;
-        border-bottom: 2px solid rgba(255,255,255,0.2);
-        padding-bottom: 4px;
-    }
-    .small {
-      font-size:20px;
-      color:rgba(255,255,255,0.8);
-    }
-    .away-column .top { background-color: var(--awayColor); }
-    .home-column .top { background-color: var(--homeColor); }
-  </style>
+.main-container {
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+  width:100vw;
+  box-sizing:border-box;
+}
+
+.wrap {
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:var(--pad);
+  gap:var(--pad);
+  box-sizing:border-box;
+}
+
+.teams-row {
+  display:flex;
+  gap:var(--pad);
+  width:100%;
+}
+
+.game-info-bar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:calc(var(--pad) * 0.7) calc(var(--pad) * 2);
+  font-size:var(--metaFontSize);
+  background:rgba(255,255,255,0.08);
+  border-radius:var(--radius);
+}
+
+.team-column {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  background:rgba(255,255,255,0.04);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.top {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:var(--pad);
+  height:var(--topHeight);
+  flex-direction:column;
+}
+
+.logo {
+  width:var(--logoSize);
+  height:var(--logoSize);
+  object-fit:contain;
+  border-radius:var(--radius);
+}
+
+.score {
+  font-size:var(--scoreFontSize);
+  font-weight:900;
+  margin-top:8px;
+}
+
+.name {
+  font-size:var(--nameFontSize);
+  font-weight:700;
+  text-align:center;
+}
+
+.body {
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  gap:var(--pad);
+  padding:var(--pad);
+  box-sizing:border-box;
+}
+
+.stats-container,
+.leaders-container {
+  flex:1;
+  overflow-y:auto;
+  padding:calc(var(--pad) * 0.7);
+  background:rgba(255,255,255,0.08);
+  border-radius:var(--radius);
+}
+
+/* Smaller section titles */
+h2 {
+  margin:0 0 8px 0;
+  font-size:calc(2.3vh * var(--scale));
+  font-weight:700;
+  opacity:.8;
+}
+
+/* Bigger stats text */
+.stat-row {
+  display:flex;
+  justify-content:space-between;
+  padding:1px 0;
+  font-size:var(--statFontSize);
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+
+/* Leaders sizing adjustments */
+.leader {
+  display:flex;
+  align-items:center;
+  gap:calc(var(--pad) * 0.7);
+  padding:calc(var(--pad) * 0.35) 0;
+}
+
+.headshot {
+  width:calc(7.2vh * var(--scale));   /* smaller image */
+  height:calc(7.2vh * var(--scale));
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,0.2);
+}
+
+.leader strong {
+  font-size:var(--leaderNameFont);    /* bigger name */
+}
+
+.leader .small {
+  font-size:var(--leaderValueFont);   /* bigger value */
+  opacity:.9;
+}
+
+.team-icon {
+  width:calc(3.2vh * var(--scale));
+  height:calc(3.2vh * var(--scale));
+  border-radius:50%;
+  border:2px solid #fff;
+  position:absolute;
+  bottom:-4px;
+  right:-4px;
+}
+
+.away-column .top { background-color: var(--awayColor); }
+.home-column .top { background-color: var(--homeColor); }
+</style>
 </head>
 <body>
   
@@ -252,13 +263,21 @@
   root.style.setProperty("--homeColor", "#333333");
   root.style.setProperty("--awayColor", "#333333");
 
-  const qs = new URLSearchParams(location.search);
-  let gameId = qs.get("gameId");
+  //const qs = new URLSearchParams(location.search);
+  //let gameId = qs.get("gameId");
+   const path = window.location.pathname;
+  const pathSegments = path.split('/').filter(s => s.length > 0);   
+ 
+  const league = pathSegments[0];
+  const gameId = pathSegments[1];
+    console.log ('params -> league'+league);
+  console.log ('params -> gameId'+gameId);
 
   if (!gameId) {
-    const res = await fetch("/api/track");
-    const js = await res.json();
-    gameId = js.gameId;
+    //const res = await fetch("/api/track");
+    //const js = await res.json();
+    //gameId = js.gameId;
+
   }
 
   if (!gameId) {
@@ -297,7 +316,9 @@
       leadersEl.innerHTML = "";
       const tLogo = teamObj.team?.logo || "";
       
-      (teamObj.leaders || []).forEach(group => {
+      (teamObj.leaders || [])
+      .slice(0, 3) // takes index 0,1,2 and skips the rest
+      .forEach(group => {
           const leader = group.leaders?.[0];
           if (!leader) return;
           const div = document.createElement("div");
@@ -364,7 +385,7 @@
   }
 
   fetchAndRender();
-  setInterval(fetchAndRender, 15000);
+  setInterval(fetchAndRender, 5000);
 })();
 </script>
 </body>

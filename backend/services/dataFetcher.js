@@ -20,7 +20,7 @@ async function fetchDataAndSave(url, fileName, dataDir) {
 
   try {
     emitStatusUpdate();
-    console.log(`\n⏳ Fetching ${feedName} data from: ${url}`);
+    //console.log(`\n⏳ Fetching ${feedName} data from: ${url}`);
     const response = await fetch(url);
 
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -29,7 +29,7 @@ async function fetchDataAndSave(url, fileName, dataDir) {
     if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
     fs.writeFileSync(filePath, data);
 
-    console.log(`✅ Successfully updated ${fileName} at ${new Date().toLocaleTimeString()}`);
+    //console.log(`✅ Successfully updated ${fileName} at ${new Date().toLocaleTimeString()}`);
 
     // ✅ Update heartbeat (successful fetch)
     fs.writeFileSync(
@@ -70,7 +70,7 @@ export function startDataPolling(url, file, dataDir) {
     if (isActivePollingTime(now)) {
       await fetchDataAndSave(url, file, dataDir);
     } else {
-      console.log(`Skipping poll at ${now.toLocaleTimeString()} (outside active hours)`);
+      //console.log(`Skipping poll at ${now.toLocaleTimeString()} (outside active hours)`);
     }
 
     // Calculate next poll time
@@ -101,7 +101,7 @@ export function startDataPolling(url, file, dataDir) {
 
   // Start polling immediately
   poll();
-  console.log(`⏰ Polling started for ${file}`);
+  //console.log(`⏰ Polling started for ${file}`);
 }
 export function getLatestFeed(feedType) {
   try {
@@ -145,7 +145,7 @@ function writeHeartbeat() {
 
   try {
     fs.writeFileSync(HEARTBEAT_FILE, JSON.stringify(data, null, 2));
-    console.log(`💓 Heartbeat written at ${data.timestamp}`);
+   // console.log(`💓 Heartbeat written at ${data.timestamp}`);
   } catch (err) {
     console.error("Error writing heartbeat:", err);
   }

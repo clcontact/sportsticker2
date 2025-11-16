@@ -13,7 +13,7 @@ const GameDisplaySwitcher = () => {
     async function fetchData() {
       try {
         //const res = await fetch(`http://localhost:3000/api/ncaagamesm/${gameId}`);
-        const res = await fetch (`/api/gamesscoreboard/${league}/${gameId}`)
+        const res = await fetch (`http://localhost:3000/api/gamesscoreboard/${league}/${gameId}`)
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
         setGameData(data);
