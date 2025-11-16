@@ -3,9 +3,17 @@ import { FaFootballBall } from 'react-icons/fa';
 
 const GameDetailsSwitch = () => {
   // Parse URL params (league and gameId)
+     const path = window.location.pathname;
+  const pathSegments = path.split('/').filter(s => s.length > 0);   
+ 
+  const league = pathSegments[1];
+  const gameId = pathSegments[2];
+  //  console.log ('params -> league'+league);
+  //console.log ('params -> gameId'+gameId);
   const urlParams = new URLSearchParams(window.location.search);
-  const league = urlParams.get('league') || 'nfl';
-  const gameId = urlParams.get('gameId') || '401772631';
+  //const league = urlParams.get('league') || 'nfl';
+  //const gameId = urlParams.get('gameId') ;
+  //console.log ('this is gameID: '+ gameId);
 
   const [currentView, setCurrentView] = useState(0); // 0=away leaders, 1=home leaders, 2=stats
   const [summaryData, setSummaryData] = useState(null);
@@ -77,18 +85,32 @@ const GameDetailsSwitch = () => {
   const situation = competition?.situation;
   const status = competition?.status;
 
-  const getContrastColor = (hexColor, alternateHex = null) => {
-    if (!hexColor) return '#fff';
-    const hex = hexColor.replace('#', '');
-    const r = parseInt(hex.substring(0, 2), 16);
-    const g = parseInt(hex.substring(2, 4), 16);
-    const b = parseInt(hex.substring(4, 6), 16);
-    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-    if (luminance < 0.5) {
-      return alternateHex ? `#${alternateHex}` : '#ffffff';
-    }
-    return `#${hexColor}`;
-  };
+const getContrastColor = (hexColor) => {
+  if (!hexColor) return '#ffffff';
+
+  const hex = hexColor.replace('#', '');
+  let r = parseInt(hex.substring(0, 2), 16);
+  let g = parseInt(hex.substring(2, 4), 16);
+  let b = parseInt(hex.substring(4, 6), 16);
+
+  // Convert RGB to luminance (0 = black, 1 = white)
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Minimum luminance for readability against black
+  const minLuminance = 0.5;
+
+  if (luminance < minLuminance) {
+    // Calculate the factor to lighten proportionally
+    const factor = (minLuminance - luminance) / luminance;
+
+    r = Math.min(255, Math.floor(r + r * factor));
+    g = Math.min(255, Math.floor(g + g * factor));
+    b = Math.min(255, Math.floor(b + b * factor));
+  }
+
+  const toHex = (val) => val.toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+};
 
   const renderTimeoutDots = (count) => (
     <div className="flex space-x-2 mt-3">
@@ -144,7 +166,7 @@ const GameDetailsSwitch = () => {
                   />
                 )}
               </div>
-              <p className="text-gray-400 text-xl mt-2">
+              <p className="text-gray-400 text-4xl mt-2">
                 {team.records?.[0]?.summary || ''}
               </p>
               {renderTimeoutDots(
