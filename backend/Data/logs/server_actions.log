@@ -1716,3 +1716,50 @@
 [2025-11-17T15:42:15.275Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
 [2025-11-17T15:43:15.280Z] [INFO] gamesscoreboard->league nfl
 [2025-11-17T15:43:15.281Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:58:34.075Z] [INFO] 📡 Broadcasting 37 combined games every 15s from 8 feeds. (Data Dir: C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data)
+[2025-11-17T15:58:34.078Z] [INFO] ✅ Server running on port 3000
+[2025-11-17T15:58:34.078Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-17T15:58:34.079Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-17T15:59:03.109Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T15:59:03.110Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T15:59:15.280Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:59:15.281Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:59:38.826Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T15:59:38.827Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:00:03.272Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:00:03.272Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:00:15.284Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:00:15.284Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:01:03.269Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:01:03.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:01:15.270Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:01:15.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:02:03.272Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:02:03.273Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:02:15.275Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:02:15.276Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:03:03.262Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:03:03.264Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:03:15.278Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:03:15.279Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:04:03.267Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:04:03.268Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:04:15.272Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:04:15.273Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:05:03.265Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:05:03.267Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:05:15.273Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:05:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:05:15.590Z] [INFO] Starting screen change.
+[2025-11-17T16:05:15.593Z] [ERROR] [ERROR] Failed to change URL on localhost:9223: request to http://localhost:9223/json failed, reason: 
+[2025-11-17T16:05:15.594Z] [INFO] ✅ Right display set to http://localhost:3001/GameDetailsSwitchNCAAM/401826912
+[2025-11-17T16:06:15.281Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:06:15.282Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:06:15.285Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:06:15.285Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:07:15.277Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T16:07:15.278Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T16:07:15.279Z] [INFO] gamesscoreboard->league nba
+[2025-11-17T16:07:15.280Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-17T16:07:34.327Z] [ERROR] ❌ Could not get display info from 9222: connect ECONNREFUSED 127.0.0.1:9222
+[2025-11-17T16:07:34.329Z] [ERROR] ❌ Could not get display info from 9223: connect ECONNREFUSED 127.0.0.1:9223

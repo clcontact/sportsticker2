@@ -38,10 +38,11 @@
 
   <script>
     async function loadGames() {
-      console.log('what I want: /api/gamesscoreboard/nfl')
+      
       const path = window.location.pathname;
       const pathSegments = path.split('/').filter(s => s.length > 0);      
       const league = pathSegments[pathSegments.length - 1];
+      console.log('what I want: /api/gamesscoreboard/'+league)
       console.log('this is league-> ' + league);
       const url = "/api/gamesscoreboard/" + league;
       console.log('this is url-> ' + url);
@@ -75,13 +76,14 @@ console.log('this is data-> ' + data);
         div.className = "game";
 const league = pathSegments[pathSegments.length - 1];
 
-let pageName = "GameDetailsSwitch.jsx"; // default
-if (league === "nba") pageName = "GameDetailsSwitchNBA.jsx";
-if (league === "nhl") pageName = "GameDetailsSwitchNHL.jsx";
-if (league === "ncaam") pageName = "GameDetailsSwitchNCAAM.jsx";
+let pageName = "GameDetailsSwitch"; // default
+if (league === "nba") pageName = "GameDetailsSwitchNBA";
+if (league === "nhl") pageName = "GameDetailsSwitchNHL";
+console.log("pagename-> "+ pageName);
 
 div.onclick = async () => {
   const url = `http://localhost:3001/${pageName}/${league}/${g.id}`;
+  console.log("url-> "+ url);
   console.log("Changing RIGHT display to:", url);
 
   await fetch("/displays/change", {
