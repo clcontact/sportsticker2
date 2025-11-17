@@ -8,6 +8,7 @@ import autoprefixer from 'autoprefixer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  appType: 'spa',   // <--- IMPORTANT for React Router support
   plugins: [react()],
   css: {
     postcss: {

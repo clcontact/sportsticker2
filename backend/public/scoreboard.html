@@ -78,6 +78,7 @@ const league = pathSegments[pathSegments.length - 1];
 let pageName = "GameDetailsSwitch.jsx"; // default
 if (league === "nba") pageName = "GameDetailsSwitchNBA.jsx";
 if (league === "nhl") pageName = "GameDetailsSwitchNHL.jsx";
+if (league === "ncaam") pageName = "GameDetailsSwitchNCAAM.jsx";
 
 div.onclick = async () => {
   const url = `http://localhost:3001/${pageName}/${league}/${g.id}`;

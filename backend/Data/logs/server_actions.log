@@ -1385,3 +1385,334 @@
 [2025-11-16T22:44:16.349Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
 [2025-11-16T22:44:16.784Z] [INFO] gamesscoreboard->league nfl
 [2025-11-16T22:44:16.785Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:35:21.187Z] [INFO] 📡 Broadcasting 37 combined games every 15s from 8 feeds. (Data Dir: C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data)
+[2025-11-17T14:35:21.189Z] [INFO] ✅ Server running on port 3000
+[2025-11-17T14:35:21.190Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-17T14:35:21.190Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-17T14:36:15.273Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:36:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:36:47.578Z] [ERROR] ❌ Could not get display info from 9222: connect ECONNREFUSED 127.0.0.1:9222
+[2025-11-17T14:36:47.580Z] [ERROR] ❌ Could not get display info from 9223: connect ECONNREFUSED 127.0.0.1:9223
+[2025-11-17T14:36:58.723Z] [INFO] startChrome->win32 screen: right
+[2025-11-17T14:36:58.724Z] [INFO] startChrome->BASE_URL->http://localhost:3001
+[2025-11-17T14:36:58.724Z] [INFO] startChrome->process.env.BASE_URL->http://localhost:3001
+[2025-11-17T14:36:58.725Z] [INFO] startChrome->profileDir->C:\Temp\right-profile 
+[2025-11-17T14:36:58.725Z] [INFO] startChrome->port->9223 
+[2025-11-17T14:36:58.725Z] [INFO] startChrome->startUrl->http://localhost:3001/GameDetailsPage2/nfl/eagles 
+[2025-11-17T14:36:58.725Z] [INFO] 🚀 Launching right Chrome: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --remote-debugging-port=9223 --no-first-run --disable-infobars --disable-session-crashed-bubble --user-data-dir="C:\Temp\right-profile" --kiosk http://localhost:3001/GameDetailsPage2/nfl/eagles
+[2025-11-17T14:36:59.786Z] [INFO] league->nfl
+[2025-11-17T14:36:59.787Z] [INFO] team->eagles
+[2025-11-17T14:36:59.788Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:36:59.788Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:36:59.793Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:36:59.794Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:36:59.795Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:36:59.795Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:04.793Z] [INFO] league->nfl
+[2025-11-17T14:37:04.795Z] [INFO] team->eagles
+[2025-11-17T14:37:04.796Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:04.797Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:04.809Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:04.810Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:04.811Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:04.812Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:10.257Z] [INFO] league->nfl
+[2025-11-17T14:37:10.257Z] [INFO] team->eagles
+[2025-11-17T14:37:10.258Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:10.258Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:10.261Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:10.261Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:10.262Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:10.262Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:15.120Z] [INFO] league->nfl
+[2025-11-17T14:37:15.122Z] [INFO] team->eagles
+[2025-11-17T14:37:15.122Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:15.123Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:15.127Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:15.127Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:15.128Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:15.128Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:15.266Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:37:15.267Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:37:19.795Z] [INFO] league->nfl
+[2025-11-17T14:37:19.797Z] [INFO] team->eagles
+[2025-11-17T14:37:19.798Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:19.800Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:19.807Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:19.807Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:19.807Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:19.808Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:25.265Z] [INFO] league->nfl
+[2025-11-17T14:37:25.266Z] [INFO] team->eagles
+[2025-11-17T14:37:25.267Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:25.268Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:25.272Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:25.273Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:25.273Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:25.274Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:30.259Z] [INFO] league->nfl
+[2025-11-17T14:37:30.261Z] [INFO] team->eagles
+[2025-11-17T14:37:30.262Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:30.263Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:30.270Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:30.271Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:30.272Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:30.273Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:35.267Z] [INFO] league->nfl
+[2025-11-17T14:37:35.269Z] [INFO] team->eagles
+[2025-11-17T14:37:35.270Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:35.272Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:35.280Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:35.281Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:35.281Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:35.281Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:40.261Z] [INFO] league->nfl
+[2025-11-17T14:37:40.263Z] [INFO] team->eagles
+[2025-11-17T14:37:40.264Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:40.266Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:40.273Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:40.273Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:40.274Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:40.274Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:45.258Z] [INFO] league->nfl
+[2025-11-17T14:37:45.260Z] [INFO] team->eagles
+[2025-11-17T14:37:45.261Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:45.261Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:45.268Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:45.268Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:45.269Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:45.270Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:50.263Z] [INFO] league->nfl
+[2025-11-17T14:37:50.265Z] [INFO] team->eagles
+[2025-11-17T14:37:50.265Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:50.267Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:50.274Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:50.274Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:50.275Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:50.275Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:37:55.270Z] [INFO] league->nfl
+[2025-11-17T14:37:55.272Z] [INFO] team->eagles
+[2025-11-17T14:37:55.274Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:37:55.275Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:37:55.286Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:37:55.288Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:37:55.289Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:37:55.290Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:38:00.258Z] [INFO] league->nfl
+[2025-11-17T14:38:00.260Z] [INFO] team->eagles
+[2025-11-17T14:38:00.261Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:38:00.262Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:38:00.271Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:38:00.271Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:38:00.272Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:38:00.272Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:38:05.271Z] [INFO] league->nfl
+[2025-11-17T14:38:05.273Z] [INFO] team->eagles
+[2025-11-17T14:38:05.275Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:38:05.276Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:38:05.288Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:38:05.290Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:38:05.290Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:38:05.291Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:38:10.272Z] [INFO] league->nfl
+[2025-11-17T14:38:10.274Z] [INFO] team->eagles
+[2025-11-17T14:38:10.276Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:38:10.277Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:38:10.286Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:38:10.286Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:38:10.286Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:38:10.287Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:38:15.261Z] [INFO] league->nfl
+[2025-11-17T14:38:15.262Z] [INFO] team->eagles
+[2025-11-17T14:38:15.263Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:38:15.264Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:38:15.269Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:38:15.270Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:38:15.271Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:38:15.271Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:38:15.273Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:38:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:38:20.269Z] [INFO] league->nfl
+[2025-11-17T14:38:20.271Z] [INFO] team->eagles
+[2025-11-17T14:38:20.272Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:38:20.274Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:38:20.279Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:38:20.279Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:38:20.280Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:38:20.280Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:39:15.273Z] [INFO] league->nfl
+[2025-11-17T14:39:15.274Z] [INFO] team->eagles
+[2025-11-17T14:39:15.274Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:39:15.275Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:39:15.281Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:39:15.281Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:39:15.282Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:39:15.284Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:39:15.286Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:39:15.286Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:40:15.271Z] [INFO] league->nfl
+[2025-11-17T14:40:15.272Z] [INFO] team->eagles
+[2025-11-17T14:40:15.273Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:40:15.274Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:40:15.279Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:40:15.279Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:40:15.281Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:40:15.281Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:40:15.283Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:40:15.283Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:41:15.270Z] [INFO] league->nfl
+[2025-11-17T14:41:15.271Z] [INFO] team->eagles
+[2025-11-17T14:41:15.272Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:41:15.272Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:41:15.277Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:41:15.278Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:41:15.278Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:41:15.279Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:41:15.281Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:41:15.281Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:42:15.271Z] [INFO] league->nfl
+[2025-11-17T14:42:15.273Z] [INFO] team->eagles
+[2025-11-17T14:42:15.274Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:42:15.274Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:42:15.280Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:42:15.281Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:42:15.282Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:42:15.282Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:42:15.284Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:42:15.285Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:43:15.261Z] [INFO] league->nfl
+[2025-11-17T14:43:15.262Z] [INFO] team->eagles
+[2025-11-17T14:43:15.263Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:43:15.264Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:43:15.268Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:43:15.269Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:43:15.269Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:43:15.270Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:43:15.272Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:43:15.272Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:44:15.270Z] [INFO] league->nfl
+[2025-11-17T14:44:15.272Z] [INFO] team->eagles
+[2025-11-17T14:44:15.272Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:44:15.273Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:44:15.278Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:44:15.279Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:44:15.280Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:44:15.280Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:44:15.283Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:44:15.283Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:44:54.297Z] [INFO] league->nfl
+[2025-11-17T14:44:54.299Z] [INFO] team->eagles
+[2025-11-17T14:44:54.300Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:44:54.300Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:44:54.305Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:44:54.305Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:44:54.306Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:44:54.306Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:44:54.794Z] [INFO] league->nfl
+[2025-11-17T14:44:54.796Z] [INFO] team->eagles
+[2025-11-17T14:44:54.797Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:44:54.798Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:44:54.806Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:44:54.807Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:44:54.807Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:44:54.808Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:45:00.265Z] [INFO] league->nfl
+[2025-11-17T14:45:00.266Z] [INFO] team->eagles
+[2025-11-17T14:45:00.266Z] [INFO] feedConfig->{"url":"https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl","file":"nfl_data.json","route":"nfl","scoreUrl":"https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"}
+[2025-11-17T14:45:00.266Z] [INFO] FILE_PATH->C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data\nfl_data.json
+[2025-11-17T14:45:00.269Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-17T14:45:00.269Z] [INFO] findEventByName->teamName->eagles
+[2025-11-17T14:45:00.270Z] [INFO] foundEvent->[object Object]
+[2025-11-17T14:45:00.270Z] [INFO] eventsToMap->[object Object]
+[2025-11-17T14:45:04.987Z] [INFO] Starting screen change.
+[2025-11-17T14:45:05.113Z] [INFO] [SUCCESS] Navigated kiosk on localhost:9223 to: http://localhost:3001/GameDetailsSwitchNCAAM/ncaam/401809416
+[2025-11-17T14:45:05.116Z] [INFO] ✅ Right display set to http://localhost:3001/GameDetailsSwitchNCAAM/ncaam/401809416
+[2025-11-17T14:45:15.280Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:45:15.280Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:46:15.277Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:46:15.278Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:47:15.267Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:47:15.268Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:48:15.270Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:48:15.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:49:03.614Z] [INFO] Starting screen change.
+[2025-11-17T14:49:03.687Z] [INFO] [SUCCESS] Navigated kiosk on localhost:9223 to: http://localhost:3001/GameDetailsSwitchNCAAM/ncaam/401809305
+[2025-11-17T14:49:03.688Z] [INFO] ✅ Right display set to http://localhost:3001/GameDetailsSwitchNCAAM/ncaam/401809305
+[2025-11-17T14:49:15.283Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:49:15.284Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:50:15.278Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:50:15.278Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:51:15.265Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:51:15.266Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:52:15.270Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:52:15.270Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:53:15.281Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:53:15.282Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:54:15.267Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:54:15.268Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T14:55:15.274Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T14:55:15.275Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:11:53.675Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:11:53.677Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:13:15.280Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:13:15.280Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:14:15.271Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:14:15.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:15:15.277Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:15:15.278Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:16:15.274Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:16:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:17:15.270Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:17:15.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:18:15.265Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:18:15.267Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:19:15.270Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:19:15.270Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:20:15.280Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:20:15.281Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:21:15.267Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:21:15.268Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:22:15.268Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:22:15.269Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:23:15.274Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:23:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:24:15.267Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:24:15.268Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:25:15.273Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:25:15.273Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:26:15.270Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:26:15.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:27:15.271Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:27:15.271Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:28:15.275Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:28:15.275Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:29:15.278Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:29:15.279Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:30:15.261Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:30:15.262Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:31:15.275Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:31:15.276Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:32:15.267Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:32:15.268Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:33:15.274Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:33:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:34:15.272Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:34:15.273Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:35:15.279Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:35:15.280Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:36:15.271Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:36:15.272Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:37:15.278Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:37:15.278Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:38:15.273Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:38:15.274Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:39:15.272Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:39:15.273Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:40:23.297Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:40:23.298Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:41:15.268Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:41:15.269Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:42:15.274Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:42:15.275Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-17T15:43:15.280Z] [INFO] gamesscoreboard->league nfl
+[2025-11-17T15:43:15.281Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
