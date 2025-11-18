@@ -64,7 +64,7 @@ function loadSingleFile(filePath) {
 	 	 	 	 	 })),
 	 	 	 	 }));
 
-	 	 console.log(`✅ Loaded ${games.length} games from ${fileName}`);
+	 	 //console.log(`✅ Loaded ${games.length} games from ${fileName}`);
 	 	 return games;
 	 } catch (err) {
 	 	 console.error(`❌ Error reading or parsing ${fileName}:`, err);
@@ -112,7 +112,7 @@ function loadSingleNCAAFile(filePath) {
 			})) ?? []
 		}));
 
-	 	 console.log(`✅ Loaded ${games.length} games from ${fileName}`);
+	 	 //console.log(`✅ Loaded ${games.length} games from ${fileName}`);
 	 	 return games;
 	 } catch (err) {
 	 	 console.error(`❌ Error reading or parsing ${fileName}:`, err);
@@ -144,8 +144,8 @@ function loadAllNCAAData(feeds) {
         const filePath = path.join(DATA_DIR, fileName); 
         const games = loadSingleNCAAFile(filePath);
 
-        console.log(`loadAllNCAAData -> games load-> ${games.length}`);
-        console.log(`loadAllNCAADatafileName-> fileName-> ${fileName}`);
+        //console.log(`loadAllNCAAData -> games load-> ${games.length}`);
+        //console.log(`loadAllNCAADatafileName-> fileName-> ${fileName}`);
 
         allGameNCAAObjects.set(fileName, games); // keep grouped if needed
         allGames.push(...games);                 // combine into one array
@@ -164,7 +164,7 @@ function broadcastGames() {
 	 	 // Combine all arrays of games from the Map values
 	 	 const combinedGames = Array.from(allGamesData.values()).flat();
 	 	 ioInstance.emit("gameUpdate", combinedGames);
-	 	 console.log(`📡 Broadcasted a total of ${combinedGames.length} games.`);
+	 	 //console.log(`📡 Broadcasted a total of ${combinedGames.length} games.`);
 	 }
 }
 
@@ -183,7 +183,7 @@ function watchFeedFile(feed) {
 	 }
 
 	 const listener = () => {
-	 	 console.log(`♻️ Detected change in ${fileName} – reloading...`);
+	 	 //console.log(`♻️ Detected change in ${fileName} – reloading...`);
 	 	 // Reload only the changed file
 	 	 const games = loadSingleFile(filePath);
 	 	 allGamesData.set(fileName, games); // Update the map with new data
@@ -192,7 +192,7 @@ function watchFeedFile(feed) {
 
 	 fs.watchFile(filePath, listener);
 	 watchListeners[fileName] = listener; // Store the listener reference
-	 console.log(`👀 Now watching file: ${fileName}`);
+	// console.log(`👀 Now watching file: ${fileName}`);
 }
 
 // --- Exported Function ---
@@ -211,7 +211,7 @@ export function startTicker(io, feeds, dataDir, intervalMs = 15000) {
 
 	 // 1. Initial load of all files from the defined feeds
 	 const initialGames = loadAllData(feeds);
-	 console.log('feeds->'+ feeds);
+	 //console.log('feeds->'+ feeds);
 	 broadcastGames();
 
 	 console.log(
@@ -237,7 +237,7 @@ export function startNCAATicker(io, feeds, dataDir, intervalMs = 15000) {
 
 	 // 1. Initial load of all files from the defined feeds
 	 const initialGames = loadAllNCAAData(feeds);
-	 console.log('NCAAfeeds->'+ feeds);
+	 //console.log('NCAAfeeds->'+ feeds);
 	 broadcastGames();
 
 	 console.log(

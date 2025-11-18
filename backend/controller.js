@@ -18,7 +18,7 @@ export async function changeDisplay(req, res) {
     console.log(`Starting screen change.`);
 
     const ip = "localhost"; // or your Pi’s IP if remote
-/* 
+
     if (screen === "left") {
       await changeKioskUrl(url, ip, 9222);
       console.log(`✅ Left display set to ${url}`);
@@ -28,7 +28,7 @@ export async function changeDisplay(req, res) {
     } else {
       return res.status(400).json({ error: "Invalid screen" });
     }
-*/
+
     res.json({ success: true });
   } catch (err) {
     console.warn(`⚠️ Something went wrong changing ${screen} -> ${url}`, err);

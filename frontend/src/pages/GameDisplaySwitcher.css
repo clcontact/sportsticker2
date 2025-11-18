@@ -1,0 +1,83 @@
+.game-switcher-container {
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.scoreboard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 16px 0;
+  border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+.scoreboard-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.team-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.team-score {
+  font-size: 80px;
+  font-weight: 900;
+}
+
+.team-name {
+  font-size: 32px;
+}
+
+.scoreboard-center {
+  text-align: center;
+  font-size: 24px;
+  flex: 1;
+}
+
+.bottom-section {
+  flex: 1;
+  width: 100%;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade.stats {
+  opacity: 1;
+}
+.fade.details {
+  opacity: 1;
+}
+.stats-layout, .details-layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 24px;
+  height: 100%;
+}
+
+.stats-team {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
