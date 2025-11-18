@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select League Rotation</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 15px;
+    }
+    h2 {
+      color: #ffcc00;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+    .logo-card {
+      width: 100px;
+      height: 100px;
+      background: #222;
+      border: 2px solid #ffcc00;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.0rem;
+      font-weight: 700;
+      transition: background .2s, transform .2s, color .2s;
+      overflow: hidden;
+    }
+    .logo-card img {
+      max-width: 80%;
+      max-height: 80%;
+      display: block;
+    }
+    .logo-card:hover {
+      background: #ffcc00;
+      color: #000;
+      transform: scale(1.05);
+    }
+.back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 14px 22px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #222;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.back-button:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.back-button .arrow {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+.center-div {
+  width: 50%; /* Or any other fixed width, e.g., 300px */
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+  </style>
+</head>
+<body>
+  <h2>Choose League Rotation</h2>
+  <div class="logos">
+    <a class="logo-card" href="http://localhost:3001/LeagueTicker/nfl/4">
+      <img src="/assets/images/nfl-logo.png" alt="NFL Logo">
+    </a>
+    <a class="logo-card" href="http://localhost:3001/LeagueTicker/nba/4">
+      <img src="/assets/images/nba-logo2.png" alt="NBA Logo">
+    </a>
+    <a class="logo-card" href="http://localhost:3001/LeagueTicker/nhl/4">
+      <img src="/assets/images/NHL.png" alt="NHL Logo">
+    </a>
+    <a class="logo-card" href="http://localhost:3001/LeagueTicker/ncaam/4">
+      <img src="/assets/images/NCAA_logo.png" alt="NCAA Men’s Basketball Logo">
+    </a>
+  </div>
+  <br/>
+<div class="center-div">
+<a href="/main" class="back-button">
+<span class="arrow">←</span> Back
+</a>
+</div>
+  <script>
+  document.querySelector('.back-btn, .back-tag')?.addEventListener('click', () => {
+    if (navigator.vibrate) navigator.vibrate(50);
+  });
+</script>
+</body>
+</html>

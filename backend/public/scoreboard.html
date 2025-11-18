@@ -2,96 +2,177 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Pro Sports Live Admin (Compact)</title>
+  <title>Live Games</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
-    body { font-family: Inter, Arial, sans-serif; background: #f8f9fb; color: #222; margin: 0; }
-    h1 { text-align: center; padding: 12px; margin: 0; background: #005eb8; color: #fff; font-size: 18px; }
-    .games { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
-      gap: 10px; 
-      padding: 10px; 
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #111;                 /* dark match */
+      color: #fff;
+      margin: 0;
     }
-    .game { 
-      background: #fff; 
-      border-radius: 8px; 
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08); 
-      padding: 8px; 
-      cursor: pointer; 
-      transition: transform 0.1s ease; 
+
+    h1 {
+      text-align: center;
+      padding: 14px;
+      margin: 0;
+      background: #000;
+      color: #ffcc00;
+      font-size: 22px;
+      font-weight: 800;
+      border-bottom: 3px solid #ffcc00;
     }
-    .game:hover { transform: scale(1.02); }
-    .teams { display: flex; justify-content: space-between; align-items: center; }
-    .team { display: flex; flex-direction: column; align-items: center; width: 48%; }
-    .logo { width: 60px; height: 60px; object-fit: contain; border-radius: 6px; }
-    .name { font-weight: 600; margin-top: 2px; text-align: center; font-size: 13px; }
-    .score { font-size: 24px; font-weight: 700; margin: 4px 0; text-align: center; }
-    .status { text-align: center; color: #555; font-size: 12px; margin-top: 4px; }
-    #message { text-align: center; margin: 10px 0; font-weight: 600; color: #005eb8; font-size: 14px; }
+
+    .back-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: #222;
+      color: #ffcc00;
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(255, 204, 0, .4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1000;
+      transition: .15s ease;
+    }
+
+    .back-button:hover {
+      transform: scale(1.05);
+      background: #ffcc00;
+      color: #000;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      padding: 85px 14px 14px 14px;  /* space for back button */
+    }
+
+    .game {
+      background: #222;
+      border-radius: 14px;
+      border: 2px solid #ffcc00;
+      box-shadow: 0px 0px 14px rgba(255, 204, 0, .2);
+      padding: 14px;
+      cursor: pointer;
+      transition: transform .1s ease, box-shadow .1s ease;
+    }
+
+    .game:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 18px rgba(255,204,0,.5);
+    }
+
+    .teams {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48%;
+    }
+
+    .logo {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #333;
+      padding: 5px;
+    }
+
+    .name {
+      font-weight: 700;
+      margin-top: 4px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .score {
+      font-size: 24px;
+      margin-top: 4px;
+      font-weight: 800;
+      color: #ffcc00;
+    }
+
+    .status {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 8px;
+      color: #ccc;
+    }
+
+    #message {
+      text-align: center;
+      margin: 10px 0;
+      font-weight: 600;
+      font-size: 14px;
+      color: #ffcc00;
+    }
   </style>
 </head>
+
 <body>
+
+  <a href="/main" class="back-button">← Back</a>
   <h1>Live Games</h1>
   <div id="games" class="games"></div>
   <div id="message"></div>
 
   <script>
     async function loadGames() {
-      
       const path = window.location.pathname;
-      const pathSegments = path.split('/').filter(s => s.length > 0);      
+      const pathSegments = path.split('/').filter(s => s.length > 0);
       const league = pathSegments[pathSegments.length - 1];
-      console.log('what I want: /api/gamesscoreboard/'+league)
-      console.log('this is league-> ' + league);
-      const url = "/api/gamesscoreboard/" + league;
-      console.log('this is url-> ' + url);
-      const res = await fetch("/api/gamesscoreboard/"+league);
-      
+
+      const res = await fetch("/api/gamesscoreboard/" + league);
       const data = await res.json();
-console.log('this is data-> ' + data);
       const games = data.sports[0].leagues[0].events || [];
-      console.log('this is games-> ' + games);
       const container = document.getElementById("games");
       container.innerHTML = "";
 
-      const liveGames = games.filter(g => 
-        g.status === "in" || 
-        g.status === "pre" || 
-        g.status === "post"
+      const liveGames = games.filter(g =>
+        g.status === "in" || g.status === "pre" || g.status === "post"
       );
 
       if (!liveGames.length) {
-        container.innerHTML = "<p style='grid-column:1/-1;text-align:center;font-size:14px;'>No games available.</p>";
+        container.innerHTML = "<p style='grid-column:1/-1;text-align:center;'>No games available.</p>";
         return;
       }
 
       for (const g of liveGames) {
-        //const comp = g.competitions?.[0];
         const teams = g?.competitors || [];
         const home = teams.find(t => t.homeAway === "home");
         const away = teams.find(t => t.homeAway === "away");
 
+        let pageName = "GameDetailsSwitch";
+        if (league === "nba") pageName = "GameDetailsSwitchNBA";
+        if (league === "nhl") pageName = "GameDetailsSwitchNHL";
+
         const div = document.createElement("div");
         div.className = "game";
-const league = pathSegments[pathSegments.length - 1];
 
-let pageName = "GameDetailsSwitch"; // default
-if (league === "nba") pageName = "GameDetailsSwitchNBA";
-if (league === "nhl") pageName = "GameDetailsSwitchNHL";
-console.log("pagename-> "+ pageName);
-
-div.onclick = async () => {
-  const url = `http://localhost:3001/${pageName}/${league}/${g.id}`;
-  console.log("url-> "+ url);
-  console.log("Changing RIGHT display to:", url);
-
-  await fetch("/displays/change", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ screen: "right", url })
-  });
-};
+        div.onclick = async () => {
+          const url = `http://localhost:3001/${pageName}/${league}/${g.id}`;
+          await fetch("/displays/change", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ screen: "right", url })
+          });
+        };
 
         div.innerHTML = `
           <div class="teams">
@@ -113,7 +194,8 @@ div.onclick = async () => {
     }
 
     loadGames();
-    setInterval(loadGames, 60000); // refresh every 60s
+    setInterval(loadGames, 60000);
   </script>
+
 </body>
 </html>

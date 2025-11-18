@@ -77,6 +77,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static("public"));
+app.use('/assets', express.static('public'));
 // ===============================================
 // --- ROUTE REGISTRATION (CLEANED) ---
 // ===============================================
@@ -161,6 +163,15 @@ app.get("/", (req, res) => {
 });
 app.get("/ncaam", (req, res) => {
   res.sendFile(path.join(__dirname, "public/ncaam.html"));
+});
+app.get("/main", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/mainSwitcher.html"));
+});
+app.get("/mainLeft", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/mainLeft.html"));
+});
+app.get("/mainRight", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/mainRight.html"));
 });
 app.get("/scoreboard/:league", (req, res) => {
   const { league } = req.params.league.toLowerCase();;
