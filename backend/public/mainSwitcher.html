@@ -54,5 +54,26 @@
 
 <a class="button" href="mainLeft">Left Screen<br><span style="font-size:0.9rem;font-weight:400;">League Rotation View</span></a>
 
+<button class="button" onclick="toggleLight()">Turn On Screens</button>
+
+<button class="button" onclick="toggleOff()">Turn OFF Screens</button>
+<script>
+async function toggleLight() {
+console.log('Turning on screens');
+  await fetch('http://172.20.10.13:8123/api/webhook/-kYTZXb2E9UN32FdA4zmUnTmN', {
+    method: 'POST'
+  });
+console.log('END of turning on screens');
+}
+
+async function toggleOff() {
+console.log('Turning on screens');
+  await fetch('http://172.20.10.13:8123/api/webhook/-TwMNChnNikmhXSLfU4QV67lP', {
+    method: 'POST'
+  });
+console.log('END of turning on screens');
+}
+
+</script>
 </body>
 </html>

@@ -88,22 +88,47 @@
   </style>
 </head>
 <body>
-  <h2>Choose League Rotation</h2>
-  <div class="logos">
-    <a class="logo-card" href="http://localhost:3001/LeagueTicker/nfl/4">
-      <img src="/assets/images/nfl-logo.png" alt="NFL Logo">
-    </a>
-    <a class="logo-card" href="http://localhost:3001/LeagueTicker/nba/4">
-      <img src="/assets/images/nba-logo2.png" alt="NBA Logo">
-    </a>
-    <a class="logo-card" href="http://localhost:3001/LeagueTicker/nhl/4">
-      <img src="/assets/images/NHL.png" alt="NHL Logo">
-    </a>
-    <a class="logo-card" href="http://localhost:3001/LeagueTicker/ncaam/4">
-      <img src="/assets/images/NCAA_logo.png" alt="NCAA Men’s Basketball Logo">
-    </a>
+<h2>Choose League Rotation</h2>
+
+<div class="logos">
+  <div class="logo-card" data-league="nfl">
+    <img src="/assets/images/NFL-logo.png" alt="NFL Logo">
   </div>
-  <br/>
+
+  <div class="logo-card" data-league="nba">
+    <img src="/assets/images/nba-logo2.png" alt="NBA Logo">
+  </div>
+
+  <div class="logo-card" data-league="nhl">
+    <img src="/assets/images/NHL.png" alt="NHL Logo">
+  </div>
+
+  <div class="logo-card" data-league="ncaam">
+    <img src="/assets/images/NCAA_logo.png" alt="NCAA Men’s Basketball Logo">
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".logo-card").forEach(card => {
+    card.onclick = async () => {
+      const league = card.dataset.league;
+      //http://localhost:3001/LeagueTicker/ncaam/4
+      //http://localhost:3001/LeagueTracker/ncaam/4
+      console.log('this is the league'+league);
+      const url = `http://localhost:3001/LeagueTracker/${league}/4`;
+
+      console.log("Changing LEFT display to:", url);
+
+      await fetch("/displays/change", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ screen: "left", url })
+      });
+    };
+  });
+</script>
+
+
 <div class="center-div">
 <a href="/main" class="back-button">
 <span class="arrow">←</span> Back
