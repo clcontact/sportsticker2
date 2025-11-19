@@ -1763,3 +1763,30 @@
 [2025-11-17T16:07:15.280Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
 [2025-11-17T16:07:34.327Z] [ERROR] ❌ Could not get display info from 9222: connect ECONNREFUSED 127.0.0.1:9222
 [2025-11-17T16:07:34.329Z] [ERROR] ❌ Could not get display info from 9223: connect ECONNREFUSED 127.0.0.1:9223
+[2025-11-18T17:46:42.192Z] [INFO] 📡 Broadcasting 37 combined games every 15s from 8 feeds. (Data Dir: C:\Users\240075059\source\node\sports-ticker\backend\data)
+[2025-11-18T17:46:42.196Z] [INFO] ✅ Server running on port 3000
+[2025-11-18T17:46:42.197Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-18T17:46:42.198Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-18T17:48:22.460Z] [INFO] 📡 Broadcasting 38 combined games every 15s from 8 feeds. (Data Dir: C:\Users\240075059\source\node\sports-ticker\backend\data)
+[2025-11-18T17:48:22.464Z] [INFO] ✅ Server running on port 3000
+[2025-11-18T17:48:22.464Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-18T17:48:22.465Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-18T17:48:55.497Z] [INFO] gamesscoreboard->league nfl
+[2025-11-18T17:48:55.500Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-18T17:48:59.504Z] [INFO] gamesscoreboard->league nba
+[2025-11-18T17:48:59.505Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba
+[2025-11-18T19:15:47.091Z] [INFO] 📡 Broadcasting 38 combined games every 15s from 8 feeds. (Data Dir: C:\Users\240075059\source\node\sports-ticker\backend\data)
+[2025-11-18T19:15:47.095Z] [INFO] ✅ Server running on port 3000
+[2025-11-18T19:15:47.096Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-18T19:15:47.096Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-18T19:18:44.999Z] [INFO] 📡 Broadcasting 38 combined games every 15s from 8 feeds. (Data Dir: C:\Users\240075059\source\node\sports-ticker\backend\data)
+[2025-11-18T19:18:45.004Z] [INFO] ✅ Server running on port 3000
+[2025-11-18T19:18:45.004Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-18T19:18:45.005Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-18T19:34:35.502Z] [INFO] gamesscoreboard->league nfl
+[2025-11-18T19:34:35.505Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl
+[2025-11-18T19:34:43.559Z] [INFO] gamesscoreboard->league index.html
+[2025-11-18T19:36:49.222Z] [INFO] 📡 Broadcasting 38 combined games every 15s from 8 feeds. (Data Dir: C:\Users\240075059\source\node\sports-ticker\backend\data)
+[2025-11-18T19:36:49.227Z] [INFO] ✅ Server running on port 3000
+[2025-11-18T19:36:49.227Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-18T19:36:49.228Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
