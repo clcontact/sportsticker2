@@ -288,7 +288,8 @@ const StatsView = ({ awayTeam, homeTeam }) => {
   return (
     <div className="pt-4">
       <div className="bg-gray-800 rounded-3xl p-8 shadow-2xl">
-        <div className="grid grid-cols-3 gap-6 mb-6 pb-4 border-b-2 border-gray-700">
+
+{/*         <div className="grid grid-cols-3 gap-6 mb-6 pb-4 border-b-2 border-gray-700">
           <div className="text-center">
             <img src={awayTeam?.team?.logo} alt="" className="w-20 h-20 mx-auto mb-2" />
             <p className="text-2xl font-bold">{awayTeam?.team?.abbreviation}</p>
@@ -298,7 +299,7 @@ const StatsView = ({ awayTeam, homeTeam }) => {
             <img src={homeTeam?.team?.logo} alt="" className="w-20 h-20 mx-auto mb-2" />
             <p className="text-2xl font-bold">{homeTeam?.team?.abbreviation}</p>
           </div>
-        </div>
+        </div> */}
 
         {allStatNames.map((statName, i) => (
           <div
