@@ -21,13 +21,43 @@
     letter-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
+    /* Added top margin to prevent the back button from covering the title */
+    margin-top: 60px; 
     color: #ffcc00;
   }
 
+  /* Container to hold Left and Right columns */
+  .controls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px; /* Space between left and right groups */
+    width: 100%;
+    max-width: 900px;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    margin-bottom: 30px;
+  }
+
+  .control-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Take up equal space */
+    min-width: 250px; /* Prevent columns from becoming too thin */
+    align-items: center;
+  }
+
+  .column-title {
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
   .button {
-    width: 90%;
+    width: 100%; /* Fill the column width */
     padding: 20px;
-    margin: 15px;
+    margin: 10px 0; /* Adjusted margin for vertical stacking */
     background: #222;
     border-radius: 18px;
     text-align: center;
@@ -37,6 +67,7 @@
     text-transform: uppercase;
     text-decoration: none;
     color: white;
+    cursor: pointer;
     transition: 0.3s;
   }
 
@@ -44,76 +75,113 @@
     background: #ffcc00;
     color: black;
   }
-.back-button {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  padding: 14px 22px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  background: #222;
-  color: #ffcc00;
-  border: 2px solid #ffcc00;
-  border-radius: 12px;
-  text-decoration: none;
-  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
-}
 
-.back-button:hover {
-  background: #ffcc00;
-  color: #000;
-  transform: scale(1.05);
-}
+  /* Specific styling for the refresh button to make it distinct */
+  .button-refresh {
+    max-width: 400px;
+    border-color: #fff;
+  }
+  .button-refresh:hover {
+    background: #fff;
+    color: #000;
+  }
 
-.back-button .arrow {
-  font-size: 1.4rem;
-  font-weight: 900;
-}
-.center-div {
-  width: 50%; /* Or any other fixed width, e.g., 300px */
-  margin-left: auto;
-  margin-right: auto;
-}   
+  .back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    padding: 14px 22px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #222;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+  }
+
+  .back-button:hover {
+    background: #ffcc00;
+    color: #000;
+    transform: scale(1.05);
+  }
+
+  .back-button .arrow {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+
+  #status {
+    margin-top: 20px;
+    padding: 15px;
+    background: #222;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    overflow-x: auto;
+    color: #0f0; /* Matrix green for status text */
+  }
 </style>
 </head>
 <body>
 
-<h1>Sports Ticker Control Admin</h1>
+  <a href="/main" class="back-button">
+    <span class="arrow">←</span> Back
+  </a>
 
-<button class="button" onclick="start('left')">Start Left</button>
-    <button class="button" onclick="restart('left')">Restart Left</button>
-    <br />
-    <button  class="button"onclick="start('right')">Start Right</button>
-    <button class="button" onclick="restart('right')">Restart Right</button>
-    <br /><br />
-    <button  class="button" onclick="refresh()">Refresh Status</button>
+  <h1>Sports Ticker Control Admin</h1>
 
-<div class="center-div">
-<a href="/main" class="back-button">
-<span class="arrow">←</span> Back
-</a>
-</div>    
-    <pre id="status">Loading...</pre>
-    <script>
-      async function refresh() {
+  <div class="controls-container">
+    <div class="control-column">
+      <div class="column-title">Left Screen</div>
+      <button class="button" onclick="start('left')">Start Left</button>
+      <button class="button" onclick="restart('left')">Restart Left</button>
+    </div>
+
+    <div class="control-column">
+      <div class="column-title">Right Screen</div>
+      <button class="button" onclick="start('right')">Start Right</button>
+      <button class="button" onclick="restart('right')">Restart Right</button>
+    </div>
+  </div>
+
+  <button class="button button-refresh" onclick="refresh()">Refresh Status</button>
+
+  <pre id="status">Loading...</pre>
+
+  <script>
+    async function refresh() {
+      try {
         const res = await fetch("/chrome/status");
         const data = await res.json();
         document.getElementById("status").textContent = JSON.stringify(data, null, 2);
+      } catch (e) {
+        document.getElementById("status").textContent = "Error fetching status.";
       }
-      async function start(screen) {
+    }
+    async function start(screen) {
+      try {
         await fetch(`/chrome/start/${screen}`, { method: "POST" });
         refresh();
+      } catch (e) {
+        console.error(e);
       }
-      async function restart(screen) {
+    }
+    async function restart(screen) {
+      try {
         await fetch(`/chrome/restart/${screen}`, { method: "POST" });
         refresh();
+      } catch (e) {
+        console.error(e);
       }
-      refresh();
-    </script>
+    }
+    refresh();
+  </script>
 </body>
 </html>

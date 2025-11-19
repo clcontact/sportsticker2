@@ -1,0 +1,25 @@
+https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard
+https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.uefa/scoreboard
+https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.concacaf/scoreboard
+https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.worldq.afc/scoreboard
+https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.friendly/scoreboard
+
+
+
+
+
+
+
+
+FIFA World Cup Qualifying
+UEFA
+Concacaf
+AFC
+International Friendly
+AFC Asian Cup Qualifiers
+
+
+https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+
+
+https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?region=us&lang=en&contentorigin=espn&configuration=STREAM_MENU&platform=web&features=sfb-all%2Ccutl&buyWindow=1m&showAirings=buy%2Clive%2Creplay&showZipLookup=true&tz=America%2FNew_York&_ceID=15878776&postalCode=40205&playabilitySource=playbackId

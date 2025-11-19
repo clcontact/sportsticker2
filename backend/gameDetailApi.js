@@ -35,16 +35,16 @@ function setupGameDetailRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
         const team = req.params.team.toLowerCase();
         const feedConfig = FEEDS.find(f => f.route === league);
 
-        console.log("league->"+ league);
-        console.log("team->"+ team);
-        console.log("feedConfig->"+ JSON.stringify(feedConfig));
+        //console.log("league->"+ league);
+        //console.log("team->"+ team);
+        //console.log("feedConfig->"+ JSON.stringify(feedConfig));
         
         if (!feedConfig) {
             return res.status(400).json({ error: "Invalid league specified." });
         }
 
         const FILE_PATH = path.join(ABSOLUTE_DATA_DIR, feedConfig.file);
-console.log("FILE_PATH->"+ FILE_PATH);
+//console.log("FILE_PATH->"+ FILE_PATH);
         // Read and process the file content
         try {
             const fileContent = fs.readFileSync(FILE_PATH, 'utf8');

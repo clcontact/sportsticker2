@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 const file = './data/ncaam_data.json';
 const raw = fs.readFileSync(file, 'utf8');
-console.log(raw.slice(0,500));
+
 //import express from "express";
 //import { getLatestFeed } from "./services/dataFetcher.js";
 import { getLatestFeed } from "./services/dataFetcher.js";
@@ -105,9 +105,9 @@ export function setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
     
     app.get('/api/games/:league', (req, res) => {
         const league = req.params.league.toLowerCase();
-        console.log('leagueSetupGames->league '+ league);
+        //console.log('leagueSetupGames->league '+ league);
         const feedConfig = FEEDS.find(f => f.route === league);
-        console.log('leagueSetupGames-> feedConfig.file->'+ feedConfig.file);
+        //console.log('leagueSetupGames-> feedConfig.file->'+ feedConfig.file);
         if (!feedConfig) {
             return res.status(400).json({ error: "Invalid league specified." });
         }
@@ -117,7 +117,7 @@ export function setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
         // Read and process the file content
         try {
             const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
-            console.log('leagueSetupGames-> FILE_PATH->'+ FILE_PATH);
+            //console.log('leagueSetupGames-> FILE_PATH->'+ FILE_PATH);
             const data = JSON.parse(fileContent);
             
             // Data Transformation Logic
@@ -161,9 +161,9 @@ export function setupGameRoutes(app, FEEDS, ABSOLUTE_DATA_DIR) {
 export function setupNCAAGameRoutes(app, NCAA, ABSOLUTE_DATA_DIR) {
        app.get('/api/ncaagames/:sport', (req, res) => {
         const sport = req.params.sport.toLowerCase();
-        console.log('setupNCAAGameRoutes->league '+ sport);
+        //console.log('setupNCAAGameRoutes->league '+ sport);
         const feedConfig = NCAA.find(f => f.route === sport);
-        console.log('setupNCAAGameRoutes-> feedConfig.file->'+ feedConfig.file);
+        //console.log('setupNCAAGameRoutes-> feedConfig.file->'+ feedConfig.file);
         if (!feedConfig) {
             return res.status(400).json({ error: "Invalid league specified." });
         }
@@ -173,7 +173,7 @@ export function setupNCAAGameRoutes(app, NCAA, ABSOLUTE_DATA_DIR) {
         // Read and process the file content
         try {
             const fileContent = fs.readFileSync(FILE_PATH, 'utf8');
-            console.log('leagueSetupGames-> FILE_PATH->'+ FILE_PATH);
+            //console.log('leagueSetupGames-> FILE_PATH->'+ FILE_PATH);
             const data = JSON.parse(fileContent);
             
             // Data Transformation Logic

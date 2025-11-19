@@ -1,0 +1,62 @@
+[
+  {
+    "name": "NFL_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl",
+    "file": "nfl_data.json",
+    "route": "nfl",
+    "scoreUrl": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
+  },
+  {
+    "name": "MLB_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=baseball&league=mlb",
+    "file": "mlb_data.json",
+    "route": "mlb",
+    "scoreUrl": "https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard"
+  },
+  {
+    "name": "EPL_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1",
+    "file": "premier_data.json",
+    "route": "epl",
+    "scoreUrl": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard"
+  },
+  {
+    "name": "FIFA_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=fifa.world",
+    "file": "fifa_data.json",
+    "route": "fifa",
+    "scoreUrl": "http://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard"
+  },
+  {
+    "name": "NBA_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=basketball&league=nba",
+    "file": "nba_data.json",
+    "route": "nba",
+    "scoreUrl": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
+  },
+  {
+    "name": "NHL_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=hockey&league=nhl",
+    "file": "nhl_data.json",
+    "route": "nhl",
+    "scoreUrl": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard"
+  },
+  {
+    "name": "COLLEGE_FB_FEED",
+    "url": "https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard",
+    "file": "ncaaf_data.json",
+    "route": "ncaaf"
+  },
+  {
+    "name": "COLLEGE_BB_FEED",
+    "url": "http://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard",
+    "file": "ncaam_data.json",
+    "route": "ncaam"
+  },
+  {
+    "name": "NFLTRACKER_FEED",
+    "url": "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=football&league=nfl&team=phi",
+    "file": "nflGameTracker_data.json",
+    "route": "nfltracker"
+  }
+]
