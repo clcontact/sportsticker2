@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports Ticker Control</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffcc00;
+  }
+
+  .button {
+    width: 90%;
+    padding: 20px;
+    margin: 15px;
+    background: #222;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: 2px solid #ffcc00;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .button:hover {
+    background: #ffcc00;
+    color: black;
+  }
+.back-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 14px 22px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: #222;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.back-button:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.back-button .arrow {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+.center-div {
+  width: 50%; /* Or any other fixed width, e.g., 300px */
+  margin-left: auto;
+  margin-right: auto;
+}   
+</style>
+</head>
+<body>
+
+<h1>Sports Ticker Control Admin</h1>
+
+<button class="button" onclick="start('left')">Start Left</button>
+    <button class="button" onclick="restart('left')">Restart Left</button>
+    <br />
+    <button  class="button"onclick="start('right')">Start Right</button>
+    <button class="button" onclick="restart('right')">Restart Right</button>
+    <br /><br />
+    <button  class="button" onclick="refresh()">Refresh Status</button>
+
+<div class="center-div">
+<a href="/main" class="back-button">
+<span class="arrow">←</span> Back
+</a>
+</div>    
+    <pre id="status">Loading...</pre>
+    <script>
+      async function refresh() {
+        const res = await fetch("/chrome/status");
+        const data = await res.json();
+        document.getElementById("status").textContent = JSON.stringify(data, null, 2);
+      }
+      async function start(screen) {
+        await fetch(`/chrome/start/${screen}`, { method: "POST" });
+        refresh();
+      }
+      async function restart(screen) {
+        await fetch(`/chrome/restart/${screen}`, { method: "POST" });
+        refresh();
+      }
+      refresh();
+    </script>
+</body>
+</html>

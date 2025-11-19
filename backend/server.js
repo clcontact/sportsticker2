@@ -167,6 +167,9 @@ app.get("/ncaam", (req, res) => {
 app.get("/main", (req, res) => {
   res.sendFile(path.join(__dirname, "public/mainSwitcher.html"));
 });
+app.get("/mainAdmin", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/mainSwitcherAdmin.html"));
+});
 app.get("/mainLeft", (req, res) => {
   res.sendFile(path.join(__dirname, "public/mainLeft.html"));
 });
