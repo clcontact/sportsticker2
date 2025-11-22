@@ -1826,3 +1826,100 @@
 [2025-11-19T15:53:14.137Z] [INFO] ✅ Server running on port 3000
 [2025-11-19T15:53:14.137Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
 [2025-11-19T15:53:14.138Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-22T13:00:00.689Z] [INFO] Attempting to load config from: C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\feedConfig.json
+[2025-11-22T13:00:00.693Z] [INFO] ✅ Feeds configuration successfully loaded/reloaded. Reinitializing...
+[2025-11-22T13:00:00.693Z] [INFO] 🧹 Stopping all old polling and ticker services...
+[2025-11-22T13:00:00.694Z] [INFO] 🛑 No active polling loops found to stop.
+[2025-11-22T13:00:00.695Z] [INFO] ✅ All Ticker file watchers cleared.
+[2025-11-22T13:00:00.695Z] [INFO] 🔄 Re-registering API routes...
+[2025-11-22T13:00:00.697Z] [INFO] 🚀 Restarting new polling and ticker services...
+[2025-11-22T13:00:00.710Z] [INFO] 🚀 Ticker started. Broadcasting 109 combined games every 15s from 9 feeds. (Data Dir: C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\data)
+[2025-11-22T13:00:00.729Z] [INFO] ⏰ Polling started for nfl_data.json. Key: nfl_data.json
+[2025-11-22T13:00:00.731Z] [INFO] ⏰ Polling started for mlb_data.json. Key: mlb_data.json
+[2025-11-22T13:00:00.733Z] [INFO] ⏰ Polling started for premier_data.json. Key: premier_data.json
+[2025-11-22T13:00:00.734Z] [INFO] ⏰ Polling started for fifa_data.json. Key: fifa_data.json
+[2025-11-22T13:00:00.735Z] [INFO] ⏰ Polling started for nba_data.json. Key: nba_data.json
+[2025-11-22T13:00:00.737Z] [INFO] ⏰ Polling started for nhl_data.json. Key: nhl_data.json
+[2025-11-22T13:00:00.739Z] [INFO] ⏰ Polling started for ncaaf_data.json. Key: ncaaf_data.json
+[2025-11-22T13:00:00.741Z] [INFO] ⏰ Polling started for ncaam_data.json. Key: ncaam_data.json
+[2025-11-22T13:00:00.742Z] [INFO] ⏰ Polling started for nflGameTracker_data.json. Key: nflGameTracker_data.json
+[2025-11-22T13:00:00.743Z] [INFO] ✅ Dynamic content re-initialization complete.
+[2025-11-22T13:00:00.748Z] [INFO] ✅ Started watcher on feedConfig.json
+[2025-11-22T13:00:00.754Z] [INFO] ✅ Server running on port 3000
+[2025-11-22T13:00:00.755Z] [INFO] ✅ Kiosk Control Panel (Admin) available at http://localhost:3000/admin
+[2025-11-22T13:00:00.756Z] [INFO] ✅ Remote Commander UI available at http://localhost:3000/commander
+[2025-11-22T13:02:43.351Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:02:43.353Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:03:44.090Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:03:44.091Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:04:44.087Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:04:44.089Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:05:24.300Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:05:24.301Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:05:30.202Z] [INFO] Starting screen change.
+[2025-11-22T13:05:30.209Z] [ERROR] [ERROR] Failed to change URL on localhost:9223: request to http://localhost:9223/json failed, reason: 
+[2025-11-22T13:05:30.210Z] [INFO] ✅ Right display set to http://localhost:3001/GameDetailsSwitch/epl/740707
+[2025-11-22T13:06:25.088Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:06:25.089Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:07:25.091Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:07:25.093Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:08:25.097Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:08:25.098Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:09:25.090Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:09:25.091Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:10:25.095Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:10:25.096Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:11:25.093Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:11:25.094Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:13:11.083Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:13:11.084Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:14:11.090Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:14:11.091Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:14:32.158Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-22T13:14:32.159Z] [INFO] findEventByName->teamName->740707
+[2025-11-22T13:14:32.161Z] [INFO] foundEvent->undefined
+[2025-11-22T13:14:32.161Z] [INFO] eventsToMap->
+[2025-11-22T13:15:08.929Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-22T13:15:08.930Z] [INFO] findEventByName->teamName->bur
+[2025-11-22T13:15:08.931Z] [INFO] foundEvent->[object Object]
+[2025-11-22T13:15:08.932Z] [INFO] eventsToMap->[object Object]
+[2025-11-22T13:15:11.085Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:15:11.087Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:16:11.102Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:16:11.102Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:17:11.087Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:17:11.088Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:18:11.102Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:18:11.103Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:19:08.692Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-22T13:19:08.693Z] [INFO] findEventByName->teamName->che
+[2025-11-22T13:19:08.694Z] [INFO] foundEvent->[object Object]
+[2025-11-22T13:19:08.694Z] [INFO] eventsToMap->[object Object]
+[2025-11-22T13:19:11.081Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:19:11.082Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:20:11.096Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:20:11.097Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:20:57.295Z] [INFO] gamesscoreboard->league epl
+[2025-11-22T13:20:57.296Z] [INFO] gamesscoreboard-> feedConfig.url->https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=soccer&league=eng.1
+[2025-11-22T13:21:08.431Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-22T13:21:08.432Z] [INFO] findEventByName->teamName->bur
+[2025-11-22T13:21:08.433Z] [INFO] foundEvent->[object Object]
+[2025-11-22T13:21:08.433Z] [INFO] eventsToMap->[object Object]
+[2025-11-22T13:32:10.885Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-22T13:32:10.886Z] [INFO] findEventByName->teamName->bur
+[2025-11-22T13:32:10.886Z] [INFO] foundEvent->[object Object]
+[2025-11-22T13:32:10.886Z] [INFO] eventsToMap->[object Object]
+[2025-11-22T13:34:50.343Z] [INFO] findEventByName->events->[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2025-11-22T13:34:50.345Z] [INFO] findEventByName->teamName->bur
+[2025-11-22T13:34:50.345Z] [INFO] foundEvent->[object Object]
+[2025-11-22T13:34:50.346Z] [INFO] eventsToMap->[object Object]
+[2025-11-22T14:06:43.294Z] [INFO] 
+
+🚨 Configuration change detected for feedConfig.json. Reloading...
+[2025-11-22T14:06:43.398Z] [INFO] Attempting to load config from: C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\feedConfig.json
+[2025-11-22T14:06:43.401Z] [INFO] ℹ️ Config file changed, but content was identical. No action taken.
+[2025-11-22T16:56:37.294Z] [INFO] 
+
+🚨 Configuration change detected for feedConfig.json. Reloading...
+[2025-11-22T16:56:37.406Z] [INFO] Attempting to load config from: C:\Users\clcontact\source\node\sports-ticker\sportsticker2\backend\feedConfig.json
+[2025-11-22T16:56:37.409Z] [INFO] ℹ️ Config file changed, but content was identical. No action taken.

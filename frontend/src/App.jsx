@@ -12,6 +12,8 @@ import GameDetailsSwitch from "./pages/GameDetailsSwitch";
 import GameDetailsSwitchNBA from "./pages/GameDetailsSwitchNBA";
 import GameDetailsSwitchNHL from "./pages/GameDetailsSwitchNHL";
 import GameDetailsSwitchNCAAM from "./pages/GameDetailsSwitchNCAAM";
+import GameDetailsSwitchEPL from "./pages/GameDetailsSwitchEPL";
+
 
 
 export default function App() {
@@ -50,7 +52,9 @@ export default function App() {
               <Route path="/GameDetailsSwitch/:league/:team/"  element={<GameDetailsSwitch />} />   
               <Route path="/GameDetailsSwitchNBA/:league/:team/"  element={<GameDetailsSwitchNBA />} />  
               <Route path="/GameDetailsSwitchNHL/:league/:team/"  element={<GameDetailsSwitchNHL />} />    
-              <Route path="/GameDetailsSwitchNCAAM/:id"  element={<GameDetailsSwitchNCAAM />} />       
+              <Route path="/GameDetailsSwitchNCAAM/:id"  element={<GameDetailsSwitchNCAAM />} /> 
+              <Route path="/GameDetailsSwitchEPL/:id"  element={<GameDetailsSwitchEPL />} />  
+     
       </Routes>
     </BrowserRouter>
     
